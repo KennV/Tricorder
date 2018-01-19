@@ -1,0 +1,1168 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1576DA1A8CDC35333FEE1FE6 /* Pods_TricorderUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D41F594E173A9BBDF670D54 /* Pods_TricorderUITests.framework */; };
+		3177BCA0F99F7FECC37E72F7 /* Pods_Tricorder.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3AED9ABCA493871ABCD0BDD5 /* Pods_Tricorder.framework */; };
+		3827B0121D9DD3DF004A3582 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3827B0101D9DD3DF004A3582 /* LaunchScreen.storyboard */; };
+		3827B01D1D9DD3DF004A3582 /* TricorderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3827B01C1D9DD3DF004A3582 /* TricorderTests.swift */; };
+		3827B0281D9DD3DF004A3582 /* TricorderUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3827B0271D9DD3DF004A3582 /* TricorderUITests.swift */; };
+		3827B0391D9DD923004A3582 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3827B0381D9DD923004A3582 /* AppDelegate.swift */; };
+		3827B0481D9DD998004A3582 /* KVCameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3827B03C1D9DD998004A3582 /* KVCameraViewController.swift */; };
+		3827B0491D9DD998004A3582 /* KVPersonEditorTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3827B03D1D9DD998004A3582 /* KVPersonEditorTableViewController.swift */; };
+		3827B04A1D9DD998004A3582 /* KVMapViewCon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3827B03F1D9DD998004A3582 /* KVMapViewCon.swift */; };
+		3827B04B1D9DD998004A3582 /* KVAnnotationItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3827B0411D9DD998004A3582 /* KVAnnotationItem.swift */; };
+		3827B04C1D9DD998004A3582 /* KVPrimeTVCon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3827B0431D9DD998004A3582 /* KVPrimeTVCon.swift */; };
+		3827B04D1D9DD998004A3582 /* pvtcEXT.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3827B0441D9DD998004A3582 /* pvtcEXT.swift */; };
+		3827B04E1D9DD998004A3582 /* KVBasicCustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3827B0461D9DD998004A3582 /* KVBasicCustomCell.swift */; };
+		3827B04F1D9DD998004A3582 /* KVRatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3827B0471D9DD998004A3582 /* KVRatingView.swift */; };
+		3827B0521D9DD9AA004A3582 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3827B0511D9DD9AA004A3582 /* CoreData.framework */; };
+		3827B0541D9DD9B0004A3582 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3827B0531D9DD9B0004A3582 /* MapKit.framework */; };
+		3827B0561D9DD9BD004A3582 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3827B0551D9DD9BD004A3582 /* CoreLocation.framework */; };
+		3827B0941D9DDA2E004A3582 /* AbstractDataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3827B0591D9DDA2E004A3582 /* AbstractDataController.swift */; };
+		3827B0951D9DDA2E004A3582 /* KVEntityDataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3827B05A1D9DDA2E004A3582 /* KVEntityDataController.swift */; };
+		3827B0961D9DDA2E004A3582 /* KVItemsDataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3827B05B1D9DDA2E004A3582 /* KVItemsDataController.swift */; };
+		3827B0971D9DDA2E004A3582 /* TricorderDataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3827B05C1D9DDA2E004A3582 /* TricorderDataController.swift */; };
+		3827B0981D9DDA2E004A3582 /* KVBeverageDataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3827B05E1D9DDA2E004A3582 /* KVBeverageDataController.swift */; };
+		3827B0991D9DDA2E004A3582 /* KVEventDataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3827B05F1D9DDA2E004A3582 /* KVEventDataController.swift */; };
+		3827B09A1D9DDA2E004A3582 /* KVFoodDataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3827B0601D9DDA2E004A3582 /* KVFoodDataController.swift */; };
+		3827B09B1D9DDA2E004A3582 /* KVMealDataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3827B0611D9DDA2E004A3582 /* KVMealDataController.swift */; };
+		3827B09C1D9DDA2E004A3582 /* KVMedicineDataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3827B0621D9DDA2E004A3582 /* KVMedicineDataController.swift */; };
+		3827B09D1D9DDA2E004A3582 /* KVMessageDataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3827B0631D9DDA2E004A3582 /* KVMessageDataController.swift */; };
+		3827B09E1D9DDA2E004A3582 /* KVPackageDataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3827B0641D9DDA2E004A3582 /* KVPackageDataController.swift */; };
+		3827B09F1D9DDA2E004A3582 /* KVPersonDataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3827B0651D9DDA2E004A3582 /* KVPersonDataController.swift */; };
+		3827B0A01D9DDA2E004A3582 /* KVPlaceDataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3827B0661D9DDA2E004A3582 /* KVPlaceDataController.swift */; };
+		3827B0A11D9DDA2E004A3582 /* KVBeverageType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3827B0691D9DDA2E004A3582 /* KVBeverageType.swift */; };
+		3827B0A21D9DDA2E004A3582 /* KVEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3827B06B1D9DDA2E004A3582 /* KVEntity.swift */; };
+		3827B0A31D9DDA2E004A3582 /* KVEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3827B06D1D9DDA2E004A3582 /* KVEvent.swift */; };
+		3827B0A41D9DDA2E004A3582 /* KVFoodType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3827B06F1D9DDA2E004A3582 /* KVFoodType.swift */; };
+		3827B0A51D9DDA2E004A3582 /* KVItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3827B0711D9DDA2E004A3582 /* KVItem.swift */; };
+		3827B0A61D9DDA2E004A3582 /* KVMeal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3827B0731D9DDA2E004A3582 /* KVMeal.swift */; };
+		3827B0A71D9DDA2E004A3582 /* KVMedicine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3827B0751D9DDA2E004A3582 /* KVMedicine.swift */; };
+		3827B0A81D9DDA2E004A3582 /* KVMessageMO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3827B0771D9DDA2E004A3582 /* KVMessageMO.swift */; };
+		3827B0A91D9DDA2E004A3582 /* Archive.zip in Resources */ = {isa = PBXBuildFile; fileRef = 3827B0791D9DDA2E004A3582 /* Archive.zip */; };
+		3827B0AA1D9DDA2E004A3582 /* KVPackage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3827B07A1D9DDA2E004A3582 /* KVPackage.swift */; };
+		3827B0AB1D9DDA2E004A3582 /* KVPerson+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3827B07C1D9DDA2E004A3582 /* KVPerson+CoreDataProperties.swift */; };
+		3827B0AC1D9DDA2E004A3582 /* KVPerson.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3827B07D1D9DDA2E004A3582 /* KVPerson.swift */; };
+		3827B0AD1D9DDA2E004A3582 /* KVPlace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3827B07F1D9DDA2E004A3582 /* KVPlace.swift */; };
+		3827B0B01D9DDA2E004A3582 /* KVRootEntityGraphics+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3827B0851D9DDA2E004A3582 /* KVRootEntityGraphics+CoreDataProperties.swift */; };
+		3827B0B11D9DDA2E004A3582 /* KVRootEntityGraphics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3827B0861D9DDA2E004A3582 /* KVRootEntityGraphics.swift */; };
+		3827B0B21D9DDA2E004A3582 /* KVRootEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3827B0871D9DDA2E004A3582 /* KVRootEntity+CoreDataProperties.swift */; };
+		3827B0B31D9DDA2E004A3582 /* KVRootEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3827B0881D9DDA2E004A3582 /* KVRootEntity.swift */; };
+		3827B0B41D9DDA2E004A3582 /* KVRootEntityLocation+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3827B08A1D9DDA2E004A3582 /* KVRootEntityLocation+CoreDataProperties.swift */; };
+		3827B0B51D9DDA2E004A3582 /* KVRootEntityLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3827B08B1D9DDA2E004A3582 /* KVRootEntityLocation.swift */; };
+		3827B0B61D9DDA2E004A3582 /* KVRootEntitySizes+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3827B08D1D9DDA2E004A3582 /* KVRootEntitySizes+CoreDataProperties.swift */; };
+		3827B0B71D9DDA2E004A3582 /* KVRootEntitySizes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3827B08E1D9DDA2E004A3582 /* KVRootEntitySizes.swift */; };
+		3827B0B81D9DDA2E004A3582 /* KVVehicle+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3827B0901D9DDA2E004A3582 /* KVVehicle+CoreDataProperties.swift */; };
+		3827B0B91D9DDA2E004A3582 /* KVVehicle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3827B0911D9DDA2E004A3582 /* KVVehicle.swift */; };
+		3827B0BA1D9DDA2E004A3582 /* Tricorder.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3827B0921D9DDA2E004A3582 /* Tricorder.xcdatamodeld */; };
+		3827B0BC1D9DDDEE004A3582 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3827B0BB1D9DDDEE004A3582 /* Assets.xcassets */; };
+		3827B0BF1D9DDE05004A3582 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3827B0BD1D9DDE05004A3582 /* Main.storyboard */; };
+		38422A2F1DA029ED00667B27 /* TC_DBTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38422A2E1DA029ED00667B27 /* TC_DBTests.swift */; };
+		869D5DE77D71CA01D10DD3CE /* Pods_TricorderTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E3C7E79C8701F30A0CE3F864 /* Pods_TricorderTests.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		3827B0191D9DD3DF004A3582 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3827AFFA1D9DD3DE004A3582 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3827B0011D9DD3DE004A3582;
+			remoteInfo = Tricorder;
+		};
+		3827B0241D9DD3DF004A3582 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3827AFFA1D9DD3DE004A3582 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3827B0011D9DD3DE004A3582;
+			remoteInfo = Tricorder;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		0C1934DDF6A459FDED11A0C8 /* Pods-TricorderTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TricorderTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TricorderTests/Pods-TricorderTests.debug.xcconfig"; sourceTree = "<group>"; };
+		1D41F594E173A9BBDF670D54 /* Pods_TricorderUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TricorderUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		32DE7EB22DA262CC3952C278 /* Pods-TricorderTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TricorderTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-TricorderTests/Pods-TricorderTests.release.xcconfig"; sourceTree = "<group>"; };
+		3827B0021D9DD3DE004A3582 /* Tricorder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tricorder.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		3827B0111D9DD3DF004A3582 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		3827B0131D9DD3DF004A3582 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3827B0181D9DD3DF004A3582 /* TricorderTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TricorderTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		3827B01C1D9DD3DF004A3582 /* TricorderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TricorderTests.swift; sourceTree = "<group>"; };
+		3827B01E1D9DD3DF004A3582 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3827B0231D9DD3DF004A3582 /* TricorderUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TricorderUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		3827B0271D9DD3DF004A3582 /* TricorderUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TricorderUITests.swift; sourceTree = "<group>"; };
+		3827B0291D9DD3DF004A3582 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3827B0381D9DD923004A3582 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		3827B03C1D9DD998004A3582 /* KVCameraViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KVCameraViewController.swift; sourceTree = "<group>"; };
+		3827B03D1D9DD998004A3582 /* KVPersonEditorTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KVPersonEditorTableViewController.swift; sourceTree = "<group>"; };
+		3827B03F1D9DD998004A3582 /* KVMapViewCon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KVMapViewCon.swift; sourceTree = "<group>"; };
+		3827B0411D9DD998004A3582 /* KVAnnotationItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KVAnnotationItem.swift; sourceTree = "<group>"; };
+		3827B0431D9DD998004A3582 /* KVPrimeTVCon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KVPrimeTVCon.swift; sourceTree = "<group>"; };
+		3827B0441D9DD998004A3582 /* pvtcEXT.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = pvtcEXT.swift; sourceTree = "<group>"; };
+		3827B0461D9DD998004A3582 /* KVBasicCustomCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KVBasicCustomCell.swift; sourceTree = "<group>"; };
+		3827B0471D9DD998004A3582 /* KVRatingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KVRatingView.swift; sourceTree = "<group>"; };
+		3827B0511D9DD9AA004A3582 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		3827B0531D9DD9B0004A3582 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		3827B0551D9DD9BD004A3582 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		3827B0591D9DDA2E004A3582 /* AbstractDataController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AbstractDataController.swift; sourceTree = "<group>"; };
+		3827B05A1D9DDA2E004A3582 /* KVEntityDataController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KVEntityDataController.swift; sourceTree = "<group>"; };
+		3827B05B1D9DDA2E004A3582 /* KVItemsDataController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KVItemsDataController.swift; sourceTree = "<group>"; };
+		3827B05C1D9DDA2E004A3582 /* TricorderDataController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TricorderDataController.swift; sourceTree = "<group>"; };
+		3827B05E1D9DDA2E004A3582 /* KVBeverageDataController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KVBeverageDataController.swift; sourceTree = "<group>"; };
+		3827B05F1D9DDA2E004A3582 /* KVEventDataController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KVEventDataController.swift; sourceTree = "<group>"; };
+		3827B0601D9DDA2E004A3582 /* KVFoodDataController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KVFoodDataController.swift; sourceTree = "<group>"; };
+		3827B0611D9DDA2E004A3582 /* KVMealDataController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KVMealDataController.swift; sourceTree = "<group>"; };
+		3827B0621D9DDA2E004A3582 /* KVMedicineDataController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KVMedicineDataController.swift; sourceTree = "<group>"; };
+		3827B0631D9DDA2E004A3582 /* KVMessageDataController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KVMessageDataController.swift; sourceTree = "<group>"; };
+		3827B0641D9DDA2E004A3582 /* KVPackageDataController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KVPackageDataController.swift; sourceTree = "<group>"; };
+		3827B0651D9DDA2E004A3582 /* KVPersonDataController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KVPersonDataController.swift; sourceTree = "<group>"; };
+		3827B0661D9DDA2E004A3582 /* KVPlaceDataController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KVPlaceDataController.swift; sourceTree = "<group>"; };
+		3827B0691D9DDA2E004A3582 /* KVBeverageType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KVBeverageType.swift; sourceTree = "<group>"; };
+		3827B06B1D9DDA2E004A3582 /* KVEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KVEntity.swift; sourceTree = "<group>"; };
+		3827B06D1D9DDA2E004A3582 /* KVEvent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KVEvent.swift; sourceTree = "<group>"; };
+		3827B06F1D9DDA2E004A3582 /* KVFoodType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KVFoodType.swift; sourceTree = "<group>"; };
+		3827B0711D9DDA2E004A3582 /* KVItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KVItem.swift; sourceTree = "<group>"; };
+		3827B0731D9DDA2E004A3582 /* KVMeal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KVMeal.swift; sourceTree = "<group>"; };
+		3827B0751D9DDA2E004A3582 /* KVMedicine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KVMedicine.swift; sourceTree = "<group>"; };
+		3827B0771D9DDA2E004A3582 /* KVMessageMO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KVMessageMO.swift; sourceTree = "<group>"; };
+		3827B0791D9DDA2E004A3582 /* Archive.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = Archive.zip; sourceTree = "<group>"; };
+		3827B07A1D9DDA2E004A3582 /* KVPackage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KVPackage.swift; sourceTree = "<group>"; };
+		3827B07C1D9DDA2E004A3582 /* KVPerson+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "KVPerson+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		3827B07D1D9DDA2E004A3582 /* KVPerson.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KVPerson.swift; sourceTree = "<group>"; };
+		3827B07F1D9DDA2E004A3582 /* KVPlace.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KVPlace.swift; sourceTree = "<group>"; };
+		3827B0821D9DDA2E004A3582 /* KVRootEntityData+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "KVRootEntityData+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		3827B0831D9DDA2E004A3582 /* KVRootEntityData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KVRootEntityData.swift; sourceTree = "<group>"; };
+		3827B0851D9DDA2E004A3582 /* KVRootEntityGraphics+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "KVRootEntityGraphics+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		3827B0861D9DDA2E004A3582 /* KVRootEntityGraphics.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KVRootEntityGraphics.swift; sourceTree = "<group>"; };
+		3827B0871D9DDA2E004A3582 /* KVRootEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "KVRootEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		3827B0881D9DDA2E004A3582 /* KVRootEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KVRootEntity.swift; sourceTree = "<group>"; };
+		3827B08A1D9DDA2E004A3582 /* KVRootEntityLocation+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "KVRootEntityLocation+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		3827B08B1D9DDA2E004A3582 /* KVRootEntityLocation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KVRootEntityLocation.swift; sourceTree = "<group>"; };
+		3827B08D1D9DDA2E004A3582 /* KVRootEntitySizes+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "KVRootEntitySizes+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		3827B08E1D9DDA2E004A3582 /* KVRootEntitySizes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KVRootEntitySizes.swift; sourceTree = "<group>"; };
+		3827B0901D9DDA2E004A3582 /* KVVehicle+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "KVVehicle+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		3827B0911D9DDA2E004A3582 /* KVVehicle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KVVehicle.swift; sourceTree = "<group>"; };
+		3827B0931D9DDA2E004A3582 /* Tricorder.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Tricorder.xcdatamodel; sourceTree = "<group>"; };
+		3827B0BB1D9DDDEE004A3582 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		3827B0BE1D9DDE05004A3582 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		38422A2E1DA029ED00667B27 /* TC_DBTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TC_DBTests.swift; sourceTree = "<group>"; };
+		3AED9ABCA493871ABCD0BDD5 /* Pods_Tricorder.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Tricorder.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7ACFF9C3389F9D2151761BFC /* Pods-Tricorder.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tricorder.release.xcconfig"; path = "Pods/Target Support Files/Pods-Tricorder/Pods-Tricorder.release.xcconfig"; sourceTree = "<group>"; };
+		AACC2D391C8216DE0EABC0C7 /* Pods-TricorderUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TricorderUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TricorderUITests/Pods-TricorderUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		E3155BB8E6626BF06F35B9BA /* Pods-Tricorder.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tricorder.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Tricorder/Pods-Tricorder.debug.xcconfig"; sourceTree = "<group>"; };
+		E3C7E79C8701F30A0CE3F864 /* Pods_TricorderTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TricorderTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E4AB72B55657ACD29C632D0A /* Pods-TricorderUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TricorderUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-TricorderUITests/Pods-TricorderUITests.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		3827AFFF1D9DD3DE004A3582 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3827B0561D9DD9BD004A3582 /* CoreLocation.framework in Frameworks */,
+				3827B0541D9DD9B0004A3582 /* MapKit.framework in Frameworks */,
+				3827B0521D9DD9AA004A3582 /* CoreData.framework in Frameworks */,
+				3177BCA0F99F7FECC37E72F7 /* Pods_Tricorder.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3827B0151D9DD3DF004A3582 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				869D5DE77D71CA01D10DD3CE /* Pods_TricorderTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3827B0201D9DD3DF004A3582 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1576DA1A8CDC35333FEE1FE6 /* Pods_TricorderUITests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		3827AFF91D9DD3DE004A3582 = {
+			isa = PBXGroup;
+			children = (
+				3827B0041D9DD3DE004A3582 /* Tricorder */,
+				3827B01B1D9DD3DF004A3582 /* TricorderTests */,
+				3827B0261D9DD3DF004A3582 /* TricorderUITests */,
+				3827B0031D9DD3DE004A3582 /* Products */,
+				3827B0501D9DD9AA004A3582 /* Frameworks */,
+				697E68D884BEDE98D6EB6F28 /* Pods */,
+			);
+			sourceTree = "<group>";
+		};
+		3827B0031D9DD3DE004A3582 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				3827B0021D9DD3DE004A3582 /* Tricorder.app */,
+				3827B0181D9DD3DF004A3582 /* TricorderTests.xctest */,
+				3827B0231D9DD3DF004A3582 /* TricorderUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		3827B0041D9DD3DE004A3582 /* Tricorder */ = {
+			isa = PBXGroup;
+			children = (
+				38A9475A1D9DE38D002D7821 /* GUI */,
+				3827B0571D9DDA2E004A3582 /* Data */,
+				3827B03A1D9DD998004A3582 /* Views */,
+				3827B0371D9DD8CA004A3582 /* AppSupport */,
+			);
+			path = Tricorder;
+			sourceTree = "<group>";
+		};
+		3827B01B1D9DD3DF004A3582 /* TricorderTests */ = {
+			isa = PBXGroup;
+			children = (
+				3827B01C1D9DD3DF004A3582 /* TricorderTests.swift */,
+				38422A2E1DA029ED00667B27 /* TC_DBTests.swift */,
+				3827B01E1D9DD3DF004A3582 /* Info.plist */,
+			);
+			path = TricorderTests;
+			sourceTree = "<group>";
+		};
+		3827B0261D9DD3DF004A3582 /* TricorderUITests */ = {
+			isa = PBXGroup;
+			children = (
+				3827B0271D9DD3DF004A3582 /* TricorderUITests.swift */,
+				3827B0291D9DD3DF004A3582 /* Info.plist */,
+			);
+			path = TricorderUITests;
+			sourceTree = "<group>";
+		};
+		3827B0371D9DD8CA004A3582 /* AppSupport */ = {
+			isa = PBXGroup;
+			children = (
+				3827B0381D9DD923004A3582 /* AppDelegate.swift */,
+				3827B0131D9DD3DF004A3582 /* Info.plist */,
+				3827B0101D9DD3DF004A3582 /* LaunchScreen.storyboard */,
+			);
+			name = AppSupport;
+			sourceTree = "<group>";
+		};
+		3827B03A1D9DD998004A3582 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				3827B03B1D9DD998004A3582 /* Editors */,
+				3827B03E1D9DD998004A3582 /* MapView */,
+				3827B0421D9DD998004A3582 /* PrimeTVC */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		3827B03B1D9DD998004A3582 /* Editors */ = {
+			isa = PBXGroup;
+			children = (
+				3827B03C1D9DD998004A3582 /* KVCameraViewController.swift */,
+				3827B03D1D9DD998004A3582 /* KVPersonEditorTableViewController.swift */,
+			);
+			path = Editors;
+			sourceTree = "<group>";
+		};
+		3827B03E1D9DD998004A3582 /* MapView */ = {
+			isa = PBXGroup;
+			children = (
+				3827B03F1D9DD998004A3582 /* KVMapViewCon.swift */,
+				3827B0401D9DD998004A3582 /* MapObjects */,
+			);
+			path = MapView;
+			sourceTree = "<group>";
+		};
+		3827B0401D9DD998004A3582 /* MapObjects */ = {
+			isa = PBXGroup;
+			children = (
+				3827B0411D9DD998004A3582 /* KVAnnotationItem.swift */,
+			);
+			path = MapObjects;
+			sourceTree = "<group>";
+		};
+		3827B0421D9DD998004A3582 /* PrimeTVC */ = {
+			isa = PBXGroup;
+			children = (
+				3827B0431D9DD998004A3582 /* KVPrimeTVCon.swift */,
+				3827B0441D9DD998004A3582 /* pvtcEXT.swift */,
+				3827B0451D9DD998004A3582 /* tvcOBJ */,
+			);
+			path = PrimeTVC;
+			sourceTree = "<group>";
+		};
+		3827B0451D9DD998004A3582 /* tvcOBJ */ = {
+			isa = PBXGroup;
+			children = (
+				3827B0461D9DD998004A3582 /* KVBasicCustomCell.swift */,
+				3827B0471D9DD998004A3582 /* KVRatingView.swift */,
+			);
+			path = tvcOBJ;
+			sourceTree = "<group>";
+		};
+		3827B0501D9DD9AA004A3582 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3827B0551D9DD9BD004A3582 /* CoreLocation.framework */,
+				3827B0531D9DD9B0004A3582 /* MapKit.framework */,
+				3827B0511D9DD9AA004A3582 /* CoreData.framework */,
+				3AED9ABCA493871ABCD0BDD5 /* Pods_Tricorder.framework */,
+				E3C7E79C8701F30A0CE3F864 /* Pods_TricorderTests.framework */,
+				1D41F594E173A9BBDF670D54 /* Pods_TricorderUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		3827B0571D9DDA2E004A3582 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				3827B0581D9DDA2E004A3582 /* Abstract */,
+				3827B05D1D9DDA2E004A3582 /* EntityControllers */,
+				3827B0671D9DDA2E004A3582 /* Models */,
+				3827B0921D9DDA2E004A3582 /* Tricorder.xcdatamodeld */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		3827B0581D9DDA2E004A3582 /* Abstract */ = {
+			isa = PBXGroup;
+			children = (
+				3827B0591D9DDA2E004A3582 /* AbstractDataController.swift */,
+				3827B05A1D9DDA2E004A3582 /* KVEntityDataController.swift */,
+				3827B05B1D9DDA2E004A3582 /* KVItemsDataController.swift */,
+				3827B05C1D9DDA2E004A3582 /* TricorderDataController.swift */,
+			);
+			path = Abstract;
+			sourceTree = "<group>";
+		};
+		3827B05D1D9DDA2E004A3582 /* EntityControllers */ = {
+			isa = PBXGroup;
+			children = (
+				3827B05E1D9DDA2E004A3582 /* KVBeverageDataController.swift */,
+				3827B05F1D9DDA2E004A3582 /* KVEventDataController.swift */,
+				3827B0601D9DDA2E004A3582 /* KVFoodDataController.swift */,
+				3827B0611D9DDA2E004A3582 /* KVMealDataController.swift */,
+				3827B0621D9DDA2E004A3582 /* KVMedicineDataController.swift */,
+				3827B0631D9DDA2E004A3582 /* KVMessageDataController.swift */,
+				3827B0641D9DDA2E004A3582 /* KVPackageDataController.swift */,
+				3827B0651D9DDA2E004A3582 /* KVPersonDataController.swift */,
+				3827B0661D9DDA2E004A3582 /* KVPlaceDataController.swift */,
+			);
+			path = EntityControllers;
+			sourceTree = "<group>";
+		};
+		3827B0671D9DDA2E004A3582 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				3827B0681D9DDA2E004A3582 /* beverage */,
+				3827B06A1D9DDA2E004A3582 /* entity */,
+				3827B06C1D9DDA2E004A3582 /* event */,
+				3827B06E1D9DDA2E004A3582 /* food */,
+				3827B0701D9DDA2E004A3582 /* Item */,
+				3827B0721D9DDA2E004A3582 /* meal */,
+				3827B0741D9DDA2E004A3582 /* medicine */,
+				3827B0761D9DDA2E004A3582 /* messageMO */,
+				3827B0781D9DDA2E004A3582 /* package */,
+				3827B07B1D9DDA2E004A3582 /* person */,
+				3827B07E1D9DDA2E004A3582 /* place */,
+				3827B0801D9DDA2E004A3582 /* root */,
+				3827B08F1D9DDA2E004A3582 /* vehicle */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		3827B0681D9DDA2E004A3582 /* beverage */ = {
+			isa = PBXGroup;
+			children = (
+				3827B0691D9DDA2E004A3582 /* KVBeverageType.swift */,
+			);
+			path = beverage;
+			sourceTree = "<group>";
+		};
+		3827B06A1D9DDA2E004A3582 /* entity */ = {
+			isa = PBXGroup;
+			children = (
+				3827B06B1D9DDA2E004A3582 /* KVEntity.swift */,
+			);
+			path = entity;
+			sourceTree = "<group>";
+		};
+		3827B06C1D9DDA2E004A3582 /* event */ = {
+			isa = PBXGroup;
+			children = (
+				3827B06D1D9DDA2E004A3582 /* KVEvent.swift */,
+			);
+			path = event;
+			sourceTree = "<group>";
+		};
+		3827B06E1D9DDA2E004A3582 /* food */ = {
+			isa = PBXGroup;
+			children = (
+				3827B06F1D9DDA2E004A3582 /* KVFoodType.swift */,
+			);
+			path = food;
+			sourceTree = "<group>";
+		};
+		3827B0701D9DDA2E004A3582 /* Item */ = {
+			isa = PBXGroup;
+			children = (
+				3827B0711D9DDA2E004A3582 /* KVItem.swift */,
+			);
+			path = Item;
+			sourceTree = "<group>";
+		};
+		3827B0721D9DDA2E004A3582 /* meal */ = {
+			isa = PBXGroup;
+			children = (
+				3827B0731D9DDA2E004A3582 /* KVMeal.swift */,
+			);
+			path = meal;
+			sourceTree = "<group>";
+		};
+		3827B0741D9DDA2E004A3582 /* medicine */ = {
+			isa = PBXGroup;
+			children = (
+				3827B0751D9DDA2E004A3582 /* KVMedicine.swift */,
+			);
+			path = medicine;
+			sourceTree = "<group>";
+		};
+		3827B0761D9DDA2E004A3582 /* messageMO */ = {
+			isa = PBXGroup;
+			children = (
+				3827B0771D9DDA2E004A3582 /* KVMessageMO.swift */,
+			);
+			path = messageMO;
+			sourceTree = "<group>";
+		};
+		3827B0781D9DDA2E004A3582 /* package */ = {
+			isa = PBXGroup;
+			children = (
+				3827B0791D9DDA2E004A3582 /* Archive.zip */,
+				3827B07A1D9DDA2E004A3582 /* KVPackage.swift */,
+			);
+			path = package;
+			sourceTree = "<group>";
+		};
+		3827B07B1D9DDA2E004A3582 /* person */ = {
+			isa = PBXGroup;
+			children = (
+				3827B07C1D9DDA2E004A3582 /* KVPerson+CoreDataProperties.swift */,
+				3827B07D1D9DDA2E004A3582 /* KVPerson.swift */,
+			);
+			path = person;
+			sourceTree = "<group>";
+		};
+		3827B07E1D9DDA2E004A3582 /* place */ = {
+			isa = PBXGroup;
+			children = (
+				3827B07F1D9DDA2E004A3582 /* KVPlace.swift */,
+			);
+			path = place;
+			sourceTree = "<group>";
+		};
+		3827B0801D9DDA2E004A3582 /* root */ = {
+			isa = PBXGroup;
+			children = (
+				3827B0811D9DDA2E004A3582 /* data */,
+				3827B0841D9DDA2E004A3582 /* graphics */,
+				3827B0871D9DDA2E004A3582 /* KVRootEntity+CoreDataProperties.swift */,
+				3827B0881D9DDA2E004A3582 /* KVRootEntity.swift */,
+				3827B0891D9DDA2E004A3582 /* location */,
+				3827B08C1D9DDA2E004A3582 /* sizes */,
+			);
+			path = root;
+			sourceTree = "<group>";
+		};
+		3827B0811D9DDA2E004A3582 /* data */ = {
+			isa = PBXGroup;
+			children = (
+				3827B0821D9DDA2E004A3582 /* KVRootEntityData+CoreDataProperties.swift */,
+				3827B0831D9DDA2E004A3582 /* KVRootEntityData.swift */,
+			);
+			path = data;
+			sourceTree = "<group>";
+		};
+		3827B0841D9DDA2E004A3582 /* graphics */ = {
+			isa = PBXGroup;
+			children = (
+				3827B0851D9DDA2E004A3582 /* KVRootEntityGraphics+CoreDataProperties.swift */,
+				3827B0861D9DDA2E004A3582 /* KVRootEntityGraphics.swift */,
+			);
+			path = graphics;
+			sourceTree = "<group>";
+		};
+		3827B0891D9DDA2E004A3582 /* location */ = {
+			isa = PBXGroup;
+			children = (
+				3827B08A1D9DDA2E004A3582 /* KVRootEntityLocation+CoreDataProperties.swift */,
+				3827B08B1D9DDA2E004A3582 /* KVRootEntityLocation.swift */,
+			);
+			path = location;
+			sourceTree = "<group>";
+		};
+		3827B08C1D9DDA2E004A3582 /* sizes */ = {
+			isa = PBXGroup;
+			children = (
+				3827B08D1D9DDA2E004A3582 /* KVRootEntitySizes+CoreDataProperties.swift */,
+				3827B08E1D9DDA2E004A3582 /* KVRootEntitySizes.swift */,
+			);
+			path = sizes;
+			sourceTree = "<group>";
+		};
+		3827B08F1D9DDA2E004A3582 /* vehicle */ = {
+			isa = PBXGroup;
+			children = (
+				3827B0901D9DDA2E004A3582 /* KVVehicle+CoreDataProperties.swift */,
+				3827B0911D9DDA2E004A3582 /* KVVehicle.swift */,
+			);
+			path = vehicle;
+			sourceTree = "<group>";
+		};
+		38A9475A1D9DE38D002D7821 /* GUI */ = {
+			isa = PBXGroup;
+			children = (
+				3827B0BD1D9DDE05004A3582 /* Main.storyboard */,
+				3827B0BB1D9DDDEE004A3582 /* Assets.xcassets */,
+			);
+			name = GUI;
+			sourceTree = "<group>";
+		};
+		697E68D884BEDE98D6EB6F28 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				E3155BB8E6626BF06F35B9BA /* Pods-Tricorder.debug.xcconfig */,
+				7ACFF9C3389F9D2151761BFC /* Pods-Tricorder.release.xcconfig */,
+				0C1934DDF6A459FDED11A0C8 /* Pods-TricorderTests.debug.xcconfig */,
+				32DE7EB22DA262CC3952C278 /* Pods-TricorderTests.release.xcconfig */,
+				AACC2D391C8216DE0EABC0C7 /* Pods-TricorderUITests.debug.xcconfig */,
+				E4AB72B55657ACD29C632D0A /* Pods-TricorderUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		3827B0011D9DD3DE004A3582 /* Tricorder */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3827B02C1D9DD3DF004A3582 /* Build configuration list for PBXNativeTarget "Tricorder" */;
+			buildPhases = (
+				794587297E74CDEB1E7EA172 /* [CP] Check Pods Manifest.lock */,
+				3827AFFE1D9DD3DE004A3582 /* Sources */,
+				3827AFFF1D9DD3DE004A3582 /* Frameworks */,
+				3827B0001D9DD3DE004A3582 /* Resources */,
+				EC2048A027B84B31739ED428 /* [CP] Embed Pods Frameworks */,
+				53884C1A4B6934101EC675BF /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Tricorder;
+			productName = Tricorder;
+			productReference = 3827B0021D9DD3DE004A3582 /* Tricorder.app */;
+			productType = "com.apple.product-type.application";
+		};
+		3827B0171D9DD3DF004A3582 /* TricorderTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3827B02F1D9DD3DF004A3582 /* Build configuration list for PBXNativeTarget "TricorderTests" */;
+			buildPhases = (
+				EA8779A9287561A7C1AE4CEA /* [CP] Check Pods Manifest.lock */,
+				3827B0141D9DD3DF004A3582 /* Sources */,
+				3827B0151D9DD3DF004A3582 /* Frameworks */,
+				3827B0161D9DD3DF004A3582 /* Resources */,
+				3B8A8474794F760CFAFB501F /* [CP] Embed Pods Frameworks */,
+				94A16487279B42AC481B1F48 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				3827B01A1D9DD3DF004A3582 /* PBXTargetDependency */,
+			);
+			name = TricorderTests;
+			productName = TricorderTests;
+			productReference = 3827B0181D9DD3DF004A3582 /* TricorderTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		3827B0221D9DD3DF004A3582 /* TricorderUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3827B0321D9DD3DF004A3582 /* Build configuration list for PBXNativeTarget "TricorderUITests" */;
+			buildPhases = (
+				672FD8379E90730D9EDCA5A2 /* [CP] Check Pods Manifest.lock */,
+				3827B01F1D9DD3DF004A3582 /* Sources */,
+				3827B0201D9DD3DF004A3582 /* Frameworks */,
+				3827B0211D9DD3DF004A3582 /* Resources */,
+				AC9E9CA955A08AEC7EBC865B /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				3827B0251D9DD3DF004A3582 /* PBXTargetDependency */,
+			);
+			name = TricorderUITests;
+			productName = TricorderUITests;
+			productReference = 3827B0231D9DD3DF004A3582 /* TricorderUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		3827AFFA1D9DD3DE004A3582 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0800;
+				LastUpgradeCheck = 0810;
+				ORGANIZATIONNAME = K3nV;
+				TargetAttributes = {
+					3827B0011D9DD3DE004A3582 = {
+						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = LQ75G5YK98;
+						LastSwiftMigration = 0800;
+						ProvisioningStyle = Automatic;
+					};
+					3827B0171D9DD3DF004A3582 = {
+						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = LQ75G5YK98;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 3827B0011D9DD3DE004A3582;
+					};
+					3827B0221D9DD3DF004A3582 = {
+						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = LQ75G5YK98;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 3827B0011D9DD3DE004A3582;
+					};
+				};
+			};
+			buildConfigurationList = 3827AFFD1D9DD3DE004A3582 /* Build configuration list for PBXProject "Tricorder" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 3827AFF91D9DD3DE004A3582;
+			productRefGroup = 3827B0031D9DD3DE004A3582 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				3827B0011D9DD3DE004A3582 /* Tricorder */,
+				3827B0171D9DD3DF004A3582 /* TricorderTests */,
+				3827B0221D9DD3DF004A3582 /* TricorderUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		3827B0001D9DD3DE004A3582 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3827B0121D9DD3DF004A3582 /* LaunchScreen.storyboard in Resources */,
+				3827B0BC1D9DDDEE004A3582 /* Assets.xcassets in Resources */,
+				3827B0A91D9DDA2E004A3582 /* Archive.zip in Resources */,
+				3827B0BF1D9DDE05004A3582 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3827B0161D9DD3DF004A3582 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3827B0211D9DD3DF004A3582 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		3B8A8474794F760CFAFB501F /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TricorderTests/Pods-TricorderTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		53884C1A4B6934101EC675BF /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Tricorder/Pods-Tricorder-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		672FD8379E90730D9EDCA5A2 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		794587297E74CDEB1E7EA172 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		94A16487279B42AC481B1F48 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TricorderTests/Pods-TricorderTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AC9E9CA955A08AEC7EBC865B /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TricorderUITests/Pods-TricorderUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EA8779A9287561A7C1AE4CEA /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		EC2048A027B84B31739ED428 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Tricorder/Pods-Tricorder-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		3827AFFE1D9DD3DE004A3582 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3827B04E1D9DD998004A3582 /* KVBasicCustomCell.swift in Sources */,
+				3827B0AC1D9DDA2E004A3582 /* KVPerson.swift in Sources */,
+				3827B0B11D9DDA2E004A3582 /* KVRootEntityGraphics.swift in Sources */,
+				3827B0A31D9DDA2E004A3582 /* KVEvent.swift in Sources */,
+				3827B0A51D9DDA2E004A3582 /* KVItem.swift in Sources */,
+				3827B0971D9DDA2E004A3582 /* TricorderDataController.swift in Sources */,
+				3827B0AA1D9DDA2E004A3582 /* KVPackage.swift in Sources */,
+				3827B0B91D9DDA2E004A3582 /* KVVehicle.swift in Sources */,
+				3827B04D1D9DD998004A3582 /* pvtcEXT.swift in Sources */,
+				3827B0491D9DD998004A3582 /* KVPersonEditorTableViewController.swift in Sources */,
+				3827B0A81D9DDA2E004A3582 /* KVMessageMO.swift in Sources */,
+				3827B0961D9DDA2E004A3582 /* KVItemsDataController.swift in Sources */,
+				3827B0481D9DD998004A3582 /* KVCameraViewController.swift in Sources */,
+				3827B0391D9DD923004A3582 /* AppDelegate.swift in Sources */,
+				3827B04C1D9DD998004A3582 /* KVPrimeTVCon.swift in Sources */,
+				3827B04A1D9DD998004A3582 /* KVMapViewCon.swift in Sources */,
+				3827B0BA1D9DDA2E004A3582 /* Tricorder.xcdatamodeld in Sources */,
+				3827B0AB1D9DDA2E004A3582 /* KVPerson+CoreDataProperties.swift in Sources */,
+				3827B0B41D9DDA2E004A3582 /* KVRootEntityLocation+CoreDataProperties.swift in Sources */,
+				3827B04B1D9DD998004A3582 /* KVAnnotationItem.swift in Sources */,
+				3827B0A01D9DDA2E004A3582 /* KVPlaceDataController.swift in Sources */,
+				3827B0B21D9DDA2E004A3582 /* KVRootEntity+CoreDataProperties.swift in Sources */,
+				3827B0951D9DDA2E004A3582 /* KVEntityDataController.swift in Sources */,
+				3827B09E1D9DDA2E004A3582 /* KVPackageDataController.swift in Sources */,
+				3827B0A71D9DDA2E004A3582 /* KVMedicine.swift in Sources */,
+				3827B0B31D9DDA2E004A3582 /* KVRootEntity.swift in Sources */,
+				3827B0A61D9DDA2E004A3582 /* KVMeal.swift in Sources */,
+				3827B04F1D9DD998004A3582 /* KVRatingView.swift in Sources */,
+				3827B09A1D9DDA2E004A3582 /* KVFoodDataController.swift in Sources */,
+				3827B0B61D9DDA2E004A3582 /* KVRootEntitySizes+CoreDataProperties.swift in Sources */,
+				3827B09F1D9DDA2E004A3582 /* KVPersonDataController.swift in Sources */,
+				3827B0941D9DDA2E004A3582 /* AbstractDataController.swift in Sources */,
+				3827B0B81D9DDA2E004A3582 /* KVVehicle+CoreDataProperties.swift in Sources */,
+				3827B0A41D9DDA2E004A3582 /* KVFoodType.swift in Sources */,
+				3827B0B01D9DDA2E004A3582 /* KVRootEntityGraphics+CoreDataProperties.swift in Sources */,
+				3827B0B71D9DDA2E004A3582 /* KVRootEntitySizes.swift in Sources */,
+				3827B0AD1D9DDA2E004A3582 /* KVPlace.swift in Sources */,
+				3827B0991D9DDA2E004A3582 /* KVEventDataController.swift in Sources */,
+				3827B09D1D9DDA2E004A3582 /* KVMessageDataController.swift in Sources */,
+				3827B0A11D9DDA2E004A3582 /* KVBeverageType.swift in Sources */,
+				3827B09B1D9DDA2E004A3582 /* KVMealDataController.swift in Sources */,
+				3827B0B51D9DDA2E004A3582 /* KVRootEntityLocation.swift in Sources */,
+				3827B09C1D9DDA2E004A3582 /* KVMedicineDataController.swift in Sources */,
+				3827B0981D9DDA2E004A3582 /* KVBeverageDataController.swift in Sources */,
+				3827B0A21D9DDA2E004A3582 /* KVEntity.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3827B0141D9DD3DF004A3582 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				38422A2F1DA029ED00667B27 /* TC_DBTests.swift in Sources */,
+				3827B01D1D9DD3DF004A3582 /* TricorderTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3827B01F1D9DD3DF004A3582 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3827B0281D9DD3DF004A3582 /* TricorderUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		3827B01A1D9DD3DF004A3582 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3827B0011D9DD3DE004A3582 /* Tricorder */;
+			targetProxy = 3827B0191D9DD3DF004A3582 /* PBXContainerItemProxy */;
+		};
+		3827B0251D9DD3DF004A3582 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3827B0011D9DD3DE004A3582 /* Tricorder */;
+			targetProxy = 3827B0241D9DD3DF004A3582 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		3827B0101D9DD3DF004A3582 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3827B0111D9DD3DF004A3582 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		3827B0BD1D9DDE05004A3582 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3827B0BE1D9DDE05004A3582 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		3827B02A1D9DD3DF004A3582 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		3827B02B1D9DD3DF004A3582 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		3827B02D1D9DD3DF004A3582 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E3155BB8E6626BF06F35B9BA /* Pods-Tricorder.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = LQ75G5YK98;
+				INFOPLIST_FILE = Tricorder/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.axolotol.Tricorder;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		3827B02E1D9DD3DF004A3582 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7ACFF9C3389F9D2151761BFC /* Pods-Tricorder.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = LQ75G5YK98;
+				INFOPLIST_FILE = Tricorder/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.axolotol.Tricorder;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		3827B0301D9DD3DF004A3582 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0C1934DDF6A459FDED11A0C8 /* Pods-TricorderTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = LQ75G5YK98;
+				INFOPLIST_FILE = TricorderTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.axolotol.TricorderTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Tricorder.app/Tricorder";
+			};
+			name = Debug;
+		};
+		3827B0311D9DD3DF004A3582 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 32DE7EB22DA262CC3952C278 /* Pods-TricorderTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = LQ75G5YK98;
+				INFOPLIST_FILE = TricorderTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.axolotol.TricorderTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Tricorder.app/Tricorder";
+			};
+			name = Release;
+		};
+		3827B0331D9DD3DF004A3582 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = AACC2D391C8216DE0EABC0C7 /* Pods-TricorderUITests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				DEVELOPMENT_TEAM = LQ75G5YK98;
+				INFOPLIST_FILE = TricorderUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.axolotol.TricorderUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = Tricorder;
+			};
+			name = Debug;
+		};
+		3827B0341D9DD3DF004A3582 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E4AB72B55657ACD29C632D0A /* Pods-TricorderUITests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				DEVELOPMENT_TEAM = LQ75G5YK98;
+				INFOPLIST_FILE = TricorderUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.axolotol.TricorderUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = Tricorder;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		3827AFFD1D9DD3DE004A3582 /* Build configuration list for PBXProject "Tricorder" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3827B02A1D9DD3DF004A3582 /* Debug */,
+				3827B02B1D9DD3DF004A3582 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3827B02C1D9DD3DF004A3582 /* Build configuration list for PBXNativeTarget "Tricorder" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3827B02D1D9DD3DF004A3582 /* Debug */,
+				3827B02E1D9DD3DF004A3582 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3827B02F1D9DD3DF004A3582 /* Build configuration list for PBXNativeTarget "TricorderTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3827B0301D9DD3DF004A3582 /* Debug */,
+				3827B0311D9DD3DF004A3582 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3827B0321D9DD3DF004A3582 /* Build configuration list for PBXNativeTarget "TricorderUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3827B0331D9DD3DF004A3582 /* Debug */,
+				3827B0341D9DD3DF004A3582 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		3827B0921D9DDA2E004A3582 /* Tricorder.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				3827B0931D9DDA2E004A3582 /* Tricorder.xcdatamodel */,
+			);
+			currentVersion = 3827B0931D9DDA2E004A3582 /* Tricorder.xcdatamodel */;
+			path = Tricorder.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 3827AFFA1D9DD3DE004A3582 /* Project object */;
+}

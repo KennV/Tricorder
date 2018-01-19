@@ -1,0 +1,6 @@
+framework module Pods_TricorderTests {
+  umbrella header "Pods-TricorderTests-umbrella.h"
+
+  export *
+  module * { export * }
+}

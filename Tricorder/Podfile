@@ -1,0 +1,33 @@
+# Uncomment this line to define a global platform for your project
+# platform :ios, '9.0'
+
+target 'Tricorder' do
+  # Comment this line if you're not using Swift and don't want to use dynamic frameworks
+  use_frameworks!
+  # Pods for Tricorder
+  #https://github.com/luispadron/UICircularProgressRing
+  # pod 'UICircularProgressRing'
+  
+  target 'TricorderTests' do
+    inherit! :search_paths
+    # Pods for testing
+
+  end
+
+  target 'TricorderUITests' do
+    inherit! :search_paths
+    # Pods for testing
+  
+  end
+  
+  # For issues related to the laguage not being 'rigt' after install
+  # Plus I commented out the platform line up ther
+    post_install do |installer|
+      installer.pods_project.targets.each do |target|
+        target.build_configurations.each do |configuration|
+          configuration.build_settings['SWIFT_VERSION'] = "3.0"
+        end
+      end
+    end
+
+end

@@ -1,0 +1,6 @@
+framework module Pods_Tricorder {
+  umbrella header "Pods-Tricorder-umbrella.h"
+
+  export *
+  module * { export * }
+}
