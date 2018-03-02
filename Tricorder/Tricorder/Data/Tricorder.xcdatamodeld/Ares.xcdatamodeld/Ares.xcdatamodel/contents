@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="13772" systemVersion="17D102" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="KDVAbstractEntity" representedClassName="KDVAbstractEntity" syncable="YES" codeGenerationType="class">
+        <attribute name="incepDate" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="uniqueID" optional="YES" attributeType="UUID" usesScalarValueType="NO" syncable="YES"/>
+        <relationship name="graphics" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="KDVAbstractEntityGraphics" inverseName="owner" inverseEntity="KDVAbstractEntityGraphics" syncable="YES"/>
+        <relationship name="locations" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="KDVAbstractEntityLocation" inverseName="owner" inverseEntity="KDVAbstractEntityLocation" syncable="YES"/>
+        <relationship name="physics" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="KDVAbstractEntityPhysics" inverseName="owner" inverseEntity="KDVAbstractEntityPhysics" syncable="YES"/>
+    </entity>
+    <entity name="KDVAbstractEntityGraphics" representedClassName="KDVAbstractEntityGraphics" syncable="YES" codeGenerationType="class">
+        <attribute name="imageActual" optional="YES" attributeType="Transformable" syncable="YES"/>
+        <attribute name="imageCaption" attributeType="String" defaultValueString="unset" syncable="YES"/>
+        <attribute name="imageFileName" attributeType="String" defaultValueString="unset" syncable="YES"/>
+        <attribute name="imageRating" attributeType="Integer 16" minValueString="0" maxValueString="100" defaultValueString="0.0" usesScalarValueType="NO" syncable="YES"/>
+        <relationship name="owner" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="KDVAbstractEntity" inverseName="graphics" inverseEntity="KDVAbstractEntity" syncable="YES"/>
+    </entity>
+    <entity name="KDVAbstractEntityLocation" representedClassName="KDVAbstractEntityLocation" syncable="YES" codeGenerationType="class">
+        <attribute name="altitude" attributeType="Double" defaultValueString="0.0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="lattitude" attributeType="Double" defaultValueString="0.0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="longitude" attributeType="Double" defaultValueString="0.0" usesScalarValueType="NO" syncable="YES"/>
+        <relationship name="owner" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="KDVAbstractEntity" inverseName="locations" inverseEntity="KDVAbstractEntity" syncable="YES"/>
+    </entity>
+    <entity name="KDVAbstractEntityPhysics" representedClassName="KDVAbstractEntityPhysics" syncable="YES" codeGenerationType="class">
+        <attribute name="xAbsolute" attributeType="Float" defaultValueString="0.0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="yAbsolute" attributeType="Float" defaultValueString="0.0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="zAbsolute" attributeType="Float" defaultValueString="0.0" usesScalarValueType="NO" syncable="YES"/>
+        <relationship name="owner" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="KDVAbstractEntity" inverseName="physics" inverseEntity="KDVAbstractEntity" syncable="YES"/>
+    </entity>
+    <entity name="KDVAddressEntity" representedClassName="KDVAddressEntity" syncable="YES" codeGenerationType="class">
+        <attribute name="apartmentNumber" attributeType="String" defaultValueString="unset" syncable="YES"/>
+        <attribute name="city" attributeType="String" defaultValueString="unset" syncable="YES"/>
+        <attribute name="county" attributeType="String" defaultValueString="unset" syncable="YES"/>
+        <attribute name="isPrimaryAddressIfYES" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="nation" attributeType="String" defaultValueString="unset" syncable="YES"/>
+        <attribute name="state" attributeType="String" defaultValueString="unset" syncable="YES"/>
+        <attribute name="streetName" attributeType="String" defaultValueString="unset" syncable="YES"/>
+        <attribute name="streetNumber" attributeType="String" defaultValueString="unset" syncable="YES"/>
+        <relationship name="personOwner" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="KDVPerson" inverseName="addressStack" inverseEntity="KDVPerson" syncable="YES"/>
+        <relationship name="primaryOwner" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="KDVRootEntity" inverseName="fixedAddress" inverseEntity="KDVRootEntity" syncable="YES"/>
+    </entity>
+    <entity name="KDVEntity" representedClassName="KDVEntity" parentEntity="KDVRootEntity" syncable="YES" codeGenerationType="class"/>
+    <entity name="KDVEventItem" representedClassName="KDVEventItem" parentEntity="KDVItem" syncable="YES" codeGenerationType="class">
+        <attribute name="duration" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="endTime" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="label" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="priority" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="startTime" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="title" attributeType="String" defaultValueString="unset" syncable="YES"/>
+    </entity>
+    <entity name="KDVGroceryItem" representedClassName="KDVGroceryItem" parentEntity="KDVItem" syncable="YES" codeGenerationType="class">
+        <attribute name="groceryName" attributeType="String" defaultValueString="unset" syncable="YES"/>
+        <attribute name="skuID" attributeType="String" defaultValueString="unset" syncable="YES"/>
+    </entity>
+    <entity name="KDVItem" representedClassName="KDVItem" parentEntity="KDVRootEntity" syncable="YES" codeGenerationType="class">
+        <attribute name="attribute" attributeType="Decimal" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="cost" attributeType="Decimal" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="ownerUUID" attributeType="UUID" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="price" attributeType="Decimal" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="rating" attributeType="Float" defaultValueString="0.0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="recieverUUID" attributeType="UUID" defaultValueString="unset" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="senderUUID" attributeType="UUID" defaultValueString="unset" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="stateOfItem" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="taxRate" attributeType="Decimal" defaultValueString="0.0" syncable="YES"/>
+    </entity>
+    <entity name="KDVMeal" representedClassName="KDVMeal" parentEntity="KDVItem" syncable="YES" codeGenerationType="class">
+        <attribute name="goesWellWith" attributeType="String" defaultValueString="unset" syncable="YES"/>
+        <attribute name="mealName" attributeType="String" defaultValueString="unset" syncable="YES"/>
+        <attribute name="mealType" attributeType="String" defaultValueString="unset" syncable="YES"/>
+    </entity>
+    <entity name="KDVMealBeverage" representedClassName="KDVMealBeverage" parentEntity="KDVItem" syncable="YES" codeGenerationType="class">
+        <attribute name="beverageName" attributeType="String" defaultValueString="unset" syncable="YES"/>
+        <attribute name="beverageSize" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="doesContainAlcoholIfYes" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="isCurrentlyAvailableIfYES" attributeType="Boolean" defaultValueString="YES" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="isPartOfAMealIfYES" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="NO" syncable="YES"/>
+    </entity>
+    <entity name="KDVMealFood" representedClassName="KDVMealFood" parentEntity="KDVItem" syncable="YES" codeGenerationType="class">
+        <attribute name="foodName" attributeType="String" defaultValueString="unset" syncable="YES"/>
+    </entity>
+    <entity name="KDVMedication" representedClassName="KDVMedication" parentEntity="KDVItem" syncable="YES" codeGenerationType="class">
+        <attribute name="dailyFrequency" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="doasage" attributeType="Integer 16" defaultValueString="0.0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="dosageString" attributeType="String" defaultValueString="unset" syncable="YES"/>
+        <attribute name="dosageUnits" attributeType="String" defaultValueString="unset" syncable="YES"/>
+        <attribute name="duration" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="genericName" attributeType="String" defaultValueString="unset" syncable="YES"/>
+        <attribute name="productName" attributeType="String" defaultValueString="unset" syncable="YES"/>
+        <attribute name="timeDue" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+    </entity>
+    <entity name="KDVMessageItem" representedClassName="KDVMessageItem" parentEntity="KDVItem" syncable="YES" codeGenerationType="class">
+        <attribute name="fullDataMimeStream" attributeType="String" defaultValueString="unset" syncable="YES"/>
+        <attribute name="fullMessageString" attributeType="String" defaultValueString="unset" syncable="YES"/>
+        <attribute name="hasAttachmentIfYES" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="shortMessage" attributeType="String" defaultValueString="unset" syncable="YES"/>
+        <attribute name="title" attributeType="String" defaultValueString="unset" syncable="YES"/>
+    </entity>
+    <entity name="KDVPackage" representedClassName="KDVPackage" parentEntity="KDVMessageItem" syncable="YES" codeGenerationType="class">
+        <attribute name="shippingMassKG" attributeType="Float" defaultValueString="0.0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="xWidthM" attributeType="Float" defaultValueString="0.0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="yDepthM" attributeType="Float" defaultValueString="0.0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="zHeightM" attributeType="Float" defaultValueString="0.0" usesScalarValueType="NO" syncable="YES"/>
+    </entity>
+    <entity name="KDVPerson" representedClassName="KDVPerson" parentEntity="KDVEntity" syncable="YES" codeGenerationType="class">
+        <attribute name="emailID" attributeType="String" defaultValueString="unset" syncable="YES"/>
+        <attribute name="firstName" attributeType="String" defaultValueString="unset" syncable="YES"/>
+        <attribute name="isApplicationPrimaryUserIfYES" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="lastName" attributeType="String" defaultValueString="unset" syncable="YES"/>
+        <attribute name="midOrNoName" attributeType="String" defaultValueString="unset" syncable="YES"/>
+        <attribute name="phoneNumber" attributeType="String" defaultValueString="unset" syncable="YES"/>
+        <attribute name="textID" attributeType="String" defaultValueString="unset" syncable="YES"/>
+        <relationship name="addressStack" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="KDVAddressEntity" inverseName="personOwner" inverseEntity="KDVAddressEntity" syncable="YES"/>
+        <relationship name="vehicle" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="KDVVehicle" inverseName="driver" inverseEntity="KDVVehicle" syncable="YES"/>
+    </entity>
+    <entity name="KDVPlace" representedClassName="KDVPlace" parentEntity="KDVEntity" syncable="YES" codeGenerationType="class">
+        <attribute name="numberOfSides" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="privateIfYES" attributeType="Boolean" defaultValueString="YES" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="rating" attributeType="Decimal" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="rediusMeters" attributeType="Float" defaultValueString="0.0" usesScalarValueType="NO" syncable="YES"/>
+    </entity>
+    <entity name="KDVRootEntity" representedClassName="KDVRootEntity" parentEntity="KDVAbstractEntity" syncable="YES" codeGenerationType="class">
+        <attribute name="hexID" attributeType="String" defaultValueString="unset" syncable="YES"/>
+        <attribute name="qName" attributeType="String" defaultValueString="unset" syncable="YES"/>
+        <attribute name="type" attributeType="String" defaultValueString="unset" syncable="YES"/>
+        <relationship name="fixedAddress" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="KDVAddressEntity" inverseName="primaryOwner" inverseEntity="KDVAddressEntity" syncable="YES"/>
+    </entity>
+    <entity name="KDVVehicle" representedClassName="KDVVehicle" syncable="YES" codeGenerationType="class">
+        <attribute name="color" attributeType="String" defaultValueString="unset" syncable="YES"/>
+        <attribute name="make" attributeType="String" defaultValueString="unset" syncable="YES"/>
+        <attribute name="model" attributeType="String" defaultValueString="unset" syncable="YES"/>
+        <attribute name="numberOfWheels" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <relationship name="driver" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="KDVPerson" inverseName="vehicle" inverseEntity="KDVPerson" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="KDVAbstractEntity" positionX="349" positionY="18" width="128" height="118"/>
+        <element name="KDVAbstractEntityGraphics" positionX="-27" positionY="-64" width="128" height="118"/>
+        <element name="KDVAbstractEntityLocation" positionX="-27" positionY="68" width="128" height="103"/>
+        <element name="KDVAbstractEntityPhysics" positionX="-20" positionY="207" width="128" height="103"/>
+        <element name="KDVAddressEntity" positionX="279" positionY="270" width="128" height="193"/>
+        <element name="KDVEntity" positionX="873" positionY="288" width="128" height="43"/>
+        <element name="KDVEventItem" positionX="1116" positionY="-468" width="128" height="133"/>
+        <element name="KDVGroceryItem" positionX="1294" positionY="-169" width="128" height="73"/>
+        <element name="KDVItem" positionX="873" positionY="-226" width="128" height="178"/>
+        <element name="KDVMeal" positionX="1107" positionY="-72" width="128" height="88"/>
+        <element name="KDVMealBeverage" positionX="1285" positionY="-459" width="128" height="118"/>
+        <element name="KDVMealFood" positionX="1287" positionY="-286" width="128" height="58"/>
+        <element name="KDVMedication" positionX="873" positionY="-468" width="128" height="163"/>
+        <element name="KDVMessageItem" positionX="612" positionY="-376" width="128" height="118"/>
+        <element name="KDVPackage" positionX="612" positionY="-531" width="128" height="103"/>
+        <element name="KDVPerson" positionX="882" positionY="648" width="128" height="178"/>
+        <element name="KDVPlace" positionX="684" positionY="257" width="128" height="103"/>
+        <element name="KDVRootEntity" positionX="871" positionY="30" width="128" height="103"/>
+        <element name="KDVVehicle" positionX="250" positionY="683" width="128" height="118"/>
+    </elements>
+</model>
