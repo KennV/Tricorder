@@ -24,9 +24,9 @@
 	<true/>
 	<key>NSCameraUsageDescription</key>
 	<string>Using Camera access to enable photos</string>
-	<key>NSLocationAlwaysUsageDescription</key>
-	<string>Ares Attempts to provide location and context based services by accessing your current location and patterns. Please enable for proper usage.</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>Ares Attempts to provide location and context based services by accessing your current location and patterns. Please enable for proper usage.</string>
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
 	<string>Always Set to always, Please!</string>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>Using Library</string>
