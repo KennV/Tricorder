@@ -52,9 +52,10 @@ class TC_DBTests: XCTestCase
     SUT_PSK = setupPSK()
     MOC = SUT_PSK?.viewContext
   }
+  
   func setUpInMemoryManagedObjectContext() -> NSManagedObjectContext
   {
-    
+    //
     let managedObjectModel = NSManagedObjectModel.mergedModel(from: [Bundle.main])!
     
     let persistentStoreCoordinator = NSPersistentStoreCoordinator(managedObjectModel: managedObjectModel)
@@ -73,11 +74,13 @@ class TC_DBTests: XCTestCase
     super.setUp()
     MOC = setUpInMemoryManagedObjectContext()
   }
+  
   override func tearDown() {
     MOC = nil
 //    SUT_PSK = nil
     super.tearDown()
   }
+  
   func testPersonController() {
     let pCon = KVPersonDataController()
     pCon.MOC = self.MOC
@@ -88,6 +91,7 @@ class TC_DBTests: XCTestCase
     pCon.deleteEntityInContext(pCon.MOC!, entity: jiveJoe)
 //    XCTAssertEqual(1, pCon.getAllEntities().count)
   }
+  
   func testPersonAllUp()
   {
     let pCon = KVPersonDataController()
@@ -97,6 +101,7 @@ class TC_DBTests: XCTestCase
     XCTAssertNotNil(pp.location, "Need Location Obj")
     pCon.deleteEntityInContext(pCon.MOC!, entity: pp)
   }
+  
   func testTVCon()
   {
     let AllDataController = TricorderDataController()
@@ -113,6 +118,7 @@ class TC_DBTests: XCTestCase
   
     XCTAssertNotNil(SUT.viewDidLoad())
   }  
+  
   func testPerformanceExample() {
     // This is an example of a performance test case.
     self.measure {
@@ -120,4 +126,85 @@ class TC_DBTests: XCTestCase
     }
   }
   
+  /** REFACTOR TEST CASES
+   */
+  //New testCases
+  
+  //
+  func testSaveState() {
+    /** Ok
+     I fully expect this to burn up, except that it currently works; So the desired effect is to see the what, when and how it performs save */
+  }
+  
+  func testMockPersonController()
+  {
+    /**
+     OK Jajaja,haha haaa Ha Bitches I am already wicked Close
+     What happens, compile wise if I inject the dependency?
+     - if it does not work fix and document it
+     What happens when I init it?
+     - what is the Optimal Init-Chain
+     Can I pop that over to a background queue?
+    */
+  }
+
+  func testPhotoEditState()
+  {
+    /** Given a PhotoProtocol
+     I should return two true states
+     one for the imageWillChange/DidChange
+     and a second for the entityDidSave[- saveEntity]
+     I can set it as an observer
+    */
+  }
+  
+  func testPhotoWasSentNonPhotoItem()
+  {
+    /**
+     What happens if I take the object
+     init & set;
+     changeAndSave;
+     changeToNil;
+     changeToMovieItem;
+    */
+  }
+  
+  // New Protocol
+  func testPersonMakesItem()
+  {
+    /**
+     Attempt to make a new person (p) and have P's controller
+     initItemWithOwner:<T>
+     Expected Result.
+    */
+    
+  }
+  func testPersonHasMultpileItems()
+  {
+    /**
+     Okay, if this is true then I should be able to add a list of items
+    */
+  }
+  
+  func testPesronCanTensferItem()
+  {
+    /**
+     P's controller needs two <T> person and set ownership of item to P2
+     func treanferItem(_ item : KVItem, _ p1 : KVPerson, _ p2)
+
+    */
+  }
+  //
+  
+  /**
+   Given a working Mock can I make another for a different Type of Item
+   Can I make a mockSubclass here first?
+   
+   */
+  // test another thing
+  /**
+   Given a ::items:message _message:<T> can I make one again?
+   can I mutate it here?
+   does the itemsTopDataController? See all of the
+   */
 }
