@@ -11,7 +11,11 @@ Then I simply make a nil moc and set it to a new inMemPSK / SUT_PSK and nil
 it again in the teardown and it is *Done*
 This allows me to put this into test (And work this project like a sane human being)
  
-The other Fun thing is that I am not even init'g the test controllers. ther really is no reason to
+The other Fun thing is that I am not even init'g the test controllers. there really is no reason to
+ 
+** Re-Ignition Revision ##
+OK Based on testMockPersonController() and Similar. It looks like I could do this without the container, _per se_: It could be done with only the MOC, So I will have to be able to
+ 
 */
 
 import CoreData
@@ -19,39 +23,29 @@ import CoreLocation
 import XCTest
 @testable import Tricorder
 
+//
+class MockPersonDataController <T : KVPerson> : KVPersonDataController<T>
+{
+  
+}
 class TC_DBTests: XCTestCase
 {
-  var SUT_PSK : NSPersistentContainer? = nil
+  var container : NSPersistentContainer? = nil
+  var inMemoryContext : NSManagedObjectContext? = nil
   
-  func setupPSK() -> NSPersistentContainer  {
+  func createInMemoryContainer() -> NSPersistentContainer  {
 //    let st = "NSInMemoryStoreType" // storeType
     let container = NSPersistentContainer(name: "Tricorder")
     container.loadPersistentStores(completionHandler: { (NSInMemoryStoreType, error) in
-      if let error = error as NSError? {
-        // Replace this implementation with code to handle the error appropriately.
-        // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
-        
-        /*
-         Typical reasons for an error here include:
-         * The parent directory does not exist, cannot be created, or disallows writing.
-         * The persistent store is not accessible, due to permissions or data protection when the device is locked.
-         * The device is out of space.
-         * The store could not be migrated to the current model version.
-         Check the error message to determine what the actual problem was.
-         */
+      if let error = error as NSError?
+      {
         fatalError("Unresolved error \(error), \(error.userInfo)")
       }
     })
 //    container.NSS
     return container
   }
-  
-  var MOC : NSManagedObjectContext? = nil
 
-  func LIVEsetUpInMemoryManagedObjectContext()  {
-    SUT_PSK = setupPSK()
-    MOC = SUT_PSK?.viewContext
-  }
   
   func setUpInMemoryManagedObjectContext() -> NSManagedObjectContext
   {
@@ -72,21 +66,21 @@ class TC_DBTests: XCTestCase
   
   override func setUp() {
     super.setUp()
-    MOC = setUpInMemoryManagedObjectContext()
+//    container = createInMemoryContainer() // Not redundant and not super necessary
+    inMemoryContext = setUpInMemoryManagedObjectContext()
   }
   
   override func tearDown() {
-    MOC = nil
-//    SUT_PSK = nil
+    inMemoryContext = nil
     super.tearDown()
   }
   
   func testPersonController() {
-    let pCon = KVPersonDataController()
-    pCon.MOC = self.MOC
+    let pCon = MockPersonDataController()
+    pCon.MOC = self.inMemoryContext
     XCTAssertNotNil(pCon.MOC, "Must have TestMOC to proceed")
     let jiveJoe = pCon.makePerson(pCon.MOC!)
-    XCTAssertNotNil(jiveJoe, "ust be able to make JJ to proceed")
+    XCTAssertNotNil(jiveJoe, "Must be able to make JJ to proceed")
     XCTAssertNotNil(pCon.getAllEntities())
     pCon.deleteEntityInContext(pCon.MOC!, entity: jiveJoe)
 //    XCTAssertEqual(1, pCon.getAllEntities().count)
@@ -95,7 +89,7 @@ class TC_DBTests: XCTestCase
   func testPersonAllUp()
   {
     let pCon = KVPersonDataController()
-    pCon.MOC = self.MOC
+    pCon.MOC = self.inMemoryContext
     let pp = pCon.makePersonAllUp(pCon.MOC!)
     pCon.makeRandomName(pp)
     XCTAssertNotNil(pp.location, "Need Location Obj")
@@ -105,12 +99,12 @@ class TC_DBTests: XCTestCase
   func testTVCon()
   {
     let AllDataController = TricorderDataController()
-    AllDataController.MOC = MOC
+    AllDataController.MOC = inMemoryContext
 
     let SUT = KVPrimeTVCon()
     SUT.dvc = KVMapViewCon()
-    SUT.pdc.MOC = MOC
-    SUT.placesDC.MOC = MOC
+    SUT.pdc.MOC = inMemoryContext
+    SUT.placesDC.MOC = inMemoryContext
     for _ in 1...20 {
       SUT.willAddPerson(self)
       _ = SUT.placesDC.makePlace(SUT.placesDC.MOC!)
@@ -131,7 +125,8 @@ class TC_DBTests: XCTestCase
   //New testCases
   
   //
-  func testSaveState() {
+  func testSaveState()
+  {
     /** Ok
      I fully expect this to burn up, except that it currently works; So the desired effect is to see the what, when and how it performs save */
   }
@@ -145,6 +140,7 @@ class TC_DBTests: XCTestCase
      What happens when I init it?
      - what is the Optimal Init-Chain
      Can I pop that over to a background queue?
+     - does that fail?, How?
     */
   }
 
@@ -176,17 +172,18 @@ class TC_DBTests: XCTestCase
      Attempt to make a new person (p) and have P's controller
      initItemWithOwner:<T>
      Expected Result.
+     
     */
-    
   }
-  func testPersonHasMultpileItems()
+  
+  func testPersonMakesMultpileItems()
   {
     /**
      Okay, if this is true then I should be able to add a list of items
     */
   }
   
-  func testPesronCanTensferItem()
+  func testPesronCanTransferItem()
   {
     /**
      P's controller needs two <T> person and set ownership of item to P2
@@ -194,6 +191,14 @@ class TC_DBTests: XCTestCase
 
     */
   }
+  
+  func testPersonCanTransferAllItems()
+  {
+    /**
+     Like above but sexier. for every item in P1's.Items setOwner -> P2
+    */
+  }
+  
   //
   
   /**
