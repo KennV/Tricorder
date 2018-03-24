@@ -170,7 +170,8 @@ extension KVPrimeTVCon: CLLocationManagerDelegate
   func didChangePerson(_ entity: KVPerson)
   {
     _ = pdc.saveEntity(entity: entity)
-    pdc.saveContext()
+//    pdc.saveContext() // This is to fix the photo not persisting in HW Bug
+    pdc.saveCurrentContext(pdc.MOC!)
     tableView.reloadData()
   }
   
