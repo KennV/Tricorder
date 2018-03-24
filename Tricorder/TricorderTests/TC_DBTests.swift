@@ -28,6 +28,10 @@ class MockPersonDataController <T : KVPerson> : KVPersonDataController<T>
 {
   
 }
+//
+class MockTricorderDataController<T : KVRootEntity > : TricorderDataController<T> {
+  
+}
 class TC_DBTests: XCTestCase
 {
   var container : NSPersistentContainer? = nil
@@ -88,7 +92,7 @@ class TC_DBTests: XCTestCase
   
   func testPersonAllUp()
   {
-    let pCon = KVPersonDataController()
+    let pCon = MockPersonDataController()
     pCon.MOC = self.inMemoryContext
     let pp = pCon.makePersonAllUp(pCon.MOC!)
     pCon.makeRandomName(pp)
@@ -98,9 +102,10 @@ class TC_DBTests: XCTestCase
   
   func testTVCon()
   {
-    let AllDataController = TricorderDataController()
+    let AllDataController = MockTricorderDataController()
     AllDataController.MOC = inMemoryContext
-
+    // OR I can test this from the other testCase
+    // and get the Test-Rig-MainWindow()
     let SUT = KVPrimeTVCon()
     SUT.dvc = KVMapViewCon()
     SUT.pdc.MOC = inMemoryContext
@@ -109,7 +114,6 @@ class TC_DBTests: XCTestCase
       SUT.willAddPerson(self)
       _ = SUT.placesDC.makePlace(SUT.placesDC.MOC!)
     }
-  
     XCTAssertNotNil(SUT.viewDidLoad())
   }  
   
@@ -151,6 +155,8 @@ class TC_DBTests: XCTestCase
      one for the imageWillChange/DidChange
      and a second for the entityDidSave[- saveEntity]
      I can set it as an observer
+     NOTE: I actually do this from a protocol
+     AND it works, the bugfix is documented.
     */
   }
   
@@ -167,6 +173,7 @@ class TC_DBTests: XCTestCase
   
   // New Protocol
   func testPersonMakesItem()
+    
   {
     /**
      Attempt to make a new person (p) and have P's controller
