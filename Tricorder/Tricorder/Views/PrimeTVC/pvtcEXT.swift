@@ -50,7 +50,7 @@ extension KVPrimeTVCon: CLLocationManagerDelegate
     if segue.identifier == "showDetail"
     {
       if let indexPath = tableView.indexPathForSelectedRow {
-        let p = people[(indexPath as NSIndexPath).row]
+        let p = pdc.getAllEntities()[(indexPath as NSIndexPath).row]
         let mapC = (segue.destination as! UINavigationController).topViewController as! KVMapViewCon
         mapC.delegate = self
         mapC.currentPerson = p
@@ -204,8 +204,11 @@ extension KVPrimeTVCon: CLLocationManagerDelegate
   }
   /**
    Buttons in the TVC header sections
+   ::Taking this out of the insertNew Object
+   ADDING IT BACK
+   
+   These are called from the 
    */
-  // Taking this out of the insertNew Object
   func insertNewPerson(_ sender: AnyObject)
   {
     findLocation()
@@ -213,7 +216,8 @@ extension KVPrimeTVCon: CLLocationManagerDelegate
     pdc.updateLocationFor(p, loc: (locationManager?.location?.coordinate)!)
     pdc.getAddressOfLocation(p.location!)
     _ = pdc.saveEntity(entity: p)
-    people.insert(p, at: 0)
+//    people.insert(p, at: 0)
+//    pdc.getAllEntities(). Immutable
     let indexPath = IndexPath(row: 0, section: 0)
     tableView.insertRows(at: [indexPath], with: .automatic)
     pdc.saveCurrentContext(pdc.MOC!)

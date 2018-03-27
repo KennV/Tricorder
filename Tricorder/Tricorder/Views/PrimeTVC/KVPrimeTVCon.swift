@@ -24,12 +24,12 @@ class KVPrimeTVCon: UITableViewController, MapKhanDelegate
   var msgMODC = KVMessageDataController()
   var locationManager : CLLocationManager? = CLLocationManager()
 
-  var people : Array <KVPerson> {
-    get {
-      return pdc.getAllEntities()
-    }
-    set { }
-  }
+//  var xPeople : Array <KVPerson> {
+//    get {
+//      return pdc.getAllEntities()
+//    }
+//    set { }
+//  }
   var events : Array <KVEvent> {
     get {
       return eventsDC.getAllEntities()
@@ -71,8 +71,9 @@ class KVPrimeTVCon: UITableViewController, MapKhanDelegate
     // I can really Easily crush the arrays no?
     // OR are they lightweight
   }
+  // does thie need to be @objC
   // MARK: insertNewObject
-  func insertNewObject(_ sender: AnyObject)
+  @objc func insertNewObject(_ sender: AnyObject)
   {
     insertNewPerson(self)
   }
@@ -86,7 +87,7 @@ class KVPrimeTVCon: UITableViewController, MapKhanDelegate
     var rowCount = 0
     
     if (section == 0) {
-      rowCount = people.count
+      rowCount = pdc.getAllEntities().count
     }
     if (section == 1) {
       rowCount = allMessages.count
@@ -154,7 +155,7 @@ class KVPrimeTVCon: UITableViewController, MapKhanDelegate
     if (indexPath.section == 0)
     {
     let c = tableView.dequeueReusableCell(withIdentifier: "personCell", for: indexPath) as! KVBasicCustomCell
-      let p = people[(indexPath as NSIndexPath).row]
+      let p = pdc.getAllEntities()[(indexPath as NSIndexPath).row]
       c.nameLabel!.text = p.qName
 // Use the 'real' resize ƒn
       c.photoImageView.image = pdc.resizeImage(image: (p.graphics?.photoActual)!, newWidth: 64)
@@ -200,7 +201,7 @@ class KVPrimeTVCon: UITableViewController, MapKhanDelegate
       switch indexPath.section
       {
       case 0:
-        pdc.deleteEntityInContext(pdc.MOC!, entity: people[(indexPath as NSIndexPath).row])
+        pdc.deleteEntityInContext(pdc.MOC!, entity: pdc.getAllEntities()[(indexPath as NSIndexPath).row])
         tableView.deleteRows(at: [indexPath], with: .fade)
         pdc.saveCurrentContext(pdc.MOC!)
       case 1:
