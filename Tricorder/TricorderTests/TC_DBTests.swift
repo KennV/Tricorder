@@ -16,6 +16,12 @@ The other Fun thing is that I am not even init'g the test controllers. there rea
 ** Re-Ignition Revision ##
 OK Based on testMockPersonController() and Similar. It looks like I could do this without the container, _per se_: It could be done with only the MOC, So I will have to be able to
  
+¿Qué?
+ Okay; I have a New Notes.App-List BUGLIST;
+ Several of the important things Are [in a _hopefully_ :]
+ - Map might use a location
+ - current VueMight
+¿OK?
 */
 
 import CoreData
@@ -116,13 +122,7 @@ class TC_DBTests: XCTestCase
     }
     XCTAssertNotNil(SUT.viewDidLoad())
   }  
-  
-  func testPerformanceExample() {
-    // This is an example of a performance test case.
-    self.measure {
-      // Put the code you want to measure the time of here.
-    }
-  }
+
   
   /** REFACTOR TEST CASES
    */
@@ -211,7 +211,7 @@ class TC_DBTests: XCTestCase
   /**
    Given a working Mock can I make another for a different Type of Item
    Can I make a mockSubclass here first?
-   
+   ANSWER: Yup
    */
   // test another thing
   /**
