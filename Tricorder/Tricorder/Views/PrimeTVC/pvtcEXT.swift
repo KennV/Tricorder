@@ -199,7 +199,7 @@ extension KVPrimeTVCon: CLLocationManagerDelegate
     md.location?.latitude = locationManager?.location?.coordinate.latitude as NSNumber?
     md.location?.longitude = locationManager?.location?.coordinate.longitude as NSNumber?
     msgMODC.saveContext()
-    allMessages.insert(md, at: 0)
+//    allMessages.insert(md, at: 0)
     tableView.reloadData()
   }
   /**
@@ -216,8 +216,7 @@ extension KVPrimeTVCon: CLLocationManagerDelegate
     pdc.updateLocationFor(p, loc: (locationManager?.location?.coordinate)!)
     pdc.getAddressOfLocation(p.location!)
     _ = pdc.saveEntity(entity: p)
-//    people.insert(p, at: 0)
-//    pdc.getAllEntities(). Immutable
+
     let indexPath = IndexPath(row: 0, section: 0)
     tableView.insertRows(at: [indexPath], with: .automatic)
     pdc.saveCurrentContext(pdc.MOC!)
@@ -228,10 +227,6 @@ extension KVPrimeTVCon: CLLocationManagerDelegate
   {
     let pl = placesDC.makePlaceWithLocation(placesDC.MOC!, loc: (locationManager?.location?.coordinate)!)
     placesDC.getAddressOfLocation(pl.location!)
-    places.insert(pl, at: 0)
-    
-//    let indexPath = IndexPath(row: 0, section: 3)
-//    tableView.insertRows(at: [indexPath], with: .automatic)
     
     _ = placesDC.saveEntity(entity: pl)
     placesDC.saveCurrentContext(placesDC.MOC!)
@@ -240,8 +235,8 @@ extension KVPrimeTVCon: CLLocationManagerDelegate
   }
   func insertNewEvent(_ sender: AnyObject)
   {
-    let event = eventsDC.makeEvent(eventsDC.MOC!, loc: (locationManager?.location?.coordinate)!)
-    events.insert(event, at: 0)
+    _ = eventsDC.makeEvent(eventsDC.MOC!, loc: (locationManager?.location?.coordinate)!)
+
     _ = eventsDC.saveEntities()
     let indexPath = IndexPath(row: 0, section: 2)
     tableView.insertRows(at: [indexPath], with: .automatic)
@@ -253,7 +248,7 @@ extension KVPrimeTVCon: CLLocationManagerDelegate
     let md = msgMODC.makeEmptyMessage()
     md.incepDate = NSDate()
     // location for the event is the same as for the person
-    allMessages.insert(md, at: 0)
+//    allMessages.insert(md, at: 0)
     _ = msgMODC.saveEntity(entity: md)
     msgMODC.saveCurrentContext(msgMODC.MOC!)
     let indexPath = IndexPath(row: 0, section: 1)

@@ -23,31 +23,6 @@ class KVPrimeTVCon: UITableViewController, MapKhanDelegate
   var placesDC = KVPlaceDataController()
   var msgMODC = KVMessageDataController()
   var locationManager : CLLocationManager? = CLLocationManager()
-
-//  var xPeople : Array <KVPerson> {
-//    get {
-//      return pdc.getAllEntities()
-//    }
-//    set { }
-//  }
-  var events : Array <KVEvent> {
-    get {
-      return eventsDC.getAllEntities()
-    }
-    set { }
-  }
-  var places : Array <KVPlace> {
-    get {
-      return placesDC.getAllEntities()
-    }
-    set { }
-  }
-  var allMessages : Array <KVMessageMO> {
-    get {
-      return msgMODC.getAllEntities()
-    }
-    set { }
-  }
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -90,13 +65,13 @@ class KVPrimeTVCon: UITableViewController, MapKhanDelegate
       rowCount = pdc.getAllEntities().count
     }
     if (section == 1) {
-      rowCount = allMessages.count
+      rowCount = msgMODC.getAllEntities().count
     }
     if (section == 2) {
-      rowCount = events.count
+      rowCount = eventsDC.getAllEntities().count
     }
     if (section == 3) {
-      rowCount = places.count
+      rowCount = placesDC.getAllEntities().count
     }
     return rowCount
   }
@@ -164,21 +139,21 @@ class KVPrimeTVCon: UITableViewController, MapKhanDelegate
     if (indexPath.section == 1)
     {
       let f = tableView.dequeueReusableCell(withIdentifier: "msgCell", for: indexPath) as! KVBasicCustomCell
-      let item = allMessages[(indexPath as NSIndexPath).row]
+      let item = msgMODC.getAllEntities()[(indexPath as NSIndexPath).row]
       f.nameLabel!.text = item.qName
       return f
     }
     if (indexPath.section == 2)
     {
       let d = tableView.dequeueReusableCell(withIdentifier: "eventsCell", for: indexPath) as! KVBasicCustomCell
-      let item = events[(indexPath as NSIndexPath).row]
+      let item = eventsDC.getAllEntities()[(indexPath as NSIndexPath).row]
       d.nameLabel!.text = item.qName
       return d
     }
     if (indexPath.section == 3)
     {
       let e = tableView.dequeueReusableCell(withIdentifier: "placesCell", for: indexPath) as! KVBasicCustomCell
-      let item = places[(indexPath as NSIndexPath).row]
+      let item = placesDC.getAllEntities()[(indexPath as NSIndexPath).row]
       e.nameLabel!.text = item.qName
       return e
     }
@@ -205,15 +180,15 @@ class KVPrimeTVCon: UITableViewController, MapKhanDelegate
         tableView.deleteRows(at: [indexPath], with: .fade)
         pdc.saveCurrentContext(pdc.MOC!)
       case 1:
-        msgMODC.deleteEntityInContext(pdc.MOC!, entity: allMessages[(indexPath as NSIndexPath).row])
+        msgMODC.deleteEntityInContext(pdc.MOC!, entity: msgMODC.getAllEntities()[(indexPath as NSIndexPath).row])
         tableView.deleteRows(at: [indexPath], with: .fade)
         msgMODC.saveCurrentContext(msgMODC.MOC!)
       case 2:
-        eventsDC.deleteEntityInContext(pdc.MOC!, entity: events[(indexPath as NSIndexPath).row])
+        eventsDC.deleteEntityInContext(pdc.MOC!, entity: eventsDC.getAllEntities()[(indexPath as NSIndexPath).row])
         tableView.deleteRows(at: [indexPath], with: .fade)
         eventsDC.saveCurrentContext(eventsDC.MOC!)
       case 3:
-        placesDC.deleteEntityInContext(pdc.MOC!, entity: places[(indexPath as NSIndexPath).row])
+        placesDC.deleteEntityInContext(pdc.MOC!, entity: placesDC.getAllEntities()[(indexPath as NSIndexPath).row])
         tableView.deleteRows(at: [indexPath], with: .fade)
         placesDC.saveCurrentContext(placesDC.MOC!)
       default:
