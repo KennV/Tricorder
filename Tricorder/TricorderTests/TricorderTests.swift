@@ -8,11 +8,30 @@
 
 */
 
+/**
+ Preposito:
+ Put the test-mock on a background thread
+ Put the view-con as dependent on the test state.
+ do all of the tests from here.
+ ;  This Is prototyped in Argent
+*/
+import CoreData
+import CoreLocation
 import XCTest
+
+class MockEntityDataController <T : KVEntity> : TricorderDataController<T>
+{
+  
+}
+
+class MockItemsDataController <T : KVItem> : TricorderDataController<T>
+{
+  
+}
 @testable import Tricorder
 
 class TricorderTests: XCTestCase {
-    
+  
     override func setUp() {
         super.setUp()
         // Put setup code here. This method is called before the invocation of each test method in the class.
