@@ -347,15 +347,8 @@
 		3827B05D1D9DDA2E004A3582 /* EntityControllers */ = {
 			isa = PBXGroup;
 			children = (
-				3827B05E1D9DDA2E004A3582 /* KVBeverageDataController.swift */,
-				3827B05F1D9DDA2E004A3582 /* KVEventDataController.swift */,
-				3827B0601D9DDA2E004A3582 /* KVFoodDataController.swift */,
-				3827B0611D9DDA2E004A3582 /* KVMealDataController.swift */,
-				3827B0621D9DDA2E004A3582 /* KVMedicineDataController.swift */,
-				3827B0631D9DDA2E004A3582 /* KVMessageDataController.swift */,
-				3827B0641D9DDA2E004A3582 /* KVPackageDataController.swift */,
-				3827B0651D9DDA2E004A3582 /* KVPersonDataController.swift */,
-				3827B0661D9DDA2E004A3582 /* KVPlaceDataController.swift */,
+				38E2F1B6207D9AAA003FC43E /* Items */,
+				38E2F1B7207D9AB9003FC43E /* Entities */,
 			);
 			path = EntityControllers;
 			sourceTree = "<group>";
@@ -535,6 +528,29 @@
 				38D128CA201A99F100B0DC7F /* KVPackage.swift */,
 			);
 			path = package;
+			sourceTree = "<group>";
+		};
+		38E2F1B6207D9AAA003FC43E /* Items */ = {
+			isa = PBXGroup;
+			children = (
+				3827B05E1D9DDA2E004A3582 /* KVBeverageDataController.swift */,
+				3827B05F1D9DDA2E004A3582 /* KVEventDataController.swift */,
+				3827B0601D9DDA2E004A3582 /* KVFoodDataController.swift */,
+				3827B0611D9DDA2E004A3582 /* KVMealDataController.swift */,
+				3827B0621D9DDA2E004A3582 /* KVMedicineDataController.swift */,
+				3827B0631D9DDA2E004A3582 /* KVMessageDataController.swift */,
+				3827B0641D9DDA2E004A3582 /* KVPackageDataController.swift */,
+			);
+			path = Items;
+			sourceTree = "<group>";
+		};
+		38E2F1B7207D9AB9003FC43E /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				3827B0651D9DDA2E004A3582 /* KVPersonDataController.swift */,
+				3827B0661D9DDA2E004A3582 /* KVPlaceDataController.swift */,
+			);
+			path = Entities;
 			sourceTree = "<group>";
 		};
 		697E68D884BEDE98D6EB6F28 /* Pods */ = {
