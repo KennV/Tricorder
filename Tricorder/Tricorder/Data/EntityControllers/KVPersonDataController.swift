@@ -102,9 +102,9 @@ class KVPersonDataController <T : KVPerson> : KVEntityDataController<T>
   }
   /**
   ## make person
-
+   
   - parameter ctx: a MOC
-
+   
   - returns: Person as T 
   */
   func makePerson(_ ctx: NSManagedObjectContext) -> T
@@ -121,9 +121,9 @@ class KVPersonDataController <T : KVPerson> : KVEntityDataController<T>
   }
   /**
   ## Using makePerson() init all required state
-
+  
   - parameter ctx: a MOC
-
+   
   - returns: Person as T
    */
   func makePersonAllUp(_ ctx: NSManagedObjectContext) -> T
@@ -141,7 +141,7 @@ class KVPersonDataController <T : KVPerson> : KVEntityDataController<T>
   }
   /**
   # person data defaults
-
+  
   - parameter p: a Valid Person */
   func setupPersonData(_ p: T)
   {
@@ -153,7 +153,7 @@ class KVPersonDataController <T : KVPerson> : KVEntityDataController<T>
   }
   /**
   # Name randomizer
-
+  
   - parameter p: vaild P */
   func makeRandomName(_ p: KVPerson)
   {
@@ -187,7 +187,7 @@ class KVPersonDataController <T : KVPerson> : KVEntityDataController<T>
   }
   /**
   # email and textID
-
+  
   - parameter p: p */
   func makeEmailAndTextID(_ p: KVPerson)
   {
@@ -196,21 +196,21 @@ class KVPersonDataController <T : KVPerson> : KVEntityDataController<T>
      but that would clash sooner rather than later
      let _ = p.firstName?[(p.firstName?.startIndex)!]
      */
-    // p.emailID = (p.firstName! + "." + p.lastName! + "@" + "test.edu")
-    p.emailID = ((p.firstName?[(p.firstName?.startIndex)!]) + "." + p.lastName! + "@" + "test.edu")
-    p.textID =  ((p.firstName?[(p.firstName?.startIndex)!]) + (p.firstName?[(p.lastName?.startIndex)!]) + mkRandomHexQuad() + "@" + "test.edu")
+//    p.ema
+    p.emailID = (p.firstName! + "." + p.lastName! + "@" + "test.edu")
+    p.textID =  (p.firstName! + mkRandomHexQuad() + "@" + "test.edu")
   }
   /**
   # Vehicle Class
-
+  
   - parameter ctx: this MOC
-
+  
   - returns: KVVehicle */
   func makeVehicleObj(_ ctx: NSManagedObjectContext) -> KVVehicle
   {
     let vd = NSEntityDescription.entity(forEntityName: "KVVehicle", in: ctx)
     let vV = KVVehicle(entity: vd!, insertInto: ctx)
-
+  
     return(vV)
   }
   /**
@@ -218,27 +218,17 @@ class KVPersonDataController <T : KVPerson> : KVEntityDataController<T>
    
   - parameter: KVVehicle
   */
-  func setupDefaultVehicle(_ v: KVVehicle) {
-    let carBrands: [String] = ["Audi", "Porsche", "Ford", "Volvo", "Toyota", "BMW", "Ferrari", "GM", "Cheverolet"]
-    let bikeBrands: [String] = ["Trek", "GT", "Wilkerson Airlines", "Canondale", "Schwinn", "Standard", "RiBCO", "Haro"]
-
+  func setupDefaultVehicle(_ v: KVVehicle)
+  {
+    let vMakes: [String] = ["Audi", "Porsche", "Ford", "Canondale", "Schwinn"]
+//    let vTypes: [String] = ["Bike", "Car", "Van"]
     let vColor: [String] = ["Red", "Gold", "Silver", "Black", "Yellow" ]
-    let vModel: [String] = ["Base", "Medium", "High", "Custom ", "Competition"]
-
-    let mode = makeRandomNumber(2)
-    switch mode {
-    case 1:
-      v.make = bikeBrands[makeRandomNumber(UInt32(carBrands.count))]
-      v.model = vModel[makeRandomNumber(UInt32(vModel.count))]
-      v.color = vColor[makeRandomNumber(UInt32(vColor.count))]
-      v.numberOfWheels = 2
-    default:
-      v.make = carBrands[makeRandomNumber(UInt32(carBrands.count))]
-      v.model = vModel[makeRandomNumber(UInt32(vModel.count))]
-      v.color = vColor[makeRandomNumber(UInt32(vColor.count))]
-      //    v.Typ
-      v.numberOfWheels = 4
-    }
+    let vModel: [String] = ["Custom", "Medium", "High", "Custom "]
+    v.make = vMakes[makeRandomNumber(UInt32(vMakes.count))]
+    v.model = vModel[makeRandomNumber(UInt32(vModel.count))]
+    v.color = vColor[makeRandomNumber(UInt32(vColor.count))]
+//    v.Typ
+    v.numberOfWheels = 4
   }
-
+  
 }
