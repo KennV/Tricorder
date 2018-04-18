@@ -208,7 +208,7 @@ class KVPersonDataController <T : KVPerson> : KVEntityDataController<T>
   - returns: KVVehicle */
   func makeVehicleObj(_ ctx: NSManagedObjectContext) -> KVVehicle
   {
-    let vd = NSEntityDescription.entity(forEntityName: "KVVehicle", in: ctx)
+    let vd = NSEntityDescription.entity(forEntityName: EntityTypes.Vehicle, in: ctx) // Don't use a literal here
     let vV = KVVehicle(entity: vd!, insertInto: ctx)
   
     return(vV)
