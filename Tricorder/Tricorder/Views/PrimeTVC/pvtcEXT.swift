@@ -60,7 +60,9 @@ extension KVPrimeTVCon: CLLocationManagerDelegate
     switch identifierCase {
     case .showEULA:
       print("License")
-
+      let eulaCon = (segue.destination as! UINavigationController).topViewController as! KDVEULAViewController
+      eulaCon.navigationItem.leftBarButtonItem = splitViewController?.displayModeButtonItem
+      eulaCon.navigationItem.leftItemsSupplementBackButton = true
     case .showDetail:
 
       if let indexPath = tableView.indexPathForSelectedRow {
