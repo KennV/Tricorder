@@ -116,7 +116,7 @@ class TC_DBTests: XCTestCase
     SUT.dvc = KVMapViewCon()
     SUT.pdc.MOC = inMemoryContext
     SUT.placesDC.MOC = inMemoryContext
-    for _ in 1...20 {
+    for _ in 1...200 {
       SUT.willAddPerson(self)
       _ = SUT.placesDC.makePlace(SUT.placesDC.MOC!)
     }
