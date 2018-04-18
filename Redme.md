@@ -1,12 +1,9 @@
-# This Is a Rebuild #
 Lessons learned:
 	Put the entire projectƒ into another ProjectF.
 	Git from there
 	keep it entirely Modular.
 	_Do_ Take the time to make your entities and controllers
 	_Do_ All Access through EntityControllers
-### Actual Re-Ignition ###
-
 
 # ReadMe - A'iight! #
 This is actually a preamble. I have been over this project a few times. And as I not a comp-sci student. I may have had less exposure to these OSS Ideas or whatnot. I don't care. CocoaPods / Swift Package Manager is important. This is funny b\c for the past few years I did not Need Libraries, I Write Libraries. Yannow, so I don't want to sound arrogant. Then there is the eveer present what if it breaks my Kit?… But I am fairly strict about CVS, and if need be I can re-assemble this kit from scratch As I just did to make it back into tricorder. (and I only forgot the Plist, and one Segue in the process) SO it is already sort of a library.
@@ -26,3 +23,4 @@ First and best The location manager can give me a garbage value. Even if my valu
 Event and Message Do Not Update the view properly This is unsigltly and looks unprofessional. Place and Person do so that is good.
 Hmm, could be the coffe, what if I make an array of [mkpins] and return THAT from a function / Nope that is incorrect. I already know I make pins. Another interesting thing is; Event and message belong to a person. Could that be part of the problem EITHER Way event is still marked "From:" AND More importantly it needs to go straicht to an editor. So That when I press the Event button it does everything that it does now then launches a seg. to a view, nothing big or fancy could even be a popover. to do this i would need to have a list of types for the events / messages. Expanded entity types to include all current classes. this way it is easier to use. Hey I need to delete RootDataType
 NOPE that Is NOT what happened what I did was to comb through the controllers and make sure that they are all using the same constructor. and using an EntityTypes.[] for entityClassName. Both of these are written to work and they do. 
+

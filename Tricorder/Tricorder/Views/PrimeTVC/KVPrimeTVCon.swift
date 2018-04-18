@@ -61,18 +61,19 @@ class KVPrimeTVCon: UITableViewController, MapKhanDelegate
 
     var rowCount = 0
     
-    if (section == 0) {
+    switch section {
+    case 0:
       rowCount = pdc.getAllEntities().count
-    }
-    if (section == 1) {
+    case 1:
       rowCount = msgMODC.getAllEntities().count
-    }
-    if (section == 2) {
+    case 2:
       rowCount = eventsDC.getAllEntities().count
-    }
-    if (section == 3) {
+    case 3:
       rowCount = placesDC.getAllEntities().count
+    default:
+      rowCount = 0
     }
+    
     return rowCount
   }
   // MARK: Pulling section buttons for now
@@ -84,9 +85,8 @@ class KVPrimeTVCon: UITableViewController, MapKhanDelegate
     let sectionLabel = UILabel(frame: CGRect(origin: CGPoint(x: 10, y: 10), size: CGSize(width: view.frame.size.width, height: 21)))
     let sectionButton = UIButton(frame: CGRect(x: 80, y: 10, width: 88, height: 21))
     sectionButton.backgroundColor = UIColor.clear
-    //    sectionButton.titleLabel?.textColor = UIColor.black
-    //    sectionButton.fon = UIFont.systemFont(ofSize: 16)
-    
+        sectionButton.titleLabel?.textColor = UIColor.black
+//        sectionButton.font = UIFont.systemFont(ofSize: 16)
     sectionLabel.backgroundColor = UIColor.clear
     sectionLabel.textColor = UIColor.yellow
     sectionLabel.font = UIFont.boldSystemFont(ofSize: 17)
@@ -112,7 +112,7 @@ class KVPrimeTVCon: UITableViewController, MapKhanDelegate
     default:
       return nil
     }
-//    headerVue.addSubview(sectionButton) //
+    headerVue.addSubview(sectionButton) //
     headerVue.addSubview(sectionLabel)
     
     return headerVue
@@ -157,7 +157,6 @@ class KVPrimeTVCon: UITableViewController, MapKhanDelegate
       e.nameLabel!.text = item.qName
       return e
     }
-    
     /*
     return cell c,d,e,f or return an empty one
     */
