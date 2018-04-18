@@ -40,6 +40,7 @@ class KVPrimeTVCon: UITableViewController, MapKhanDelegate
   override func viewWillAppear(_ animated: Bool) {
     clearsSelectionOnViewWillAppear = splitViewController!.isCollapsed
     super.viewWillAppear(animated)
+    print("App state for AppHasRunSetup = \(UserDefaults.standard.appHasRunSetup())")
   }
   override func didReceiveMemoryWarning() {
     super.didReceiveMemoryWarning()
