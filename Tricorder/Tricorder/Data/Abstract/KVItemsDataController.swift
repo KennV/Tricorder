@@ -32,7 +32,23 @@
  KVItemsDataController.swift
 
 
+
+ */
+
+/**
+ OK New Notes:
+ I Need A Protocol Here
+ I will Add (2)
 */
+
+protocol KVItemsDelegate {
+  func mkItemForOwner(_ entity: KVEntity)
+}
+
+protocol KVItemsDataSource {
+  
+}
+
 
 import CoreData
 import Foundation
