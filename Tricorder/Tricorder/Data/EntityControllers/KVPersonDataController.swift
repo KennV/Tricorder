@@ -218,17 +218,27 @@ class KVPersonDataController <T : KVPerson> : KVEntityDataController<T>
    
   - parameter: KVVehicle
   */
-  func setupDefaultVehicle(_ v: KVVehicle)
-  {
-    let vMakes: [String] = ["Audi", "Porsche", "Ford", "Canondale", "Schwinn"]
-//    let vTypes: [String] = ["Bike", "Car", "Van"]
+  func setupDefaultVehicle(_ v: KVVehicle) {
+    let carBrands: [String] = ["Audi", "Porsche", "Ford", "Volvo", "Toyota", "BMW", "Ferrari", "GM", "Cheverolet"]
+    let bikeBrands: [String] = ["Trek", "GT", "Wilkerson Airlines", "Canondale", "Schwinn", "Standard", "RiBCO", "Haro"]
+
     let vColor: [String] = ["Red", "Gold", "Silver", "Black", "Yellow" ]
-    let vModel: [String] = ["Custom", "Medium", "High", "Custom "]
-    v.make = vMakes[makeRandomNumber(UInt32(vMakes.count))]
-    v.model = vModel[makeRandomNumber(UInt32(vModel.count))]
-    v.color = vColor[makeRandomNumber(UInt32(vColor.count))]
-//    v.Typ
-    v.numberOfWheels = 4
+    let vModel: [String] = ["Base", "Medium", "High", "Custom ", "Competition"]
+
+    let mode = makeRandomNumber(2)
+    switch mode {
+    case 1:
+      v.make = bikeBrands[makeRandomNumber(UInt32(carBrands.count))]
+      v.model = vModel[makeRandomNumber(UInt32(vModel.count))]
+      v.color = vColor[makeRandomNumber(UInt32(vColor.count))]
+      v.numberOfWheels = 2
+    default:
+      v.make = carBrands[makeRandomNumber(UInt32(carBrands.count))]
+      v.model = vModel[makeRandomNumber(UInt32(vModel.count))]
+      v.color = vColor[makeRandomNumber(UInt32(vColor.count))]
+      //    v.Typ
+      v.numberOfWheels = 4
+    }
   }
-  
+
 }
