@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="11759" systemVersion="16C67" minimumToolsVersion="Xcode 7.0" sourceLanguage="Objective-C" userDefinedModelVersionIdentifier="">
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="13772" systemVersion="17D102" minimumToolsVersion="Xcode 7.0" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="KVBeverageType" representedClassName=".KVBeverageType" parentEntity="KVItem" syncable="YES">
         <attribute name="beverageName" attributeType="String" defaultValueString="unset" syncable="YES"/>
         <attribute name="doesContainAlcoholIfYes" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="NO" syncable="YES"/>

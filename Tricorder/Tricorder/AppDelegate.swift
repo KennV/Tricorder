@@ -14,9 +14,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
 
   var window: UIWindow?
   var rootDataController = TricorderDataController()
-  /*
-   Chose the PSK because that is what it inits correctly with
-   I cannot send it to the
+  /**
+   Some Ill Shit First I need to know if I have accepted the EULA _Before_ location Management. Then I can do that in a PLIST prolly from here.
+   
+   https://stackoverflow.com/questions/31203241/how-can-i-use-userdefaults-in-swift/31203348#31203348
+   
+   In the View I can manually define a seque
+   
+   https://www.bignerdranch.com/blog/using-swift-enumerations-makes-segues-safer/
+   
+   And present a setup View Controller that I call from here when the app loads
+   
+     It might have it's own NavCon Set from this NavCon Or Not
+   
+   This takes it further from the test Ideal
+   
    */
 
 

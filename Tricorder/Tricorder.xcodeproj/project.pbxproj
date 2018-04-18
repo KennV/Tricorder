@@ -9,6 +9,15 @@
 /* Begin PBXBuildFile section */
 		1576DA1A8CDC35333FEE1FE6 /* Pods_TricorderUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D41F594E173A9BBDF670D54 /* Pods_TricorderUITests.framework */; };
 		3177BCA0F99F7FECC37E72F7 /* Pods_Tricorder.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3AED9ABCA493871ABCD0BDD5 /* Pods_Tricorder.framework */; };
+		380E9A90207D9D8800EAE199 /* KVMedicineDataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 380E9A87207D9D8700EAE199 /* KVMedicineDataController.swift */; };
+		380E9A91207D9D8800EAE199 /* KVMealDataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 380E9A88207D9D8800EAE199 /* KVMealDataController.swift */; };
+		380E9A92207D9D8800EAE199 /* KVMessageDataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 380E9A89207D9D8800EAE199 /* KVMessageDataController.swift */; };
+		380E9A93207D9D8800EAE199 /* KVBeverageDataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 380E9A8A207D9D8800EAE199 /* KVBeverageDataController.swift */; };
+		380E9A94207D9D8800EAE199 /* KVFoodDataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 380E9A8B207D9D8800EAE199 /* KVFoodDataController.swift */; };
+		380E9A95207D9D8800EAE199 /* KVEventDataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 380E9A8C207D9D8800EAE199 /* KVEventDataController.swift */; };
+		380E9A96207D9D8800EAE199 /* KVPackageDataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 380E9A8D207D9D8800EAE199 /* KVPackageDataController.swift */; };
+		380E9A97207D9D8800EAE199 /* KVPlaceDataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 380E9A8E207D9D8800EAE199 /* KVPlaceDataController.swift */; };
+		380E9A98207D9D8800EAE199 /* KVPersonDataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 380E9A8F207D9D8800EAE199 /* KVPersonDataController.swift */; };
 		3827B0121D9DD3DF004A3582 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3827B0101D9DD3DF004A3582 /* LaunchScreen.storyboard */; };
 		3827B01D1D9DD3DF004A3582 /* TricorderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3827B01C1D9DD3DF004A3582 /* TricorderTests.swift */; };
 		3827B0281D9DD3DF004A3582 /* TricorderUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3827B0271D9DD3DF004A3582 /* TricorderUITests.swift */; };
@@ -28,42 +37,36 @@
 		3827B0951D9DDA2E004A3582 /* KVEntityDataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3827B05A1D9DDA2E004A3582 /* KVEntityDataController.swift */; };
 		3827B0961D9DDA2E004A3582 /* KVItemsDataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3827B05B1D9DDA2E004A3582 /* KVItemsDataController.swift */; };
 		3827B0971D9DDA2E004A3582 /* TricorderDataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3827B05C1D9DDA2E004A3582 /* TricorderDataController.swift */; };
-		3827B0981D9DDA2E004A3582 /* KVBeverageDataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3827B05E1D9DDA2E004A3582 /* KVBeverageDataController.swift */; };
-		3827B0991D9DDA2E004A3582 /* KVEventDataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3827B05F1D9DDA2E004A3582 /* KVEventDataController.swift */; };
-		3827B09A1D9DDA2E004A3582 /* KVFoodDataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3827B0601D9DDA2E004A3582 /* KVFoodDataController.swift */; };
-		3827B09B1D9DDA2E004A3582 /* KVMealDataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3827B0611D9DDA2E004A3582 /* KVMealDataController.swift */; };
-		3827B09C1D9DDA2E004A3582 /* KVMedicineDataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3827B0621D9DDA2E004A3582 /* KVMedicineDataController.swift */; };
-		3827B09D1D9DDA2E004A3582 /* KVMessageDataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3827B0631D9DDA2E004A3582 /* KVMessageDataController.swift */; };
-		3827B09E1D9DDA2E004A3582 /* KVPackageDataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3827B0641D9DDA2E004A3582 /* KVPackageDataController.swift */; };
-		3827B09F1D9DDA2E004A3582 /* KVPersonDataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3827B0651D9DDA2E004A3582 /* KVPersonDataController.swift */; };
-		3827B0A01D9DDA2E004A3582 /* KVPlaceDataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3827B0661D9DDA2E004A3582 /* KVPlaceDataController.swift */; };
-		3827B0A11D9DDA2E004A3582 /* KVBeverageType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3827B0691D9DDA2E004A3582 /* KVBeverageType.swift */; };
-		3827B0A21D9DDA2E004A3582 /* KVEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3827B06B1D9DDA2E004A3582 /* KVEntity.swift */; };
-		3827B0A31D9DDA2E004A3582 /* KVEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3827B06D1D9DDA2E004A3582 /* KVEvent.swift */; };
-		3827B0A41D9DDA2E004A3582 /* KVFoodType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3827B06F1D9DDA2E004A3582 /* KVFoodType.swift */; };
-		3827B0A51D9DDA2E004A3582 /* KVItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3827B0711D9DDA2E004A3582 /* KVItem.swift */; };
-		3827B0A61D9DDA2E004A3582 /* KVMeal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3827B0731D9DDA2E004A3582 /* KVMeal.swift */; };
-		3827B0A71D9DDA2E004A3582 /* KVMedicine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3827B0751D9DDA2E004A3582 /* KVMedicine.swift */; };
-		3827B0A81D9DDA2E004A3582 /* KVMessageMO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3827B0771D9DDA2E004A3582 /* KVMessageMO.swift */; };
-		3827B0A91D9DDA2E004A3582 /* Archive.zip in Resources */ = {isa = PBXBuildFile; fileRef = 3827B0791D9DDA2E004A3582 /* Archive.zip */; };
-		3827B0AA1D9DDA2E004A3582 /* KVPackage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3827B07A1D9DDA2E004A3582 /* KVPackage.swift */; };
-		3827B0AB1D9DDA2E004A3582 /* KVPerson+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3827B07C1D9DDA2E004A3582 /* KVPerson+CoreDataProperties.swift */; };
-		3827B0AC1D9DDA2E004A3582 /* KVPerson.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3827B07D1D9DDA2E004A3582 /* KVPerson.swift */; };
-		3827B0AD1D9DDA2E004A3582 /* KVPlace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3827B07F1D9DDA2E004A3582 /* KVPlace.swift */; };
-		3827B0B01D9DDA2E004A3582 /* KVRootEntityGraphics+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3827B0851D9DDA2E004A3582 /* KVRootEntityGraphics+CoreDataProperties.swift */; };
-		3827B0B11D9DDA2E004A3582 /* KVRootEntityGraphics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3827B0861D9DDA2E004A3582 /* KVRootEntityGraphics.swift */; };
-		3827B0B21D9DDA2E004A3582 /* KVRootEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3827B0871D9DDA2E004A3582 /* KVRootEntity+CoreDataProperties.swift */; };
-		3827B0B31D9DDA2E004A3582 /* KVRootEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3827B0881D9DDA2E004A3582 /* KVRootEntity.swift */; };
-		3827B0B41D9DDA2E004A3582 /* KVRootEntityLocation+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3827B08A1D9DDA2E004A3582 /* KVRootEntityLocation+CoreDataProperties.swift */; };
-		3827B0B51D9DDA2E004A3582 /* KVRootEntityLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3827B08B1D9DDA2E004A3582 /* KVRootEntityLocation.swift */; };
-		3827B0B61D9DDA2E004A3582 /* KVRootEntitySizes+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3827B08D1D9DDA2E004A3582 /* KVRootEntitySizes+CoreDataProperties.swift */; };
-		3827B0B71D9DDA2E004A3582 /* KVRootEntitySizes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3827B08E1D9DDA2E004A3582 /* KVRootEntitySizes.swift */; };
-		3827B0B81D9DDA2E004A3582 /* KVVehicle+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3827B0901D9DDA2E004A3582 /* KVVehicle+CoreDataProperties.swift */; };
-		3827B0B91D9DDA2E004A3582 /* KVVehicle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3827B0911D9DDA2E004A3582 /* KVVehicle.swift */; };
 		3827B0BA1D9DDA2E004A3582 /* Tricorder.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3827B0921D9DDA2E004A3582 /* Tricorder.xcdatamodeld */; };
 		3827B0BC1D9DDDEE004A3582 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3827B0BB1D9DDDEE004A3582 /* Assets.xcassets */; };
 		3827B0BF1D9DDE05004A3582 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3827B0BD1D9DDE05004A3582 /* Main.storyboard */; };
 		38422A2F1DA029ED00667B27 /* TC_DBTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38422A2E1DA029ED00667B27 /* TC_DBTests.swift */; };
+		38760F0E2086E66100A3AC0E /* KDVEULAViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38760F0D2086E66100A3AC0E /* KDVEULAViewController.swift */; };
+		38D128CB201A99F200B0DC7F /* KVVehicle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38D128A2201A99F100B0DC7F /* KVVehicle.swift */; };
+		38D128CC201A99F200B0DC7F /* KVVehicle+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38D128A3201A99F100B0DC7F /* KVVehicle+CoreDataProperties.swift */; };
+		38D128CD201A99F200B0DC7F /* KVPerson.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38D128A5201A99F100B0DC7F /* KVPerson.swift */; };
+		38D128CE201A99F200B0DC7F /* KVPerson+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38D128A6201A99F100B0DC7F /* KVPerson+CoreDataProperties.swift */; };
+		38D128CF201A99F200B0DC7F /* KVEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38D128A8201A99F100B0DC7F /* KVEntity.swift */; };
+		38D128D0201A99F200B0DC7F /* KVMessageMO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38D128AA201A99F100B0DC7F /* KVMessageMO.swift */; };
+		38D128D1201A99F200B0DC7F /* KVItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38D128AC201A99F100B0DC7F /* KVItem.swift */; };
+		38D128D2201A99F200B0DC7F /* KVBeverageType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38D128AE201A99F100B0DC7F /* KVBeverageType.swift */; };
+		38D128D3201A99F200B0DC7F /* KVMedicine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38D128B0201A99F100B0DC7F /* KVMedicine.swift */; };
+		38D128D4201A99F200B0DC7F /* KVFoodType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38D128B2201A99F100B0DC7F /* KVFoodType.swift */; };
+		38D128D5201A99F200B0DC7F /* KVMeal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38D128B4201A99F100B0DC7F /* KVMeal.swift */; };
+		38D128D6201A99F200B0DC7F /* KVRootEntityLocation+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38D128B7201A99F100B0DC7F /* KVRootEntityLocation+CoreDataProperties.swift */; };
+		38D128D7201A99F200B0DC7F /* KVRootEntityLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38D128B8201A99F100B0DC7F /* KVRootEntityLocation.swift */; };
+		38D128D8201A99F200B0DC7F /* KVRootEntitySizes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38D128BA201A99F100B0DC7F /* KVRootEntitySizes.swift */; };
+		38D128D9201A99F200B0DC7F /* KVRootEntitySizes+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38D128BB201A99F100B0DC7F /* KVRootEntitySizes+CoreDataProperties.swift */; };
+		38D128DA201A99F200B0DC7F /* KVRootEntityGraphics+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38D128BD201A99F100B0DC7F /* KVRootEntityGraphics+CoreDataProperties.swift */; };
+		38D128DB201A99F200B0DC7F /* KVRootEntityGraphics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38D128BE201A99F100B0DC7F /* KVRootEntityGraphics.swift */; };
+		38D128DC201A99F200B0DC7F /* KVRootEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38D128BF201A99F100B0DC7F /* KVRootEntity+CoreDataProperties.swift */; };
+		38D128DD201A99F200B0DC7F /* KVRootEntityData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38D128C1201A99F100B0DC7F /* KVRootEntityData.swift */; };
+		38D128DE201A99F200B0DC7F /* KVRootEntityData+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38D128C2201A99F100B0DC7F /* KVRootEntityData+CoreDataProperties.swift */; };
+		38D128DF201A99F200B0DC7F /* KVRootEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38D128C3201A99F100B0DC7F /* KVRootEntity.swift */; };
+		38D128E0201A99F200B0DC7F /* KVPlace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38D128C5201A99F100B0DC7F /* KVPlace.swift */; };
+		38D128E1201A99F200B0DC7F /* KVEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38D128C7201A99F100B0DC7F /* KVEvent.swift */; };
+		38D128E2201A99F200B0DC7F /* Archive.zip in Resources */ = {isa = PBXBuildFile; fileRef = 38D128C9201A99F100B0DC7F /* Archive.zip */; };
+		38D128E3201A99F200B0DC7F /* KVPackage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38D128CA201A99F100B0DC7F /* KVPackage.swift */; };
 		869D5DE77D71CA01D10DD3CE /* Pods_TricorderTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E3C7E79C8701F30A0CE3F864 /* Pods_TricorderTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -88,6 +91,15 @@
 		0C1934DDF6A459FDED11A0C8 /* Pods-TricorderTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TricorderTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TricorderTests/Pods-TricorderTests.debug.xcconfig"; sourceTree = "<group>"; };
 		1D41F594E173A9BBDF670D54 /* Pods_TricorderUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TricorderUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		32DE7EB22DA262CC3952C278 /* Pods-TricorderTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TricorderTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-TricorderTests/Pods-TricorderTests.release.xcconfig"; sourceTree = "<group>"; };
+		380E9A87207D9D8700EAE199 /* KVMedicineDataController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KVMedicineDataController.swift; sourceTree = "<group>"; };
+		380E9A88207D9D8800EAE199 /* KVMealDataController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KVMealDataController.swift; sourceTree = "<group>"; };
+		380E9A89207D9D8800EAE199 /* KVMessageDataController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KVMessageDataController.swift; sourceTree = "<group>"; };
+		380E9A8A207D9D8800EAE199 /* KVBeverageDataController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KVBeverageDataController.swift; sourceTree = "<group>"; };
+		380E9A8B207D9D8800EAE199 /* KVFoodDataController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KVFoodDataController.swift; sourceTree = "<group>"; };
+		380E9A8C207D9D8800EAE199 /* KVEventDataController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KVEventDataController.swift; sourceTree = "<group>"; };
+		380E9A8D207D9D8800EAE199 /* KVPackageDataController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KVPackageDataController.swift; sourceTree = "<group>"; };
+		380E9A8E207D9D8800EAE199 /* KVPlaceDataController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KVPlaceDataController.swift; sourceTree = "<group>"; };
+		380E9A8F207D9D8800EAE199 /* KVPersonDataController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KVPersonDataController.swift; sourceTree = "<group>"; };
 		3827B0021D9DD3DE004A3582 /* Tricorder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tricorder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3827B0111D9DD3DF004A3582 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3827B0131D9DD3DF004A3582 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -113,44 +125,36 @@
 		3827B05A1D9DDA2E004A3582 /* KVEntityDataController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KVEntityDataController.swift; sourceTree = "<group>"; };
 		3827B05B1D9DDA2E004A3582 /* KVItemsDataController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KVItemsDataController.swift; sourceTree = "<group>"; };
 		3827B05C1D9DDA2E004A3582 /* TricorderDataController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TricorderDataController.swift; sourceTree = "<group>"; };
-		3827B05E1D9DDA2E004A3582 /* KVBeverageDataController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KVBeverageDataController.swift; sourceTree = "<group>"; };
-		3827B05F1D9DDA2E004A3582 /* KVEventDataController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KVEventDataController.swift; sourceTree = "<group>"; };
-		3827B0601D9DDA2E004A3582 /* KVFoodDataController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KVFoodDataController.swift; sourceTree = "<group>"; };
-		3827B0611D9DDA2E004A3582 /* KVMealDataController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KVMealDataController.swift; sourceTree = "<group>"; };
-		3827B0621D9DDA2E004A3582 /* KVMedicineDataController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KVMedicineDataController.swift; sourceTree = "<group>"; };
-		3827B0631D9DDA2E004A3582 /* KVMessageDataController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KVMessageDataController.swift; sourceTree = "<group>"; };
-		3827B0641D9DDA2E004A3582 /* KVPackageDataController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KVPackageDataController.swift; sourceTree = "<group>"; };
-		3827B0651D9DDA2E004A3582 /* KVPersonDataController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KVPersonDataController.swift; sourceTree = "<group>"; };
-		3827B0661D9DDA2E004A3582 /* KVPlaceDataController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KVPlaceDataController.swift; sourceTree = "<group>"; };
-		3827B0691D9DDA2E004A3582 /* KVBeverageType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KVBeverageType.swift; sourceTree = "<group>"; };
-		3827B06B1D9DDA2E004A3582 /* KVEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KVEntity.swift; sourceTree = "<group>"; };
-		3827B06D1D9DDA2E004A3582 /* KVEvent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KVEvent.swift; sourceTree = "<group>"; };
-		3827B06F1D9DDA2E004A3582 /* KVFoodType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KVFoodType.swift; sourceTree = "<group>"; };
-		3827B0711D9DDA2E004A3582 /* KVItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KVItem.swift; sourceTree = "<group>"; };
-		3827B0731D9DDA2E004A3582 /* KVMeal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KVMeal.swift; sourceTree = "<group>"; };
-		3827B0751D9DDA2E004A3582 /* KVMedicine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KVMedicine.swift; sourceTree = "<group>"; };
-		3827B0771D9DDA2E004A3582 /* KVMessageMO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KVMessageMO.swift; sourceTree = "<group>"; };
-		3827B0791D9DDA2E004A3582 /* Archive.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = Archive.zip; sourceTree = "<group>"; };
-		3827B07A1D9DDA2E004A3582 /* KVPackage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KVPackage.swift; sourceTree = "<group>"; };
-		3827B07C1D9DDA2E004A3582 /* KVPerson+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "KVPerson+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		3827B07D1D9DDA2E004A3582 /* KVPerson.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KVPerson.swift; sourceTree = "<group>"; };
-		3827B07F1D9DDA2E004A3582 /* KVPlace.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KVPlace.swift; sourceTree = "<group>"; };
-		3827B0821D9DDA2E004A3582 /* KVRootEntityData+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "KVRootEntityData+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		3827B0831D9DDA2E004A3582 /* KVRootEntityData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KVRootEntityData.swift; sourceTree = "<group>"; };
-		3827B0851D9DDA2E004A3582 /* KVRootEntityGraphics+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "KVRootEntityGraphics+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		3827B0861D9DDA2E004A3582 /* KVRootEntityGraphics.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KVRootEntityGraphics.swift; sourceTree = "<group>"; };
-		3827B0871D9DDA2E004A3582 /* KVRootEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "KVRootEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		3827B0881D9DDA2E004A3582 /* KVRootEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KVRootEntity.swift; sourceTree = "<group>"; };
-		3827B08A1D9DDA2E004A3582 /* KVRootEntityLocation+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "KVRootEntityLocation+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		3827B08B1D9DDA2E004A3582 /* KVRootEntityLocation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KVRootEntityLocation.swift; sourceTree = "<group>"; };
-		3827B08D1D9DDA2E004A3582 /* KVRootEntitySizes+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "KVRootEntitySizes+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		3827B08E1D9DDA2E004A3582 /* KVRootEntitySizes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KVRootEntitySizes.swift; sourceTree = "<group>"; };
-		3827B0901D9DDA2E004A3582 /* KVVehicle+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "KVVehicle+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		3827B0911D9DDA2E004A3582 /* KVVehicle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KVVehicle.swift; sourceTree = "<group>"; };
 		3827B0931D9DDA2E004A3582 /* Tricorder.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Tricorder.xcdatamodel; sourceTree = "<group>"; };
 		3827B0BB1D9DDDEE004A3582 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3827B0BE1D9DDE05004A3582 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		38422A2E1DA029ED00667B27 /* TC_DBTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TC_DBTests.swift; sourceTree = "<group>"; };
+		38760F0D2086E66100A3AC0E /* KDVEULAViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KDVEULAViewController.swift; sourceTree = "<group>"; };
+		38D128A2201A99F100B0DC7F /* KVVehicle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KVVehicle.swift; sourceTree = "<group>"; };
+		38D128A3201A99F100B0DC7F /* KVVehicle+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "KVVehicle+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		38D128A5201A99F100B0DC7F /* KVPerson.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KVPerson.swift; sourceTree = "<group>"; };
+		38D128A6201A99F100B0DC7F /* KVPerson+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "KVPerson+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		38D128A8201A99F100B0DC7F /* KVEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KVEntity.swift; sourceTree = "<group>"; };
+		38D128AA201A99F100B0DC7F /* KVMessageMO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KVMessageMO.swift; sourceTree = "<group>"; };
+		38D128AC201A99F100B0DC7F /* KVItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KVItem.swift; sourceTree = "<group>"; };
+		38D128AE201A99F100B0DC7F /* KVBeverageType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KVBeverageType.swift; sourceTree = "<group>"; };
+		38D128B0201A99F100B0DC7F /* KVMedicine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KVMedicine.swift; sourceTree = "<group>"; };
+		38D128B2201A99F100B0DC7F /* KVFoodType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KVFoodType.swift; sourceTree = "<group>"; };
+		38D128B4201A99F100B0DC7F /* KVMeal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KVMeal.swift; sourceTree = "<group>"; };
+		38D128B7201A99F100B0DC7F /* KVRootEntityLocation+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "KVRootEntityLocation+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		38D128B8201A99F100B0DC7F /* KVRootEntityLocation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KVRootEntityLocation.swift; sourceTree = "<group>"; };
+		38D128BA201A99F100B0DC7F /* KVRootEntitySizes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KVRootEntitySizes.swift; sourceTree = "<group>"; };
+		38D128BB201A99F100B0DC7F /* KVRootEntitySizes+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "KVRootEntitySizes+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		38D128BD201A99F100B0DC7F /* KVRootEntityGraphics+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "KVRootEntityGraphics+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		38D128BE201A99F100B0DC7F /* KVRootEntityGraphics.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KVRootEntityGraphics.swift; sourceTree = "<group>"; };
+		38D128BF201A99F100B0DC7F /* KVRootEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "KVRootEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		38D128C1201A99F100B0DC7F /* KVRootEntityData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KVRootEntityData.swift; sourceTree = "<group>"; };
+		38D128C2201A99F100B0DC7F /* KVRootEntityData+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "KVRootEntityData+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		38D128C3201A99F100B0DC7F /* KVRootEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KVRootEntity.swift; sourceTree = "<group>"; };
+		38D128C5201A99F100B0DC7F /* KVPlace.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KVPlace.swift; sourceTree = "<group>"; };
+		38D128C7201A99F100B0DC7F /* KVEvent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KVEvent.swift; sourceTree = "<group>"; };
+		38D128C9201A99F100B0DC7F /* Archive.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = Archive.zip; sourceTree = "<group>"; };
+		38D128CA201A99F100B0DC7F /* KVPackage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KVPackage.swift; sourceTree = "<group>"; };
 		3AED9ABCA493871ABCD0BDD5 /* Pods_Tricorder.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Tricorder.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7ACFF9C3389F9D2151761BFC /* Pods-Tricorder.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tricorder.release.xcconfig"; path = "Pods/Target Support Files/Pods-Tricorder/Pods-Tricorder.release.xcconfig"; sourceTree = "<group>"; };
 		AACC2D391C8216DE0EABC0C7 /* Pods-TricorderUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TricorderUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TricorderUITests/Pods-TricorderUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -258,6 +262,7 @@
 				3827B03B1D9DD998004A3582 /* Editors */,
 				3827B03E1D9DD998004A3582 /* MapView */,
 				3827B0421D9DD998004A3582 /* PrimeTVC */,
+				38760F0F2086E68300A3AC0E /* EULA */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -325,8 +330,8 @@
 			children = (
 				3827B0581D9DDA2E004A3582 /* Abstract */,
 				3827B05D1D9DDA2E004A3582 /* EntityControllers */,
-				3827B0671D9DDA2E004A3582 /* Models */,
 				3827B0921D9DDA2E004A3582 /* Tricorder.xcdatamodeld */,
+				38D128A0201A99F100B0DC7F /* Models */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -345,185 +350,26 @@
 		3827B05D1D9DDA2E004A3582 /* EntityControllers */ = {
 			isa = PBXGroup;
 			children = (
-				3827B05E1D9DDA2E004A3582 /* KVBeverageDataController.swift */,
-				3827B05F1D9DDA2E004A3582 /* KVEventDataController.swift */,
-				3827B0601D9DDA2E004A3582 /* KVFoodDataController.swift */,
-				3827B0611D9DDA2E004A3582 /* KVMealDataController.swift */,
-				3827B0621D9DDA2E004A3582 /* KVMedicineDataController.swift */,
-				3827B0631D9DDA2E004A3582 /* KVMessageDataController.swift */,
-				3827B0641D9DDA2E004A3582 /* KVPackageDataController.swift */,
-				3827B0651D9DDA2E004A3582 /* KVPersonDataController.swift */,
-				3827B0661D9DDA2E004A3582 /* KVPlaceDataController.swift */,
+				380E9A8A207D9D8800EAE199 /* KVBeverageDataController.swift */,
+				380E9A8C207D9D8800EAE199 /* KVEventDataController.swift */,
+				380E9A8B207D9D8800EAE199 /* KVFoodDataController.swift */,
+				380E9A88207D9D8800EAE199 /* KVMealDataController.swift */,
+				380E9A87207D9D8700EAE199 /* KVMedicineDataController.swift */,
+				380E9A89207D9D8800EAE199 /* KVMessageDataController.swift */,
+				380E9A8D207D9D8800EAE199 /* KVPackageDataController.swift */,
+				380E9A8F207D9D8800EAE199 /* KVPersonDataController.swift */,
+				380E9A8E207D9D8800EAE199 /* KVPlaceDataController.swift */,
 			);
 			path = EntityControllers;
 			sourceTree = "<group>";
 		};
-		3827B0671D9DDA2E004A3582 /* Models */ = {
+		38760F0F2086E68300A3AC0E /* EULA */ = {
 			isa = PBXGroup;
 			children = (
-				3827B0681D9DDA2E004A3582 /* beverage */,
-				3827B06A1D9DDA2E004A3582 /* entity */,
-				3827B06C1D9DDA2E004A3582 /* event */,
-				3827B06E1D9DDA2E004A3582 /* food */,
-				3827B0701D9DDA2E004A3582 /* Item */,
-				3827B0721D9DDA2E004A3582 /* meal */,
-				3827B0741D9DDA2E004A3582 /* medicine */,
-				3827B0761D9DDA2E004A3582 /* messageMO */,
-				3827B0781D9DDA2E004A3582 /* package */,
-				3827B07B1D9DDA2E004A3582 /* person */,
-				3827B07E1D9DDA2E004A3582 /* place */,
-				3827B0801D9DDA2E004A3582 /* root */,
-				3827B08F1D9DDA2E004A3582 /* vehicle */,
+				38760F0D2086E66100A3AC0E /* KDVEULAViewController.swift */,
 			);
-			path = Models;
-			sourceTree = "<group>";
-		};
-		3827B0681D9DDA2E004A3582 /* beverage */ = {
-			isa = PBXGroup;
-			children = (
-				3827B0691D9DDA2E004A3582 /* KVBeverageType.swift */,
-			);
-			path = beverage;
-			sourceTree = "<group>";
-		};
-		3827B06A1D9DDA2E004A3582 /* entity */ = {
-			isa = PBXGroup;
-			children = (
-				3827B06B1D9DDA2E004A3582 /* KVEntity.swift */,
-			);
-			path = entity;
-			sourceTree = "<group>";
-		};
-		3827B06C1D9DDA2E004A3582 /* event */ = {
-			isa = PBXGroup;
-			children = (
-				3827B06D1D9DDA2E004A3582 /* KVEvent.swift */,
-			);
-			path = event;
-			sourceTree = "<group>";
-		};
-		3827B06E1D9DDA2E004A3582 /* food */ = {
-			isa = PBXGroup;
-			children = (
-				3827B06F1D9DDA2E004A3582 /* KVFoodType.swift */,
-			);
-			path = food;
-			sourceTree = "<group>";
-		};
-		3827B0701D9DDA2E004A3582 /* Item */ = {
-			isa = PBXGroup;
-			children = (
-				3827B0711D9DDA2E004A3582 /* KVItem.swift */,
-			);
-			path = Item;
-			sourceTree = "<group>";
-		};
-		3827B0721D9DDA2E004A3582 /* meal */ = {
-			isa = PBXGroup;
-			children = (
-				3827B0731D9DDA2E004A3582 /* KVMeal.swift */,
-			);
-			path = meal;
-			sourceTree = "<group>";
-		};
-		3827B0741D9DDA2E004A3582 /* medicine */ = {
-			isa = PBXGroup;
-			children = (
-				3827B0751D9DDA2E004A3582 /* KVMedicine.swift */,
-			);
-			path = medicine;
-			sourceTree = "<group>";
-		};
-		3827B0761D9DDA2E004A3582 /* messageMO */ = {
-			isa = PBXGroup;
-			children = (
-				3827B0771D9DDA2E004A3582 /* KVMessageMO.swift */,
-			);
-			path = messageMO;
-			sourceTree = "<group>";
-		};
-		3827B0781D9DDA2E004A3582 /* package */ = {
-			isa = PBXGroup;
-			children = (
-				3827B0791D9DDA2E004A3582 /* Archive.zip */,
-				3827B07A1D9DDA2E004A3582 /* KVPackage.swift */,
-			);
-			path = package;
-			sourceTree = "<group>";
-		};
-		3827B07B1D9DDA2E004A3582 /* person */ = {
-			isa = PBXGroup;
-			children = (
-				3827B07C1D9DDA2E004A3582 /* KVPerson+CoreDataProperties.swift */,
-				3827B07D1D9DDA2E004A3582 /* KVPerson.swift */,
-			);
-			path = person;
-			sourceTree = "<group>";
-		};
-		3827B07E1D9DDA2E004A3582 /* place */ = {
-			isa = PBXGroup;
-			children = (
-				3827B07F1D9DDA2E004A3582 /* KVPlace.swift */,
-			);
-			path = place;
-			sourceTree = "<group>";
-		};
-		3827B0801D9DDA2E004A3582 /* root */ = {
-			isa = PBXGroup;
-			children = (
-				3827B0811D9DDA2E004A3582 /* data */,
-				3827B0841D9DDA2E004A3582 /* graphics */,
-				3827B0871D9DDA2E004A3582 /* KVRootEntity+CoreDataProperties.swift */,
-				3827B0881D9DDA2E004A3582 /* KVRootEntity.swift */,
-				3827B0891D9DDA2E004A3582 /* location */,
-				3827B08C1D9DDA2E004A3582 /* sizes */,
-			);
-			path = root;
-			sourceTree = "<group>";
-		};
-		3827B0811D9DDA2E004A3582 /* data */ = {
-			isa = PBXGroup;
-			children = (
-				3827B0821D9DDA2E004A3582 /* KVRootEntityData+CoreDataProperties.swift */,
-				3827B0831D9DDA2E004A3582 /* KVRootEntityData.swift */,
-			);
-			path = data;
-			sourceTree = "<group>";
-		};
-		3827B0841D9DDA2E004A3582 /* graphics */ = {
-			isa = PBXGroup;
-			children = (
-				3827B0851D9DDA2E004A3582 /* KVRootEntityGraphics+CoreDataProperties.swift */,
-				3827B0861D9DDA2E004A3582 /* KVRootEntityGraphics.swift */,
-			);
-			path = graphics;
-			sourceTree = "<group>";
-		};
-		3827B0891D9DDA2E004A3582 /* location */ = {
-			isa = PBXGroup;
-			children = (
-				3827B08A1D9DDA2E004A3582 /* KVRootEntityLocation+CoreDataProperties.swift */,
-				3827B08B1D9DDA2E004A3582 /* KVRootEntityLocation.swift */,
-			);
-			path = location;
-			sourceTree = "<group>";
-		};
-		3827B08C1D9DDA2E004A3582 /* sizes */ = {
-			isa = PBXGroup;
-			children = (
-				3827B08D1D9DDA2E004A3582 /* KVRootEntitySizes+CoreDataProperties.swift */,
-				3827B08E1D9DDA2E004A3582 /* KVRootEntitySizes.swift */,
-			);
-			path = sizes;
-			sourceTree = "<group>";
-		};
-		3827B08F1D9DDA2E004A3582 /* vehicle */ = {
-			isa = PBXGroup;
-			children = (
-				3827B0901D9DDA2E004A3582 /* KVVehicle+CoreDataProperties.swift */,
-				3827B0911D9DDA2E004A3582 /* KVVehicle.swift */,
-			);
-			path = vehicle;
+			name = EULA;
+			path = "New Group";
 			sourceTree = "<group>";
 		};
 		38A9475A1D9DE38D002D7821 /* GUI */ = {
@@ -533,6 +379,174 @@
 				3827B0BB1D9DDDEE004A3582 /* Assets.xcassets */,
 			);
 			name = GUI;
+			sourceTree = "<group>";
+		};
+		38D128A0201A99F100B0DC7F /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				38D128A1201A99F100B0DC7F /* vehicle */,
+				38D128A4201A99F100B0DC7F /* person */,
+				38D128A7201A99F100B0DC7F /* entity */,
+				38D128A9201A99F100B0DC7F /* messageMO */,
+				38D128AB201A99F100B0DC7F /* Item */,
+				38D128AD201A99F100B0DC7F /* beverage */,
+				38D128AF201A99F100B0DC7F /* medicine */,
+				38D128B1201A99F100B0DC7F /* food */,
+				38D128B3201A99F100B0DC7F /* meal */,
+				38D128B5201A99F100B0DC7F /* root */,
+				38D128C4201A99F100B0DC7F /* place */,
+				38D128C6201A99F100B0DC7F /* event */,
+				38D128C8201A99F100B0DC7F /* package */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		38D128A1201A99F100B0DC7F /* vehicle */ = {
+			isa = PBXGroup;
+			children = (
+				38D128A2201A99F100B0DC7F /* KVVehicle.swift */,
+				38D128A3201A99F100B0DC7F /* KVVehicle+CoreDataProperties.swift */,
+			);
+			path = vehicle;
+			sourceTree = "<group>";
+		};
+		38D128A4201A99F100B0DC7F /* person */ = {
+			isa = PBXGroup;
+			children = (
+				38D128A5201A99F100B0DC7F /* KVPerson.swift */,
+				38D128A6201A99F100B0DC7F /* KVPerson+CoreDataProperties.swift */,
+			);
+			path = person;
+			sourceTree = "<group>";
+		};
+		38D128A7201A99F100B0DC7F /* entity */ = {
+			isa = PBXGroup;
+			children = (
+				38D128A8201A99F100B0DC7F /* KVEntity.swift */,
+			);
+			path = entity;
+			sourceTree = "<group>";
+		};
+		38D128A9201A99F100B0DC7F /* messageMO */ = {
+			isa = PBXGroup;
+			children = (
+				38D128AA201A99F100B0DC7F /* KVMessageMO.swift */,
+			);
+			path = messageMO;
+			sourceTree = "<group>";
+		};
+		38D128AB201A99F100B0DC7F /* Item */ = {
+			isa = PBXGroup;
+			children = (
+				38D128AC201A99F100B0DC7F /* KVItem.swift */,
+			);
+			path = Item;
+			sourceTree = "<group>";
+		};
+		38D128AD201A99F100B0DC7F /* beverage */ = {
+			isa = PBXGroup;
+			children = (
+				38D128AE201A99F100B0DC7F /* KVBeverageType.swift */,
+			);
+			path = beverage;
+			sourceTree = "<group>";
+		};
+		38D128AF201A99F100B0DC7F /* medicine */ = {
+			isa = PBXGroup;
+			children = (
+				38D128B0201A99F100B0DC7F /* KVMedicine.swift */,
+			);
+			path = medicine;
+			sourceTree = "<group>";
+		};
+		38D128B1201A99F100B0DC7F /* food */ = {
+			isa = PBXGroup;
+			children = (
+				38D128B2201A99F100B0DC7F /* KVFoodType.swift */,
+			);
+			path = food;
+			sourceTree = "<group>";
+		};
+		38D128B3201A99F100B0DC7F /* meal */ = {
+			isa = PBXGroup;
+			children = (
+				38D128B4201A99F100B0DC7F /* KVMeal.swift */,
+			);
+			path = meal;
+			sourceTree = "<group>";
+		};
+		38D128B5201A99F100B0DC7F /* root */ = {
+			isa = PBXGroup;
+			children = (
+				38D128B6201A99F100B0DC7F /* location */,
+				38D128B9201A99F100B0DC7F /* sizes */,
+				38D128BC201A99F100B0DC7F /* graphics */,
+				38D128BF201A99F100B0DC7F /* KVRootEntity+CoreDataProperties.swift */,
+				38D128C0201A99F100B0DC7F /* data */,
+				38D128C3201A99F100B0DC7F /* KVRootEntity.swift */,
+			);
+			path = root;
+			sourceTree = "<group>";
+		};
+		38D128B6201A99F100B0DC7F /* location */ = {
+			isa = PBXGroup;
+			children = (
+				38D128B7201A99F100B0DC7F /* KVRootEntityLocation+CoreDataProperties.swift */,
+				38D128B8201A99F100B0DC7F /* KVRootEntityLocation.swift */,
+			);
+			path = location;
+			sourceTree = "<group>";
+		};
+		38D128B9201A99F100B0DC7F /* sizes */ = {
+			isa = PBXGroup;
+			children = (
+				38D128BA201A99F100B0DC7F /* KVRootEntitySizes.swift */,
+				38D128BB201A99F100B0DC7F /* KVRootEntitySizes+CoreDataProperties.swift */,
+			);
+			path = sizes;
+			sourceTree = "<group>";
+		};
+		38D128BC201A99F100B0DC7F /* graphics */ = {
+			isa = PBXGroup;
+			children = (
+				38D128BD201A99F100B0DC7F /* KVRootEntityGraphics+CoreDataProperties.swift */,
+				38D128BE201A99F100B0DC7F /* KVRootEntityGraphics.swift */,
+			);
+			path = graphics;
+			sourceTree = "<group>";
+		};
+		38D128C0201A99F100B0DC7F /* data */ = {
+			isa = PBXGroup;
+			children = (
+				38D128C1201A99F100B0DC7F /* KVRootEntityData.swift */,
+				38D128C2201A99F100B0DC7F /* KVRootEntityData+CoreDataProperties.swift */,
+			);
+			path = data;
+			sourceTree = "<group>";
+		};
+		38D128C4201A99F100B0DC7F /* place */ = {
+			isa = PBXGroup;
+			children = (
+				38D128C5201A99F100B0DC7F /* KVPlace.swift */,
+			);
+			path = place;
+			sourceTree = "<group>";
+		};
+		38D128C6201A99F100B0DC7F /* event */ = {
+			isa = PBXGroup;
+			children = (
+				38D128C7201A99F100B0DC7F /* KVEvent.swift */,
+			);
+			path = event;
+			sourceTree = "<group>";
+		};
+		38D128C8201A99F100B0DC7F /* package */ = {
+			isa = PBXGroup;
+			children = (
+				38D128C9201A99F100B0DC7F /* Archive.zip */,
+				38D128CA201A99F100B0DC7F /* KVPackage.swift */,
+			);
+			path = package;
 			sourceTree = "<group>";
 		};
 		697E68D884BEDE98D6EB6F28 /* Pods */ = {
@@ -625,18 +639,20 @@
 					3827B0011D9DD3DE004A3582 = {
 						CreatedOnToolsVersion = 8.0;
 						DevelopmentTeam = LQ75G5YK98;
-						LastSwiftMigration = 0800;
+						LastSwiftMigration = 0920;
 						ProvisioningStyle = Automatic;
 					};
 					3827B0171D9DD3DF004A3582 = {
 						CreatedOnToolsVersion = 8.0;
 						DevelopmentTeam = LQ75G5YK98;
+						LastSwiftMigration = 0920;
 						ProvisioningStyle = Automatic;
 						TestTargetID = 3827B0011D9DD3DE004A3582;
 					};
 					3827B0221D9DD3DF004A3582 = {
 						CreatedOnToolsVersion = 8.0;
 						DevelopmentTeam = LQ75G5YK98;
+						LastSwiftMigration = 0920;
 						ProvisioningStyle = Automatic;
 						TestTargetID = 3827B0011D9DD3DE004A3582;
 					};
@@ -669,7 +685,7 @@
 			files = (
 				3827B0121D9DD3DF004A3582 /* LaunchScreen.storyboard in Resources */,
 				3827B0BC1D9DDDEE004A3582 /* Assets.xcassets in Resources */,
-				3827B0A91D9DDA2E004A3582 /* Archive.zip in Resources */,
+				38D128E2201A99F200B0DC7F /* Archive.zip in Resources */,
 				3827B0BF1D9DDE05004A3582 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -819,50 +835,53 @@
 			buildActionMask = 2147483647;
 			files = (
 				3827B04E1D9DD998004A3582 /* KVBasicCustomCell.swift in Sources */,
-				3827B0AC1D9DDA2E004A3582 /* KVPerson.swift in Sources */,
-				3827B0B11D9DDA2E004A3582 /* KVRootEntityGraphics.swift in Sources */,
-				3827B0A31D9DDA2E004A3582 /* KVEvent.swift in Sources */,
-				3827B0A51D9DDA2E004A3582 /* KVItem.swift in Sources */,
+				38D128DA201A99F200B0DC7F /* KVRootEntityGraphics+CoreDataProperties.swift in Sources */,
 				3827B0971D9DDA2E004A3582 /* TricorderDataController.swift in Sources */,
-				3827B0AA1D9DDA2E004A3582 /* KVPackage.swift in Sources */,
-				3827B0B91D9DDA2E004A3582 /* KVVehicle.swift in Sources */,
+				380E9A91207D9D8800EAE199 /* KVMealDataController.swift in Sources */,
+				38D128CC201A99F200B0DC7F /* KVVehicle+CoreDataProperties.swift in Sources */,
+				38D128D5201A99F200B0DC7F /* KVMeal.swift in Sources */,
+				38D128DC201A99F200B0DC7F /* KVRootEntity+CoreDataProperties.swift in Sources */,
 				3827B04D1D9DD998004A3582 /* pvtcEXT.swift in Sources */,
 				3827B0491D9DD998004A3582 /* KVPersonEditorTableViewController.swift in Sources */,
-				3827B0A81D9DDA2E004A3582 /* KVMessageMO.swift in Sources */,
+				38D128D0201A99F200B0DC7F /* KVMessageMO.swift in Sources */,
+				38D128DB201A99F200B0DC7F /* KVRootEntityGraphics.swift in Sources */,
+				38D128DE201A99F200B0DC7F /* KVRootEntityData+CoreDataProperties.swift in Sources */,
 				3827B0961D9DDA2E004A3582 /* KVItemsDataController.swift in Sources */,
+				38D128D7201A99F200B0DC7F /* KVRootEntityLocation.swift in Sources */,
+				380E9A98207D9D8800EAE199 /* KVPersonDataController.swift in Sources */,
 				3827B0481D9DD998004A3582 /* KVCameraViewController.swift in Sources */,
+				38D128D9201A99F200B0DC7F /* KVRootEntitySizes+CoreDataProperties.swift in Sources */,
+				38760F0E2086E66100A3AC0E /* KDVEULAViewController.swift in Sources */,
 				3827B0391D9DD923004A3582 /* AppDelegate.swift in Sources */,
 				3827B04C1D9DD998004A3582 /* KVPrimeTVCon.swift in Sources */,
+				38D128D4201A99F200B0DC7F /* KVFoodType.swift in Sources */,
+				38D128D3201A99F200B0DC7F /* KVMedicine.swift in Sources */,
+				38D128CE201A99F200B0DC7F /* KVPerson+CoreDataProperties.swift in Sources */,
+				380E9A92207D9D8800EAE199 /* KVMessageDataController.swift in Sources */,
 				3827B04A1D9DD998004A3582 /* KVMapViewCon.swift in Sources */,
+				38D128CF201A99F200B0DC7F /* KVEntity.swift in Sources */,
 				3827B0BA1D9DDA2E004A3582 /* Tricorder.xcdatamodeld in Sources */,
-				3827B0AB1D9DDA2E004A3582 /* KVPerson+CoreDataProperties.swift in Sources */,
-				3827B0B41D9DDA2E004A3582 /* KVRootEntityLocation+CoreDataProperties.swift in Sources */,
+				38D128D6201A99F200B0DC7F /* KVRootEntityLocation+CoreDataProperties.swift in Sources */,
+				380E9A97207D9D8800EAE199 /* KVPlaceDataController.swift in Sources */,
+				380E9A96207D9D8800EAE199 /* KVPackageDataController.swift in Sources */,
 				3827B04B1D9DD998004A3582 /* KVAnnotationItem.swift in Sources */,
-				3827B0A01D9DDA2E004A3582 /* KVPlaceDataController.swift in Sources */,
-				3827B0B21D9DDA2E004A3582 /* KVRootEntity+CoreDataProperties.swift in Sources */,
+				380E9A94207D9D8800EAE199 /* KVFoodDataController.swift in Sources */,
+				380E9A93207D9D8800EAE199 /* KVBeverageDataController.swift in Sources */,
+				38D128D2201A99F200B0DC7F /* KVBeverageType.swift in Sources */,
+				38D128DF201A99F200B0DC7F /* KVRootEntity.swift in Sources */,
 				3827B0951D9DDA2E004A3582 /* KVEntityDataController.swift in Sources */,
-				3827B09E1D9DDA2E004A3582 /* KVPackageDataController.swift in Sources */,
-				3827B0A71D9DDA2E004A3582 /* KVMedicine.swift in Sources */,
-				3827B0B31D9DDA2E004A3582 /* KVRootEntity.swift in Sources */,
-				3827B0A61D9DDA2E004A3582 /* KVMeal.swift in Sources */,
+				38D128D8201A99F200B0DC7F /* KVRootEntitySizes.swift in Sources */,
+				38D128D1201A99F200B0DC7F /* KVItem.swift in Sources */,
+				38D128E3201A99F200B0DC7F /* KVPackage.swift in Sources */,
+				38D128E0201A99F200B0DC7F /* KVPlace.swift in Sources */,
 				3827B04F1D9DD998004A3582 /* KVRatingView.swift in Sources */,
-				3827B09A1D9DDA2E004A3582 /* KVFoodDataController.swift in Sources */,
-				3827B0B61D9DDA2E004A3582 /* KVRootEntitySizes+CoreDataProperties.swift in Sources */,
-				3827B09F1D9DDA2E004A3582 /* KVPersonDataController.swift in Sources */,
+				38D128E1201A99F200B0DC7F /* KVEvent.swift in Sources */,
+				380E9A90207D9D8800EAE199 /* KVMedicineDataController.swift in Sources */,
+				38D128DD201A99F200B0DC7F /* KVRootEntityData.swift in Sources */,
 				3827B0941D9DDA2E004A3582 /* AbstractDataController.swift in Sources */,
-				3827B0B81D9DDA2E004A3582 /* KVVehicle+CoreDataProperties.swift in Sources */,
-				3827B0A41D9DDA2E004A3582 /* KVFoodType.swift in Sources */,
-				3827B0B01D9DDA2E004A3582 /* KVRootEntityGraphics+CoreDataProperties.swift in Sources */,
-				3827B0B71D9DDA2E004A3582 /* KVRootEntitySizes.swift in Sources */,
-				3827B0AD1D9DDA2E004A3582 /* KVPlace.swift in Sources */,
-				3827B0991D9DDA2E004A3582 /* KVEventDataController.swift in Sources */,
-				3827B09D1D9DDA2E004A3582 /* KVMessageDataController.swift in Sources */,
-				3827B0A11D9DDA2E004A3582 /* KVBeverageType.swift in Sources */,
-				3827B09B1D9DDA2E004A3582 /* KVMealDataController.swift in Sources */,
-				3827B0B51D9DDA2E004A3582 /* KVRootEntityLocation.swift in Sources */,
-				3827B09C1D9DDA2E004A3582 /* KVMedicineDataController.swift in Sources */,
-				3827B0981D9DDA2E004A3582 /* KVBeverageDataController.swift in Sources */,
-				3827B0A21D9DDA2E004A3582 /* KVEntity.swift in Sources */,
+				38D128CD201A99F200B0DC7F /* KVPerson.swift in Sources */,
+				38D128CB201A99F200B0DC7F /* KVVehicle.swift in Sources */,
+				380E9A95207D9D8800EAE199 /* KVEventDataController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1027,7 +1046,8 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Debug;
 		};
@@ -1044,7 +1064,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.axolotol.Tricorder;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Release;
 		};
@@ -1059,7 +1080,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.axolotol.TricorderTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Tricorder.app/Tricorder";
 			};
 			name = Debug;
@@ -1075,7 +1097,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.axolotol.TricorderTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Tricorder.app/Tricorder";
 			};
 			name = Release;
@@ -1090,7 +1113,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.axolotol.TricorderUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.0;
 				TEST_TARGET_NAME = Tricorder;
 			};
 			name = Debug;
@@ -1105,7 +1129,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.axolotol.TricorderUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.0;
 				TEST_TARGET_NAME = Tricorder;
 			};
 			name = Release;

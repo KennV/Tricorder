@@ -1,10 +1,9 @@
-//
-//  KVBeverageDataController.swift
-//  Ares
-//
-//  Created by Kenn Villegas on 9/5/16.
-//  Copyright © 2016 K3nV. All rights reserved.
-//
+/** KVBeverageDataController.swift
+  Ares
+
+  Created by Kenn Villegas on 9/5/16.
+  Copyright © 2016 K3nV. All rights reserved.
+*/
 
 import CoreData
 import UIKit
