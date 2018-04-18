@@ -228,7 +228,7 @@ class KVPersonDataController <T : KVPerson> : KVEntityDataController<T>
     let mode = makeRandomNumber(2)
     switch mode {
     case 1:
-      v.make = bikeBrands[makeRandomNumber(UInt32(carBrands.count))]
+      v.make = bikeBrands[makeRandomNumber(UInt32(bikeBrands.count))]
       v.model = vModel[makeRandomNumber(UInt32(vModel.count))]
       v.color = vColor[makeRandomNumber(UInt32(vColor.count))]
       v.numberOfWheels = 2
