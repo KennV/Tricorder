@@ -44,11 +44,25 @@ import Foundation
 
 extension KVPrimeTVCon: CLLocationManagerDelegate
 {
+  enum viewSegueName: String {
+    case showEULA
+    case showDetail
+  }
+  
   // MARK: - Segues
   override func prepare(for segue: UIStoryboardSegue, sender: Any?)
   {
-    if segue.identifier == "showDetail"
-    {
+    
+    guard let identifier = segue.identifier, let identifierCase = KVPrimeTVCon.viewSegueName(rawValue: identifier) else {
+      assertionFailure("Nopal")
+      return
+    }
+    switch identifierCase {
+    case .showEULA:
+      print("License")
+
+    case .showDetail:
+
       if let indexPath = tableView.indexPathForSelectedRow {
         let p = pdc.getAllEntities()[(indexPath as NSIndexPath).row]
         let mapC = (segue.destination as! UINavigationController).topViewController as! KVMapViewCon
@@ -56,10 +70,12 @@ extension KVPrimeTVCon: CLLocationManagerDelegate
         mapC.currentPerson = p
         mapC.pdc = pdc
         mapC.plc = placesDC
-        //          mapC.idc = idc
+
         mapC.navigationItem.leftBarButtonItem = splitViewController?.displayModeButtonItem
         mapC.navigationItem.leftItemsSupplementBackButton = true
+//    default: //unused
       }
+
     }
   }
   
