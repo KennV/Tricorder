@@ -1,51 +1,5 @@
-/**
-https://en.wikipedia.org/wiki/BSD_licenses
-BSD Style-License
-Copyright © 2015, Kenneth Villegas
-Copyright © 2015 K3nV. All rights reserved.
-All rights reserved.
-
-Redistribution and use in source and binary forms, with or without
-modification, are permitted provided that the following conditions are met:
-
-1. Redistributions of source code must retain the above copyright notice, this
-list of conditions and the following disclaimer.
-2. Redistributions in binary form must reproduce the above copyright notice,
-this list of conditions and the following disclaimer in the documentation
-and/or other materials provided with the distribution.
-
-THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND
-ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
-WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
-DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR
-ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES
-(INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
-LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND
-ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
-(INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
-SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-
-The views and conclusions contained in the software and documentation are those
-of the authors and should not be interpreted as representing official policies,
-either expressed or implied, of the FreeBSD Project.
-
- 
-KVMapViewCon.swift
-Ares3
-
-Created by Kenn Villegas on 9/19/16.
-Copyright © 2016 K3nV. All rights reserved.
-
-*/
 /*
-Ok I ripped out a lot of GUI that just sucked and I have added four buttons in two stacks. to be able to make a Place, or Event. on the map.
-FIXED -sort-of- GeoCoding
-Well I think it works now I have not ~~
-Rather lets go in a different direction. To make it Person centric, not people instead of pulling up a map of 29 people
-why not <= 06?
- 
-Also with the app chugging if I have a bunch of data in it. It does not seem to be pulling a lot of mem, but it could clling some utility funtion too often
-Profiler Time
+Re-Stripped the Interface, no stacks
 */
 protocol MapKhanDelegate {
   func didChangePerson(_ entity: KVPerson)
@@ -63,6 +17,13 @@ class KVMapViewCon: UIViewController, PhotoKhanDelegate, MKMapViewDelegate
 /**
 
 */
+  @IBOutlet weak var setupButton: UIButton! //Tag 10
+  @IBOutlet weak var personButton: UIButton! //Tag 11
+  @IBOutlet weak var eventButton: UIButton! //Tag 12
+  
+  /**
+   
+   */
   var delegate: MapKhanDelegate?
   var pdc = KVPersonDataController()
   var plc = KVPlaceDataController()
@@ -73,8 +34,8 @@ class KVMapViewCon: UIViewController, PhotoKhanDelegate, MKMapViewDelegate
   
   @IBOutlet weak var imageView: UIImageView!
   @IBOutlet var mapView: MKMapView!
-  @IBOutlet weak var personTitleLabel: UILabel!
-  @IBOutlet weak var editPersonButton: UIButton!
+//  @IBOutlet weak var personTitleLabel: UILabel!
+//  @IBOutlet weak var editPersonButton: UIButton!
 
   let regionSmall = 1000
   let regionMedium = 3000
@@ -119,14 +80,16 @@ class KVMapViewCon: UIViewController, PhotoKhanDelegate, MKMapViewDelegate
   }
   func configureView()
   {
-    
+    if (UserDefaults.standard.appHasRunSetup()) {
+      
+    }
     if let p = currentPerson {
-      if let label = personTitleLabel {
-        label.text = p.qName
-      }
-      if let _pButton = editPersonButton {
-        _pButton.setTitle(("Edit " + p.firstName! + ":"), for: UIControlState.normal)
-      }
+//      if let label = personTitleLabel {
+//        label.text = p.qName
+//      }
+//      if let _pButton = editPersonButton {
+//        _pButton.setTitle(("Edit " + p.firstName! + ":"), for: UIControlState.normal)
+//      }
       if let _imgVue = imageView {
 //        _imgVue.image = (p.graphics?.photoActual)// as! UIImage)
         let i = pdc.resizeImage(image: (p.graphics?.photoActual)!, newWidth: _imgVue.bounds.height)
@@ -140,11 +103,17 @@ class KVMapViewCon: UIViewController, PhotoKhanDelegate, MKMapViewDelegate
       mapView.setRegion(region, animated: true)
     }
   }
-  /*
-  @IBOutlet var mapView: MKMapView! // Does not fall out of scope
-  @IBOutlet weak var mapView: MKMapView! // falls out
-  let mapView = MKMapView() // is not linked
-  */
+
+  // NEW
+  func setupButtonsForState() {
+    if (!(UserDefaults.standard.appHasRunSetup())) {
+      self.mapView.isHidden = true
+      self.setupButton.isHidden = false
+    }
+    self.mapView.isHidden = false
+    self.setupButton.isHidden = true
+  }
+  
   func setupMapView()
   {
     
