@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="H1p-Uh-vWS">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="H1p-Uh-vWS">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -66,19 +66,18 @@
                                 <rect key="frame" x="313" y="72" width="46" height="30"/>
                                 <state key="normal" title="Button"/>
                             </button>
-                            <button opaque="NO" tag="11" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m1v-RO-hAM">
-                                <rect key="frame" x="251" y="579" width="108" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" tag="11" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m1v-RO-hAM">
+                                <rect key="frame" x="264" y="573" width="95" height="36"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
                                 <state key="normal" title="Person ++"/>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zOX-fV-mZw">
-                                <rect key="frame" x="16" y="579" width="62" height="30"/>
+                                <rect key="frame" x="16" y="573" width="83" height="36"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
                                 <state key="normal" title="Event ++"/>
                             </button>
-                            <button opaque="NO" tag="10" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CKL-Zf-rou">
+                            <button opaque="NO" tag="10" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CKL-Zf-rou">
                                 <rect key="frame" x="140" y="310" width="95" height="46"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="italicSystem" pointSize="24"/>
                                 <state key="normal" title="Setup"/>
                             </button>
@@ -86,7 +85,9 @@
                         <color key="backgroundColor" red="0.32549020649999999" green="0.32549020649999999" blue="0.32549020649999999" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="XrF-GB-Oa1" firstAttribute="trailing" secondItem="Qnh-AA-jJa" secondAttribute="trailing" id="0Td-Wl-wrE"/>
+                            <constraint firstItem="m1v-RO-hAM" firstAttribute="trailing" secondItem="svH-Pt-448" secondAttribute="trailingMargin" id="1KN-Ud-OR4"/>
                             <constraint firstItem="XrF-GB-Oa1" firstAttribute="leading" secondItem="svH-Pt-448" secondAttribute="leading" id="1hr-F6-MOW"/>
+                            <constraint firstItem="CKL-Zf-rou" firstAttribute="centerY" secondItem="XrF-GB-Oa1" secondAttribute="centerY" id="1nB-8c-7bj"/>
                             <constraint firstItem="Qnh-AA-jJa" firstAttribute="top" secondItem="zOX-fV-mZw" secondAttribute="bottom" constant="14" id="5if-p9-CNo"/>
                             <constraint firstItem="XrF-GB-Oa1" firstAttribute="top" secondItem="svH-Pt-448" secondAttribute="top" id="AJc-9a-DTL"/>
                             <constraint firstItem="Z9V-JS-fNg" firstAttribute="leading" secondItem="svH-Pt-448" secondAttribute="leadingMargin" id="BPY-bW-VCz"/>
@@ -98,6 +99,8 @@
                             <constraint firstItem="XrF-GB-Oa1" firstAttribute="leading" secondItem="Qnh-AA-jJa" secondAttribute="leading" id="lD7-2g-eO3"/>
                             <constraint firstAttribute="trailing" secondItem="XrF-GB-Oa1" secondAttribute="trailing" id="lNT-hu-2Fm"/>
                             <constraint firstItem="eAA-wh-qKr" firstAttribute="top" secondItem="SYR-Wa-9uf" secondAttribute="bottom" constant="8" id="rbe-4y-j3u"/>
+                            <constraint firstItem="CKL-Zf-rou" firstAttribute="centerX" secondItem="XrF-GB-Oa1" secondAttribute="centerX" id="wPI-ly-uNG"/>
+                            <constraint firstItem="Qnh-AA-jJa" firstAttribute="top" secondItem="m1v-RO-hAM" secondAttribute="bottom" constant="14" id="yV0-3F-1cr"/>
                         </constraints>
                     </view>
                     <toolbarItems/>
@@ -606,13 +609,13 @@
                                                     <rect key="frame" x="87" y="0.0" width="256" height="69.5"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iIv-Ib-RkO">
-                                                            <rect key="frame" x="0.0" y="0.0" width="256" height="0.0"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="256" height="24"/>
                                                             <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
                                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="geL-Uv-gsM" customClass="KVRatingView" customModule="Tricorder" customModuleProvider="target">
-                                                            <rect key="frame" x="0.0" y="0.0" width="240" height="69.5"/>
+                                                            <rect key="frame" x="0.0" y="24" width="240" height="45.5"/>
                                                         </view>
                                                     </subviews>
                                                     <constraints>
@@ -658,13 +661,13 @@
                                                     <rect key="frame" x="87" y="0.0" width="256" height="69.5"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ool-RO-xP0">
-                                                            <rect key="frame" x="0.0" y="0.0" width="256" height="0.0"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="256" height="24"/>
                                                             <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
                                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="47n-Gg-iBE" customClass="KVRatingView" customModule="Tricorder" customModuleProvider="target">
-                                                            <rect key="frame" x="0.0" y="0.0" width="240" height="69.5"/>
+                                                            <rect key="frame" x="0.0" y="24" width="240" height="45.5"/>
                                                         </view>
                                                     </subviews>
                                                     <constraints>
@@ -710,13 +713,13 @@
                                                     <rect key="frame" x="87" y="0.0" width="256" height="69.5"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V1U-g4-rtG">
-                                                            <rect key="frame" x="0.0" y="0.0" width="256" height="0.0"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="256" height="24"/>
                                                             <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
                                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YXf-Rh-Tz8" customClass="KVRatingView" customModule="Tricorder" customModuleProvider="target">
-                                                            <rect key="frame" x="0.0" y="0.0" width="240" height="69.5"/>
+                                                            <rect key="frame" x="0.0" y="24" width="240" height="45.5"/>
                                                         </view>
                                                     </subviews>
                                                     <constraints>
