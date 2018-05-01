@@ -23,7 +23,12 @@ THE PRIME TVC Needs to also be a DataSource(Delegate)
  
 It does what it (was) is designed to do, but that sucks.
  :: The Primary reason to get to a setup window is to create a Primary User for the app.
- :: When I add any NonPrimaryEntity it *Must* have a 
+ :: When I add any NonPrimaryEntity it *Must* have a
+ 
+ OKAY SO:
+I AM adding a requirement to the app that it ALWAYS has a CLLocation
+ Hell; it IS a MKMap
+And it is the first itenm in bugfix 
 */
 protocol MapKhanDelegate {
   func didChangePerson(_ entity: KVPerson)
@@ -161,9 +166,11 @@ class KVMapViewCon: UIViewController, PhotoKhanDelegate, MKMapViewDelegate
     
   }
 /**
+   STRONG SIDENOTE TO SELF
+   Conformance is Compliance, it is complicity
 */
   
- //MARK: Protocol Conformance
+ //MARK: -  Protocol Conformance -
 
   func didChangeGraphicsOn(_ entity: KVRootEntityGraphics)
   {
@@ -252,6 +259,7 @@ class KVMapViewCon: UIViewController, PhotoKhanDelegate, MKMapViewDelegate
   func setupButtonsForApplicationState() {
     if (UserDefaults.standard.appHasRunSetup() == false) {
       self.mapView.isHidden = true
+      self.mapView.alpha = 00.00
       self.setupButton.isHidden = false
     } else {
       self.mapView.isHidden = false
