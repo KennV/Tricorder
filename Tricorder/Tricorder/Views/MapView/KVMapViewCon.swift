@@ -1,51 +1,34 @@
 /**
-https://en.wikipedia.org/wiki/BSD_licenses
-BSD Style-License
-Copyright © 2015, Kenneth Villegas
-Copyright © 2015 K3nV. All rights reserved.
-All rights reserved.
+Re-Stripped the Interface, no stacks
 
-Redistribution and use in source and binary forms, with or without
-modification, are permitted provided that the following conditions are met:
-
-1. Redistributions of source code must retain the above copyright notice, this
-list of conditions and the following disclaimer.
-2. Redistributions in binary form must reproduce the above copyright notice,
-this list of conditions and the following disclaimer in the documentation
-and/or other materials provided with the distribution.
-
-THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND
-ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
-WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
-DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR
-ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES
-(INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
-LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND
-ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
-(INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
-SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-
-The views and conclusions contained in the software and documentation are those
-of the authors and should not be interpreted as representing official policies,
-either expressed or implied, of the FreeBSD Project.
-
+Mind you this is buggy AF.
+ the map view is visible prior to setup:
+  [do I make it invisible or opaque]
+  Is it suitable to make a blackout view to cover it and remove this view if etc
+ Actually I bet that is a Massive Performance Hit See Option Three
+  Or the Other way around and have the map view on top
+  OR A THIRD WAY to have the background Black and the only draw the map view if hasSetup == true
  
-KVMapViewCon.swift
-Ares3
-
-Created by Kenn Villegas on 9/19/16.
-Copyright © 2016 K3nV. All rights reserved.
-
-*/
-/*
-Ok I ripped out a lot of GUI that just sucked and I have added four buttons in two stacks. to be able to make a Place, or Event. on the map.
-FIXED -sort-of- GeoCoding
-Well I think it works now I have not ~~
-Rather lets go in a different direction. To make it Person centric, not people instead of pulling up a map of 29 people
-why not <= 06?
+ the setup button does not do anything
+ The buttons do not have correct placement, or arrtibutes
+  [Working this first]
+  look into attributed strings;
+  and IBInscpectable instance variables
  
-Also with the app chugging if I have a bunch of data in it. It does not seem to be pulling a lot of mem, but it could clling some utility funtion too often
-Profiler Time
+ the buttons do not do anything
+  [I suppose that this is second]
+ There is no Progress indicator
+
+THE PRIME TVC Needs to also be a DataSource(Delegate)
+ 
+It does what it (was) is designed to do, but that sucks.
+ :: The Primary reason to get to a setup window is to create a Primary User for the app.
+ :: When I add any NonPrimaryEntity it *Must* have a
+ 
+ OKAY SO:
+I AM adding a requirement to the app that it ALWAYS has a CLLocation
+ Hell; it IS a MKMap
+And it is the first itenm in bugfix 
 */
 protocol MapKhanDelegate {
   func didChangePerson(_ entity: KVPerson)
@@ -60,21 +43,21 @@ import UIKit
 
 class KVMapViewCon: UIViewController, PhotoKhanDelegate, MKMapViewDelegate
 {
-/**
+  /**
 
-*/
+  */
+  @IBOutlet weak var setupButton: UIButton! //Tag 10
+  @IBOutlet weak var personButton: UIButton! //Tag 11
+  @IBOutlet weak var eventButton: UIButton! //Tag 12
+  /**
+
+   */
   var delegate: MapKhanDelegate?
   var pdc = KVPersonDataController()
   var plc = KVPlaceDataController()
   
-//  var idc = KVItemsDataController()
-//  var peoplePins = [KVPinItem]()
-//  var placePins = [KVPinItem]()
-  
   @IBOutlet weak var imageView: UIImageView!
   @IBOutlet var mapView: MKMapView!
-  @IBOutlet weak var personTitleLabel: UILabel!
-  @IBOutlet weak var editPersonButton: UIButton!
 
   let regionSmall = 1000
   let regionMedium = 3000
@@ -88,63 +71,18 @@ class KVMapViewCon: UIViewController, PhotoKhanDelegate, MKMapViewDelegate
   override func viewDidLoad()
   {
     super.viewDidLoad()
+    setupButtonsForApplicationState()
     setupMapView()
     configureView()
     
   }
+
   override func didReceiveMemoryWarning()
   {
     super.didReceiveMemoryWarning()
     // Dispose of any resources that can be recreated.
   }
-  // MARK: Segues:
-  override func prepare(for segue: UIStoryboardSegue, sender: Any?)
-  {
-    if (segue.identifier == "showPersonEd")
-    {
-      let e = segue.destination as! KVPersonEditorTableViewController
-      e.currentPerson = currentPerson
-    }
-    else if (segue.identifier == "showPhotoEd")
-    {
-      let e = segue.destination as! KVCameraViewController
-      e.delegate = self
-      e.currentGFX = (currentPerson?.graphics)
-    }
-    else if (segue.identifier == "showCollection")
-    {
-      //      ADD seg-seqs
-    }
-    
-  }
-  func configureView()
-  {
-    
-    if let p = currentPerson {
-      if let label = personTitleLabel {
-        label.text = p.qName
-      }
-      if let _pButton = editPersonButton {
-        _pButton.setTitle(("Edit " + p.firstName! + ":"), for: UIControlState.normal)
-      }
-      if let _imgVue = imageView {
-//        _imgVue.image = (p.graphics?.photoActual)// as! UIImage)
-        let i = pdc.resizeImage(image: (p.graphics?.photoActual)!, newWidth: _imgVue.bounds.height)
-        _imgVue.image = i
-      }
-      
-      loadPinData()
-      mapView.setNeedsDisplay()
-      let objLocation = CLLocation(latitude: currentPerson?.location?.latitude as! Double, longitude: currentPerson?.location?.longitude as! Double)
-      let region = MKCoordinateRegionMakeWithDistance(objLocation.coordinate, 500, 500)
-      mapView.setRegion(region, animated: true)
-    }
-  }
-  /*
-  @IBOutlet var mapView: MKMapView! // Does not fall out of scope
-  @IBOutlet weak var mapView: MKMapView! // falls out
-  let mapView = MKMapView() // is not linked
-  */
+
   func setupMapView()
   {
     
@@ -166,6 +104,7 @@ class KVMapViewCon: UIViewController, PhotoKhanDelegate, MKMapViewDelegate
     mapView.camera = camera
     
   }
+  
   // This used to be renderPeople replaces
   func loadPinData()
   {
@@ -198,6 +137,7 @@ class KVMapViewCon: UIViewController, PhotoKhanDelegate, MKMapViewDelegate
       mapView.addAnnotation(pin)
     }
   }
+  
   func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView?
   {
     //http://stackoverflow.com/questions/31069802/error-could-not-cast-value-of-type-nskvonotifying-mkuserlocation-to-park-view-a
@@ -225,9 +165,13 @@ class KVMapViewCon: UIViewController, PhotoKhanDelegate, MKMapViewDelegate
     return pinView
     
   }
-  //
-  // MARK: Protocol Conformance
-  //
+/**
+   STRONG SIDENOTE TO SELF
+   Conformance is Compliance, it is complicity
+*/
+  
+ //MARK: -  Protocol Conformance -
+
   func didChangeGraphicsOn(_ entity: KVRootEntityGraphics)
   {
     if currentPerson?.graphics != entity {
@@ -252,16 +196,78 @@ class KVMapViewCon: UIViewController, PhotoKhanDelegate, MKMapViewDelegate
     */
    delegate?.willMakeMessageFromPerson(currentPerson!) //It needs to reload table data
   }
+  
   @IBAction func AddPlace()
   {
     delegate?.willMakeNewPlaceHere(delegate)
     configureView()
   }
+  
   @IBAction func addEvent()
   {
     delegate?.willAddNewEvent(self)
   }
 
+  // MARK: Segues:
+  override func prepare(for segue: UIStoryboardSegue, sender: Any?)
+  {
+    if (segue.identifier == "showPersonEd")
+    {
+      let e = segue.destination as! KVPersonEditorTableViewController
+      e.currentPerson = currentPerson
+    }
+    else if (segue.identifier == "showPhotoEd")
+    {
+      let e = segue.destination as! KVCameraViewController
+      e.delegate = self
+      e.currentGFX = (currentPerson?.graphics)
+    }
+    else if (segue.identifier == "showCollection")
+    {
+      //      ADD seg-seqs
+    }
+    
+  }
+  
+  func configureView()
+  {
+    if (UserDefaults.standard.appHasRunSetup()) {
+      
+    }
+    if let p = currentPerson {
+      //      if let label = personTitleLabel {
+      //        label.text = p.qName
+      //      }
+      //      if let _pButton = editPersonButton {
+      //        _pButton.setTitle(("Edit " + p.firstName! + ":"), for: UIControlState.normal)
+      //      }
+      if let _imgVue = imageView {
+        //        _imgVue.image = (p.graphics?.photoActual)// as! UIImage)
+        let i = pdc.resizeImage(image: (p.graphics?.photoActual)!, newWidth: _imgVue.bounds.height)
+        _imgVue.image = i
+      }
+      
+      loadPinData()
+      mapView.setNeedsDisplay()
+      let objLocation = CLLocation(latitude: currentPerson?.location?.latitude as! Double, longitude: currentPerson?.location?.longitude as! Double)
+      let region = MKCoordinateRegionMakeWithDistance(objLocation.coordinate, 500, 500)
+      mapView.setRegion(region, animated: true)
+    }
+  }
+  
+  // NEW
+  func setupButtonsForApplicationState() {
+    if (UserDefaults.standard.appHasRunSetup() == false) {
+      self.mapView.isHidden = true
+      self.mapView.alpha = 00.00
+      self.setupButton.isHidden = false
+    } else {
+      self.mapView.isHidden = false
+      self.setupButton.isHidden = true
+    }
+  }
+  
+  
 }
 
 

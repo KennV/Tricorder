@@ -27,6 +27,9 @@ class KVPrimeTVCon: UITableViewController, MapKhanDelegate
   override func viewDidLoad() {
     super.viewDidLoad()
     setupCLManager() // I could set this in the AppDeli but I am not sure if that is best.
+    if (!(pdc.getAllEntities().isEmpty)) {
+     UserDefaults.standard.setAppHasRunSetup(val: true)
+    }
     
     navigationItem.leftBarButtonItem = editButtonItem
     let addButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(KVPrimeTVCon.insertNewObject(_:)))
