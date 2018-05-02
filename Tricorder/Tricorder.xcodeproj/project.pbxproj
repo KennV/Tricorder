@@ -40,6 +40,7 @@
 		3827B0BA1D9DDA2E004A3582 /* Tricorder.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3827B0921D9DDA2E004A3582 /* Tricorder.xcdatamodeld */; };
 		3827B0BC1D9DDDEE004A3582 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3827B0BB1D9DDDEE004A3582 /* Assets.xcassets */; };
 		3827B0BF1D9DDE05004A3582 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3827B0BD1D9DDE05004A3582 /* Main.storyboard */; };
+		38297D7B2099F8A7006A7B47 /* mapViewEXT.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38297D7A2099F8A7006A7B47 /* mapViewEXT.swift */; };
 		38422A2F1DA029ED00667B27 /* TC_DBTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38422A2E1DA029ED00667B27 /* TC_DBTests.swift */; };
 		38760F0E2086E66100A3AC0E /* KDVEULAViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38760F0D2086E66100A3AC0E /* KDVEULAViewController.swift */; };
 		38D128CB201A99F200B0DC7F /* KVVehicle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38D128A2201A99F100B0DC7F /* KVVehicle.swift */; };
@@ -128,6 +129,7 @@
 		3827B0931D9DDA2E004A3582 /* Tricorder.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Tricorder.xcdatamodel; sourceTree = "<group>"; };
 		3827B0BB1D9DDDEE004A3582 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3827B0BE1D9DDE05004A3582 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		38297D7A2099F8A7006A7B47 /* mapViewEXT.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = mapViewEXT.swift; sourceTree = "<group>"; };
 		38422A2E1DA029ED00667B27 /* TC_DBTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TC_DBTests.swift; sourceTree = "<group>"; };
 		38760F0D2086E66100A3AC0E /* KDVEULAViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KDVEULAViewController.swift; sourceTree = "<group>"; };
 		38D128A2201A99F100B0DC7F /* KVVehicle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KVVehicle.swift; sourceTree = "<group>"; };
@@ -279,6 +281,7 @@
 		3827B03E1D9DD998004A3582 /* MapView */ = {
 			isa = PBXGroup;
 			children = (
+				38297D7A2099F8A7006A7B47 /* mapViewEXT.swift */,
 				3827B03F1D9DD998004A3582 /* KVMapViewCon.swift */,
 				3827B0401D9DD998004A3582 /* MapObjects */,
 			);
@@ -843,6 +846,7 @@
 				38D128DC201A99F200B0DC7F /* KVRootEntity+CoreDataProperties.swift in Sources */,
 				3827B04D1D9DD998004A3582 /* pvtcEXT.swift in Sources */,
 				3827B0491D9DD998004A3582 /* KVPersonEditorTableViewController.swift in Sources */,
+				38297D7B2099F8A7006A7B47 /* mapViewEXT.swift in Sources */,
 				38D128D0201A99F200B0DC7F /* KVMessageMO.swift in Sources */,
 				38D128DB201A99F200B0DC7F /* KVRootEntityGraphics.swift in Sources */,
 				38D128DE201A99F200B0DC7F /* KVRootEntityData+CoreDataProperties.swift in Sources */,
