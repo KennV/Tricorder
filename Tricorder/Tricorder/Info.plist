@@ -19,15 +19,15 @@
 	<key>CFBundleSignature</key>
 	<string>k3nv</string>
 	<key>CFBundleVersion</key>
-	<string>11</string>
+	<string>13</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>NSCameraUsageDescription</key>
 	<string>Using Camera access to enable photos</string>
-	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>Ares Attempts to provide location and context based services by accessing your current location and patterns. Please enable for proper usage.</string>
 	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
 	<string>Always Set to always, Please!</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>Ares Attempts to provide location and context based services by accessing your current location and patterns. Please enable for proper usage.</string>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>Using Library</string>
 	<key>UILaunchStoryboardName</key>

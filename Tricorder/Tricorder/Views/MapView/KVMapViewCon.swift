@@ -49,6 +49,7 @@ class KVMapViewCon: UIViewController, PhotoKhanDelegate, MKMapViewDelegate
   @IBOutlet weak var setupButton: UIButton! //Tag 10
   @IBOutlet weak var personButton: UIButton! //Tag 11
   @IBOutlet weak var eventButton: UIButton! //Tag 12
+  @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
   /**
 
    */
@@ -58,6 +59,7 @@ class KVMapViewCon: UIViewController, PhotoKhanDelegate, MKMapViewDelegate
   
   @IBOutlet weak var imageView: UIImageView!
   @IBOutlet var mapView: MKMapView!
+  var location: CLLocation! //note this and adjust properly in map
 
   let regionSmall = 1000
   let regionMedium = 3000

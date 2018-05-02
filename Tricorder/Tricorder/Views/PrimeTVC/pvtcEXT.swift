@@ -1,34 +1,4 @@
 /**
-https://en.wikipedia.org/wiki/BSD_licenses
-BSD Style-License
-Copyright © 2015, Kenneth Villegas
-Copyright © 2015 K3nV. All rights reserved.
-All rights reserved.
-
-Redistribution and use in source and binary forms, with or without
-modification, are permitted provided that the following conditions are met:
-
-1. Redistributions of source code must retain the above copyright notice, this
-list of conditions and the following disclaimer.
-2. Redistributions in binary form must reproduce the above copyright notice,
-this list of conditions and the following disclaimer in the documentation
-and/or other materials provided with the distribution.
-
-THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND
-ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
-WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
-DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR
-ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES
-(INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
-LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND
-ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
-(INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
-SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-
-The views and conclusions contained in the software and documentation are those
-of the authors and should not be interpreted as representing official policies,
-either expressed or implied, of the FreeBSD Project.
-
  KVPrimeTVCon.swift
  Ares3
  
@@ -93,6 +63,7 @@ extension KVPrimeTVCon: CLLocationManagerDelegate
     locationManager?.startUpdatingLocation()
     findLocation()
   }
+  
   func setupCLAuthState()
   {
     if (CLLocationManager.authorizationStatus() == .notDetermined) {
@@ -101,6 +72,7 @@ extension KVPrimeTVCon: CLLocationManagerDelegate
     
   }
   // TODO: Update the RSRC string/URL in here
+
   func locationManager(_ manager: CLLocationManager,
                        didChangeAuthorization status: CLAuthorizationStatus)
   {
@@ -130,15 +102,18 @@ extension KVPrimeTVCon: CLLocationManagerDelegate
     }
    
   }
+
   func locationManager(_ manager: CLLocationManager, didFailWithError error: Error)
   {
     print("No-Loc")
   }
+
   func locationManager(_ manager: CLLocationManager,
                        didUpdateLocations locations: [CLLocation])
   {
     foundLocation()
   }
+
   func findLocation()
   {
     let defLat : Double = 37.33115792
@@ -148,6 +123,7 @@ extension KVPrimeTVCon: CLLocationManagerDelegate
     print(locationManager?.location?.coordinate.latitude ?? defLat)
     print(locationManager?.location?.coordinate.longitude ?? defLon)
   }
+
   func foundLocation()
   {
     locationManager?.stopUpdatingLocation()
@@ -181,7 +157,6 @@ extension KVPrimeTVCon: CLLocationManagerDelegate
 
   } // OK it is not what I want (YET)
   
-  
   //
   // MARK: Delegate Conformance
   //
@@ -197,11 +172,13 @@ extension KVPrimeTVCon: CLLocationManagerDelegate
     findLocation()
     insertNewPerson(self)
   }
+
   func willMakeNewPlaceHere(_ deli: Any?)
   {
     findLocation()
     insertNewPlace(self)
   }
+
   func willAddNewEvent( _ deli: Any?)
   {
     findLocation()
@@ -210,6 +187,7 @@ extension KVPrimeTVCon: CLLocationManagerDelegate
     eventsDC.saveContext()
     dvc?.configureView() // Added to test event synx did not
   }
+
   func willMakeMessageFromPerson(_ person: KVPerson?)
   {
     let md = msgMODC.makeMessageTo("Nobody", from: (person)!)
@@ -241,6 +219,7 @@ extension KVPrimeTVCon: CLLocationManagerDelegate
     dvc!.configureView()
     
   }
+
   func insertNewPlace(_ sender: AnyObject)
   {
     let pl = placesDC.makePlaceWithLocation(placesDC.MOC!, loc: (locationManager?.location?.coordinate)!)
@@ -251,6 +230,7 @@ extension KVPrimeTVCon: CLLocationManagerDelegate
     tableView.reloadData()
     foundLocation()
   }
+
   func insertNewEvent(_ sender: AnyObject)
   {
     _ = eventsDC.makeEvent(eventsDC.MOC!, loc: (locationManager?.location?.coordinate)!)
@@ -261,6 +241,7 @@ extension KVPrimeTVCon: CLLocationManagerDelegate
     eventsDC.saveCurrentContext(eventsDC.MOC!)
     dvc!.configureView()
   }
+
   @objc func insertNewMsgMO(_ sender: AnyObject)
   {
     let md = msgMODC.makeEmptyMessage()
