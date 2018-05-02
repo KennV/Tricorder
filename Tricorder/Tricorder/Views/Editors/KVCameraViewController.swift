@@ -7,7 +7,7 @@ Copyright © 2016 K3nV. All rights reserved.
 ACTIVATE
 */
 
-protocol PhotoKhanDelegate {
+protocol PhotoEditorDelegate {
 
   func didChangeGraphicsOn(_ entity: KVRootEntityGraphics)
 //  optional
@@ -19,7 +19,7 @@ import UIKit
 class KVCameraViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate
 {
 //
-  var delegate: PhotoKhanDelegate?
+  var delegate: PhotoEditorDelegate?
   
   @IBOutlet weak var bigView: UIImageView!
   @IBOutlet weak var ratingView: UIView!
