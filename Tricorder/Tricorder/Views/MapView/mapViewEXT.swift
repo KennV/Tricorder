@@ -1,7 +1,7 @@
 import MapKit
 import UIKit
 
-extension KVMapViewCon: PhotoEditorDelegate
+extension KVMapViewCon: PhotoEditorDelegate, MKMapViewDelegate
 {
 	
   enum mapSegueName: String {
@@ -36,9 +36,9 @@ extension KVMapViewCon: PhotoEditorDelegate
 */
   
  //MARK: -  Protocol Conformance -
-
   func didChangeGraphicsOn(_ entity: KVRootEntityGraphics)
   {
+    // PhotoEditorDelegate
     if currentPerson?.graphics != entity {
       currentPerson?.graphics = entity
     }
@@ -46,11 +46,12 @@ extension KVMapViewCon: PhotoEditorDelegate
     // pass it to the other deli
     delegate?.didChangePerson(currentPerson!)
   }
-  // Protocol Usage
+
+  //MKMapViewDelegate
   @IBAction func addPerson(_ sender: AnyObject)
   {
     delegate?.willAddPerson(delegate)
-    currentPerson = pdc.getAllEntities()[0]
+    currentPerson = pdc.getAllEntities().first
     configureView()
   }
   

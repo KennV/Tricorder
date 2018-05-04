@@ -41,7 +41,7 @@ protocol MapEditorDelegate {
 import MapKit
 import UIKit
 
-class KVMapViewCon: UIViewController, MKMapViewDelegate
+class KVMapViewCon: UIViewController
 {
   /**
 
