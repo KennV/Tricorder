@@ -241,7 +241,7 @@ extension KVPrimeTVCon: CLLocationManagerDelegate
     eventsDC.saveCurrentContext(eventsDC.MOC!)
     dvc!.configureView()
   }
-  //TODO: - BESOS
+  // FIXME: NO @objc
   @objc func insertNewMsgMO(_ sender: AnyObject)
   {
     let md = msgMODC.makeEmptyMessage()

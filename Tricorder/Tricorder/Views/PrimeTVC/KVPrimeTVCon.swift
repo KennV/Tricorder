@@ -51,7 +51,8 @@ class KVPrimeTVCon: UITableViewController, MapKhanDelegate
     // OR are they lightweight
   }
   // does thie need to be @objC
-  // MARK: insertNewObject
+  // FIXME: NO @objc
+  //insertNewObject
   @objc func insertNewObject(_ sender: AnyObject)
   {
     insertNewPerson(self)
