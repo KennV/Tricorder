@@ -1,11 +1,15 @@
-//
-//  AppDelegate.swift
-//  Tricorder
-//
-//  Created by Kenn Villegas on 9/29/16.
-//  Copyright © 2016 K3nV. All rights reserved.
-//
+/**
+  AppDelegate.swift
+  Tricorder
 
+  Created by Kenn Villegas on 9/29/16.
+  Copyright © 2016 K3nV. All rights reserved.
+*/
+/**
+What do I refactor after appHasRunSetup?
+ I could make the LocationManager global but I don't like that
+ BUT I need to work on the backGroundQueues
+*/
 import CoreData
 import UIKit
 //
@@ -98,7 +102,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
   }
 
   // MARK: - Split view
-
+  /**
+  OKAY, so if appHasRunSetup is false then I need to pop over to another segue to handle EULA and Setup, plus AppPermissions
+  */
   func splitViewController(_ splitViewController: UISplitViewController, collapseSecondary secondaryViewController:UIViewController, onto primaryViewController:UIViewController) -> Bool {
       guard let secondaryAsNavController = secondaryViewController as? UINavigationController else { return false }
       guard let topAsDetailController = secondaryAsNavController.topViewController as? KVMapViewCon else { return false }
