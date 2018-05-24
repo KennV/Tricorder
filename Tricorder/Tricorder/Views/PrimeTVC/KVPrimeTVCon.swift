@@ -50,10 +50,8 @@ class KVPrimeTVCon: UITableViewController, MapKhanDelegate
     // I can really Easily crush the arrays no?
     // OR are they lightweight
   }
-  // does thie need to be @objC
-  // FIXME: NO @objc
-  //insertNewObject
-  @objc func insertNewObject(_ sender: AnyObject)
+
+  func insertNewObject(_ sender: AnyObject)
   {
     insertNewPerson(self)
   }

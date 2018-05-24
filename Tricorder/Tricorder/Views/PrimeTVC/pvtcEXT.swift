@@ -241,8 +241,7 @@ extension KVPrimeTVCon: CLLocationManagerDelegate
     eventsDC.saveCurrentContext(eventsDC.MOC!)
     dvc!.configureView()
   }
-  // FIXME: NO @objc
-  @objc func insertNewMsgMO(_ sender: AnyObject)
+  func insertNewMsgMO(_ sender: AnyObject)
   {
     let md = msgMODC.makeEmptyMessage()
     md.incepDate = NSDate()
