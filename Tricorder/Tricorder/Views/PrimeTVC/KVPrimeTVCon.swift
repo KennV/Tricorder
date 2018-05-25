@@ -27,12 +27,13 @@ class KVPrimeTVCon: UITableViewController, MapKhanDelegate
   override func viewDidLoad() {
     super.viewDidLoad()
     setupCLManager() // I could set this in the AppDeli but I am not sure if that is best.
-    if (!(pdc.getAllEntities().isEmpty)) {
-     UserDefaults.standard.setAppHasRunSetup(val: true)
-    }
-    
+    UserDefaults.standard.setAppHasRunSetup(val: true)
+//    if (!(pdc.getAllEntities().isEmpty)) {
+//     UserDefaults.standard.setAppHasRunSetup(val: true)
+//    }
+//
     navigationItem.leftBarButtonItem = editButtonItem
-    let addButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(KVPrimeTVCon.insertNewObject(_:)))
+    let addButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(KVPrimeTVCon.insertNewObject(sender :)))
     
     navigationItem.rightBarButtonItem = addButton
     if let split = splitViewController {
@@ -51,9 +52,9 @@ class KVPrimeTVCon: UITableViewController, MapKhanDelegate
     // OR are they lightweight
   }
 
-  func insertNewObject(_ sender: AnyObject)
+  func insertNewObject(sender: AnyObject)
   {
-    insertNewPerson(self)
+    insertNewPerson(sender: self)
   }
   // MARK: - Table View Setup
   override func numberOfSections(in tableView: UITableView) -> Int
@@ -102,14 +103,14 @@ class KVPrimeTVCon: UITableViewController, MapKhanDelegate
     case 1:
       sectionLabel.text = NSLocalizedString("Message:", comment: "")
       sectionButton.setTitle("Msgs ++", for: .normal)
-      sectionButton.addTarget(self, action: #selector(insertNewMsgMO(_:)), for: .touchDown)
+      sectionButton.addTarget(self, action: #selector(insertNewMsgMO(sender:)), for: .touchDown)
     case 2:
       sectionLabel.text = NSLocalizedString("Events:", comment: "")
       sectionButton.setTitle("Events ++", for: .normal)
-      sectionButton.addTarget(self, action: #selector(insertNewEvent(_ :)), for: .touchDown)
+      sectionButton.addTarget(self, action: #selector(insertNewEvent(sender:)), for: .touchDown)
     case 3:
       sectionLabel.text = NSLocalizedString("Places:", comment: "")
-      sectionButton.addTarget(self, action: #selector(insertNewPlace(_ :)), for: .touchDown)
+      sectionButton.addTarget(self, action: #selector(insertNewPlace(sender:)), for: .touchDown)
       sectionButton.setTitle("Places ++", for: .normal)
       
     default:
@@ -117,10 +118,10 @@ class KVPrimeTVCon: UITableViewController, MapKhanDelegate
     }
     headerVue.addSubview(sectionButton) //
     headerVue.addSubview(sectionLabel)
-    
     return headerVue
-    
+
   }
+  
   override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat
   {
     return (40)
