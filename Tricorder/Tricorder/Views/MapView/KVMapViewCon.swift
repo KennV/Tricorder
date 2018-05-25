@@ -110,7 +110,7 @@ class KVMapViewCon: UIViewController, MKMapViewDelegate
     
     mapView.mapType = .hybridFlyover // .Hybrid - Has Scale; .Standard Has all Custom camera No Scale Bar
     
-    mapView.showsScale = true
+    mapView.showsScale = false
     mapView.showsUserLocation = true
     mapView.showsPointsOfInterest = true
     mapView.showsCompass = false
@@ -183,42 +183,6 @@ class KVMapViewCon: UIViewController, MKMapViewDelegate
     }
     
     return pinView
-    
-  }
-
-  @IBAction func addPerson(sender: AnyObject)
-  {
-    delegate?.willAddPerson(delegate)
-    currentPerson = pdc.getAllEntities().first
-    configureView()
-  }
-  
-  @IBAction func addMessage()
-  {
-    /**
-     OK I had to clean this up in Both places
-     */
-    delegate?.willMakeMessageFromPerson(currentPerson!) //It needs to reload table data
-  }
-  
-  @IBAction func AddPlace()
-  {
-    delegate?.willMakeNewPlaceHere(delegate)
-    configureView()
-  }
-  
-  @IBAction func addEvent()
-  {
-    delegate?.willAddNewEvent(self)
-  }
-  
-  @IBAction func runSetup(_ sender: UIButton)
-  {
-    
-  }
-  
-  @IBAction func addEvent(_ sender: UIButton)
-  {
     
   }
 

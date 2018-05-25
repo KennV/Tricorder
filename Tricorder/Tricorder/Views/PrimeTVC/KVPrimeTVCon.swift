@@ -27,11 +27,11 @@ class KVPrimeTVCon: UITableViewController, MapKhanDelegate
   override func viewDidLoad() {
     super.viewDidLoad()
     setupCLManager() // I could set this in the AppDeli but I am not sure if that is best.
-    UserDefaults.standard.setAppHasRunSetup(val: true)
-//    if (!(pdc.getAllEntities().isEmpty)) {
-//     UserDefaults.standard.setAppHasRunSetup(val: true)
-//    }
-//
+//    UserDefaults.standard.setAppHasRunSetup(val: true)
+    if (!(pdc.getAllEntities().isEmpty)) {
+     UserDefaults.standard.setAppHasRunSetup(val: true)
+    }
+
     navigationItem.leftBarButtonItem = editButtonItem
     let addButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(KVPrimeTVCon.insertNewObject(sender :)))
     
@@ -40,6 +40,9 @@ class KVPrimeTVCon: UITableViewController, MapKhanDelegate
         let controllers = split.viewControllers
         dvc = (controllers[controllers.count-1] as! UINavigationController).topViewController as? KVMapViewCon
     }
+    dvc?.pdc = KVPersonDataController(self.pdc.MOC!)
+    dvc?.currentPerson = dvc?.pdc.getAllEntities()[0]
+    
   }
   override func viewWillAppear(_ animated: Bool) {
     clearsSelectionOnViewWillAppear = splitViewController!.isCollapsed
