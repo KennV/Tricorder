@@ -41,7 +41,7 @@ protocol MapKhanDelegate {
 import MapKit
 import UIKit
 
-class KVMapViewCon: UIViewController, PhotoKhanDelegate, MKMapViewDelegate
+class KVMapViewCon: UIViewController, MKMapViewDelegate
 {
   /**
 
@@ -76,7 +76,27 @@ class KVMapViewCon: UIViewController, PhotoKhanDelegate, MKMapViewDelegate
     configureView()
     
   }
-
+  
+  func configureView() {
+    if (UserDefaults.standard.appHasRunSetup()) {
+      
+      if let p = currentPerson
+      {
+        if let _imgVue = imageView {
+          let i = pdc.resizeImage(image: (p.graphics?.photoActual)!, newWidth: _imgVue.bounds.height)
+          _imgVue.image = i
+        }
+        
+        loadPinData()
+        let objLocation = CLLocation(latitude: currentPerson?.location?.latitude as! Double, longitude: currentPerson?.location?.longitude as! Double)
+        let region = MKCoordinateRegionMakeWithDistance(objLocation.coordinate, 500, 500)
+        mapView.setNeedsDisplay()
+        mapView.setRegion(region, animated: true)
+      }
+      
+    }
+  }
+  
   override func didReceiveMemoryWarning()
   {
     super.didReceiveMemoryWarning()
@@ -165,36 +185,20 @@ class KVMapViewCon: UIViewController, PhotoKhanDelegate, MKMapViewDelegate
     return pinView
     
   }
-/**
-   STRONG SIDENOTE TO SELF
-   Conformance is Compliance, it is complicity
-*/
-  
- //MARK: -  Protocol Conformance -
 
-  func didChangeGraphicsOn(_ entity: KVRootEntityGraphics)
-  {
-    if currentPerson?.graphics != entity {
-      currentPerson?.graphics = entity
-    }
-    configureView()
-    // pass it to the other deli
-    delegate?.didChangePerson(currentPerson!)
-  }
-  // Protocol Usage
-  @IBAction func addPerson(_ sender: AnyObject)
+  @IBAction func addPerson(sender: AnyObject)
   {
     delegate?.willAddPerson(delegate)
-    currentPerson = pdc.getAllEntities()[0]
+    currentPerson = pdc.getAllEntities().first
     configureView()
   }
   
   @IBAction func addMessage()
   {
     /**
-    OK I had to clean this up in Both places
-    */
-   delegate?.willMakeMessageFromPerson(currentPerson!) //It needs to reload table data
+     OK I had to clean this up in Both places
+     */
+    delegate?.willMakeMessageFromPerson(currentPerson!) //It needs to reload table data
   }
   
   @IBAction func AddPlace()
@@ -207,67 +211,17 @@ class KVMapViewCon: UIViewController, PhotoKhanDelegate, MKMapViewDelegate
   {
     delegate?.willAddNewEvent(self)
   }
-
-  // MARK: Segues:
-  override func prepare(for segue: UIStoryboardSegue, sender: Any?)
+  
+  @IBAction func runSetup(_ sender: UIButton)
   {
-    if (segue.identifier == "showPersonEd")
-    {
-      let e = segue.destination as! KVPersonEditorTableViewController
-      e.currentPerson = currentPerson
-    }
-    else if (segue.identifier == "showPhotoEd")
-    {
-      let e = segue.destination as! KVCameraViewController
-      e.delegate = self
-      e.currentGFX = (currentPerson?.graphics)
-    }
-    else if (segue.identifier == "showCollection")
-    {
-      //      ADD seg-seqs
-    }
     
   }
   
-  func configureView()
+  @IBAction func addEvent(_ sender: UIButton)
   {
-    if (UserDefaults.standard.appHasRunSetup()) {
-      
-    }
-    if let p = currentPerson {
-      //      if let label = personTitleLabel {
-      //        label.text = p.qName
-      //      }
-      //      if let _pButton = editPersonButton {
-      //        _pButton.setTitle(("Edit " + p.firstName! + ":"), for: UIControlState.normal)
-      //      }
-      if let _imgVue = imageView {
-        //        _imgVue.image = (p.graphics?.photoActual)// as! UIImage)
-        let i = pdc.resizeImage(image: (p.graphics?.photoActual)!, newWidth: _imgVue.bounds.height)
-        _imgVue.image = i
-      }
-      
-      loadPinData()
-      mapView.setNeedsDisplay()
-      let objLocation = CLLocation(latitude: currentPerson?.location?.latitude as! Double, longitude: currentPerson?.location?.longitude as! Double)
-      let region = MKCoordinateRegionMakeWithDistance(objLocation.coordinate, 500, 500)
-      mapView.setRegion(region, animated: true)
-    }
+    
   }
-  
-  // NEW
-  func setupButtonsForApplicationState() {
-    if (UserDefaults.standard.appHasRunSetup() == false) {
-      self.mapView.isHidden = true
-      self.mapView.alpha = 00.00
-      self.setupButton.isHidden = false
-    } else {
-      self.mapView.isHidden = false
-      self.setupButton.isHidden = true
-    }
-  }
-  
-  
+
 }
 
 

@@ -38,26 +38,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Qnh-AA-jJa">
-                                <rect key="frame" x="0.0" y="623" width="375" height="44"/>
-                                <items>
-                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="s81-5t-EAg"/>
-                                    <barButtonItem title="Item" id="6KO-WS-SHi"/>
-                                    <barButtonItem systemItem="rewind" id="pc0-lK-MZr"/>
-                                    <barButtonItem systemItem="camera" id="3J8-FO-tvV">
-                                        <connections>
-                                            <segue destination="sxo-UE-zSz" kind="show" id="haQ-3U-lEy"/>
-                                        </connections>
-                                    </barButtonItem>
-                                    <barButtonItem systemItem="fastForward" id="ZfQ-8L-wkc">
-                                        <connections>
-                                            <segue destination="06g-Er-evH" kind="show" id="n3L-e3-qMS"/>
-                                        </connections>
-                                    </barButtonItem>
-                                    <barButtonItem systemItem="edit" id="Gtj-eY-35t"/>
-                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="djY-tM-TPS"/>
-                                </items>
-                            </toolbar>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="XrF-GB-Oa1">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </mapView>
@@ -70,20 +50,45 @@
                                 <state key="normal" title="Button"/>
                             </button>
                             <button hidden="YES" opaque="NO" tag="11" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m1v-RO-hAM">
-                                <rect key="frame" x="264" y="573" width="95" height="36"/>
+                                <rect key="frame" x="255" y="573" width="104" height="36"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
-                                <state key="normal" title="Person ++"/>
+                                <state key="normal" title="Edit Person"/>
+                                <connections>
+                                    <segue destination="06g-Er-evH" kind="show" identifier="showPersonEd" id="nJM-4d-xdM"/>
+                                </connections>
                             </button>
                             <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zOX-fV-mZw">
                                 <rect key="frame" x="16" y="573" width="83" height="36"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
                                 <state key="normal" title="Event ++"/>
+                                <connections>
+                                    <action selector="addEvent:" destination="JEX-9P-axG" eventType="touchUpInside" id="gZr-Kq-v0F"/>
+                                </connections>
                             </button>
                             <button opaque="NO" tag="10" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CKL-Zf-rou">
                                 <rect key="frame" x="157" y="312.5" width="62" height="41"/>
                                 <fontDescription key="fontDescription" type="italicSystem" pointSize="24"/>
                                 <state key="normal" title="Setup"/>
+                                <connections>
+                                    <action selector="runSetup:" destination="JEX-9P-axG" eventType="touchUpInside" id="TCN-cv-Dgz"/>
+                                </connections>
                             </button>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Qnh-AA-jJa">
+                                <rect key="frame" x="0.0" y="623" width="375" height="44"/>
+                                <items>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="s81-5t-EAg"/>
+                                    <barButtonItem title="Item" id="6KO-WS-SHi"/>
+                                    <barButtonItem systemItem="rewind" id="pc0-lK-MZr"/>
+                                    <barButtonItem systemItem="camera" id="3J8-FO-tvV">
+                                        <connections>
+                                            <segue destination="sxo-UE-zSz" kind="show" id="haQ-3U-lEy"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem systemItem="fastForward" id="ZfQ-8L-wkc"/>
+                                    <barButtonItem systemItem="edit" id="Gtj-eY-35t"/>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="djY-tM-TPS"/>
+                                </items>
+                            </toolbar>
                         </subviews>
                         <color key="backgroundColor" red="0.32549020649999999" green="0.32549020649999999" blue="0.32549020649999999" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
