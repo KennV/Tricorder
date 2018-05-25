@@ -23,6 +23,8 @@ extension KVPrimeTVCon: CLLocationManagerDelegate
     case showDetail
   }
   
+  // Hmmm, them thingies
+  
   // MARK: - Segues
   override func prepare(for segue: UIStoryboardSegue, sender: Any?)
   {
@@ -172,19 +174,19 @@ extension KVPrimeTVCon: CLLocationManagerDelegate
   
   func willAddPerson(_ deli: Any?) {
     findLocation()
-    insertNewPerson(self)
+    insertNewPerson(sender: self)
   }
   
   func willMakeNewPlaceHere(_ deli: Any?)
   {
     findLocation()
-    insertNewPlace(self)
+    insertNewPlace(sender: self)
   }
   
   func willAddNewEvent( _ deli: Any?)
   {
     findLocation()
-    insertNewEvent(self)
+    insertNewEvent(sender: self)
     tableView.reloadData()
     eventsDC.saveContext()
     dvc?.configureView() // Added to test event synx did not
@@ -207,7 +209,7 @@ extension KVPrimeTVCon: CLLocationManagerDelegate
    
    These are called from the 
    */
-  func insertNewPerson(_ sender: AnyObject)
+  @objc func insertNewPerson(sender: AnyObject)
   {
     findLocation()
     let p = pdc.makePersonAllUp(pdc.MOC!)
@@ -221,7 +223,7 @@ extension KVPrimeTVCon: CLLocationManagerDelegate
     dvc!.configureView()
     
   }
-  func insertNewPlace(_ sender: AnyObject)
+  @objc func insertNewPlace(sender: AnyObject)
   {
     let pl = placesDC.makePlaceWithLocation(placesDC.MOC!, loc: (locationManager?.location?.coordinate)!)
     placesDC.getAddressOfLocation(pl.location!)
@@ -231,7 +233,7 @@ extension KVPrimeTVCon: CLLocationManagerDelegate
     tableView.reloadData()
     foundLocation()
   }
-  func insertNewEvent(_ sender: AnyObject)
+  @objc func insertNewEvent(sender: AnyObject)
   {
     _ = eventsDC.makeEvent(eventsDC.MOC!, loc: (locationManager?.location?.coordinate)!)
 
@@ -241,7 +243,7 @@ extension KVPrimeTVCon: CLLocationManagerDelegate
     eventsDC.saveCurrentContext(eventsDC.MOC!)
     dvc!.configureView()
   }
-  func insertNewMsgMO(_ sender: AnyObject)
+  @objc func insertNewMsgMO(sender: AnyObject)
   {
     let md = msgMODC.makeEmptyMessage()
     md.incepDate = NSDate()
