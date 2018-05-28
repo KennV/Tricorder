@@ -65,7 +65,7 @@ class KVMapViewCon: UIViewController, MKMapViewDelegate
     {
     didSet {
       // Update the view.
-      //        configureView()
+      //configureView()
     }
   }
   override func viewDidLoad()

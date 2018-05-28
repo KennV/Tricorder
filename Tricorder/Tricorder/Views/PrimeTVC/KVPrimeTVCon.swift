@@ -26,8 +26,9 @@ class KVPrimeTVCon: UITableViewController, MapKhanDelegate
   
   override func viewDidLoad() {
     super.viewDidLoad()
+    
     setupCLManager() // I could set this in the AppDeli but I am not sure if that is best.
-//    UserDefaults.standard.setAppHasRunSetup(val: true)
+
     if (!(pdc.getAllEntities().isEmpty)) {
      UserDefaults.standard.setAppHasRunSetup(val: true)
     }
@@ -40,15 +41,19 @@ class KVPrimeTVCon: UITableViewController, MapKhanDelegate
         let controllers = split.viewControllers
         dvc = (controllers[controllers.count-1] as! UINavigationController).topViewController as? KVMapViewCon
     }
+    
     dvc?.pdc = KVPersonDataController(self.pdc.MOC!)
+    
     dvc?.currentPerson = dvc?.pdc.getAllEntities()[0]
     
   }
+  
   override func viewWillAppear(_ animated: Bool) {
     clearsSelectionOnViewWillAppear = splitViewController!.isCollapsed
     super.viewWillAppear(animated)
     print("App state for AppHasRunSetup = \(UserDefaults.standard.appHasRunSetup())")
   }
+  
   override func didReceiveMemoryWarning() {
     super.didReceiveMemoryWarning()
     // I can really Easily crush the arrays no?
@@ -185,6 +190,7 @@ class KVPrimeTVCon: UITableViewController, MapKhanDelegate
         pdc.deleteEntityInContext(pdc.MOC!, entity: pdc.getAllEntities()[(indexPath as NSIndexPath).row])
         tableView.deleteRows(at: [indexPath], with: .fade)
         pdc.saveCurrentContext(pdc.MOC!)
+//        self.tableView(tableView, didSelectRowAt: [indexPath]-1)
       case 1:
         msgMODC.deleteEntityInContext(pdc.MOC!, entity: msgMODC.getAllEntities()[(indexPath as NSIndexPath).row])
         tableView.deleteRows(at: [indexPath], with: .fade)
