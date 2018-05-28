@@ -26,31 +26,43 @@ class KVPrimeTVCon: UITableViewController, MapKhanDelegate
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    setupCLManager() // I could set this in the AppDeli but I am not sure if that is best.
     
+    setupCLManager() // I could set this in the AppDeli but I am not sure if that is best.
+
+    if (!(pdc.getAllEntities().isEmpty)) {
+     UserDefaults.standard.setAppHasRunSetup(val: true)
+    }
+
     navigationItem.leftBarButtonItem = editButtonItem
-    let addButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(KVPrimeTVCon.insertNewObject(_:)))
+    let addButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(KVPrimeTVCon.insertNewObject(sender :)))
     
     navigationItem.rightBarButtonItem = addButton
     if let split = splitViewController {
         let controllers = split.viewControllers
         dvc = (controllers[controllers.count-1] as! UINavigationController).topViewController as? KVMapViewCon
     }
+    
+    dvc?.pdc = KVPersonDataController(self.pdc.MOC!)
+    
+    dvc?.currentPerson = dvc?.pdc.getAllEntities()[0]
+    
   }
+  
   override func viewWillAppear(_ animated: Bool) {
     clearsSelectionOnViewWillAppear = splitViewController!.isCollapsed
     super.viewWillAppear(animated)
+    print("App state for AppHasRunSetup = \(UserDefaults.standard.appHasRunSetup())")
   }
+  
   override func didReceiveMemoryWarning() {
     super.didReceiveMemoryWarning()
     // I can really Easily crush the arrays no?
     // OR are they lightweight
   }
-  // does thie need to be @objC
-  // MARK: insertNewObject
-  @objc func insertNewObject(_ sender: AnyObject)
+
+  func insertNewObject(sender: AnyObject)
   {
-    insertNewPerson(self)
+    insertNewPerson(sender: self)
   }
   // MARK: - Table View Setup
   override func numberOfSections(in tableView: UITableView) -> Int
@@ -99,14 +111,14 @@ class KVPrimeTVCon: UITableViewController, MapKhanDelegate
     case 1:
       sectionLabel.text = NSLocalizedString("Message:", comment: "")
       sectionButton.setTitle("Msgs ++", for: .normal)
-      sectionButton.addTarget(self, action: #selector(insertNewMsgMO(_:)), for: .touchDown)
+      sectionButton.addTarget(self, action: #selector(insertNewMsgMO(sender:)), for: .touchDown)
     case 2:
       sectionLabel.text = NSLocalizedString("Events:", comment: "")
       sectionButton.setTitle("Events ++", for: .normal)
-      sectionButton.addTarget(self, action: #selector(insertNewEvent(_ :)), for: .touchDown)
+      sectionButton.addTarget(self, action: #selector(insertNewEvent(sender:)), for: .touchDown)
     case 3:
       sectionLabel.text = NSLocalizedString("Places:", comment: "")
-      sectionButton.addTarget(self, action: #selector(insertNewPlace(_ :)), for: .touchDown)
+      sectionButton.addTarget(self, action: #selector(insertNewPlace(sender:)), for: .touchDown)
       sectionButton.setTitle("Places ++", for: .normal)
       
     default:
@@ -114,10 +126,10 @@ class KVPrimeTVCon: UITableViewController, MapKhanDelegate
     }
     headerVue.addSubview(sectionButton) //
     headerVue.addSubview(sectionLabel)
-    
     return headerVue
-    
+
   }
+  
   override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat
   {
     return (40)
@@ -178,6 +190,7 @@ class KVPrimeTVCon: UITableViewController, MapKhanDelegate
         pdc.deleteEntityInContext(pdc.MOC!, entity: pdc.getAllEntities()[(indexPath as NSIndexPath).row])
         tableView.deleteRows(at: [indexPath], with: .fade)
         pdc.saveCurrentContext(pdc.MOC!)
+//        self.tableView(tableView, didSelectRowAt: [indexPath]-1)
       case 1:
         msgMODC.deleteEntityInContext(pdc.MOC!, entity: msgMODC.getAllEntities()[(indexPath as NSIndexPath).row])
         tableView.deleteRows(at: [indexPath], with: .fade)

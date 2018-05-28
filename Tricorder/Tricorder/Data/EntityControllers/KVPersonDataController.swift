@@ -100,6 +100,14 @@ class KVPersonDataController <T : KVPerson> : KVEntityDataController<T>
     super.init()
     entityClassName = EntityTypes.Person
   }
+  // I was getting an edge case where it was returning a .Entity not a .Person
+  convenience init(_ ctx: NSManagedObjectContext)
+  {
+    self.init()
+    self.entityClassName = EntityTypes.Person
+    self.MOC = ctx
+  }
+  
   /**
   ## make person
    

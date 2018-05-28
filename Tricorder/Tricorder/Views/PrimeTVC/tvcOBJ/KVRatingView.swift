@@ -58,6 +58,7 @@ class KVRatingView: UIView
     updateButtonSelectionStates()
   }
   // MARK: Button Action
+
   @objc func ratingButtonTapped(_ button: UIButton)
   {
     rating = ratingButtons.index(of: button)! + 1

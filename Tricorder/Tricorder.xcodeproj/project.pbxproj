@@ -42,6 +42,7 @@
 		3827B0BF1D9DDE05004A3582 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3827B0BD1D9DDE05004A3582 /* Main.storyboard */; };
 		38422A2F1DA029ED00667B27 /* TC_DBTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38422A2E1DA029ED00667B27 /* TC_DBTests.swift */; };
 		38760F0E2086E66100A3AC0E /* KDVEULAViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38760F0D2086E66100A3AC0E /* KDVEULAViewController.swift */; };
+		38A8C3D120B8834D00534B25 /* KVMapVCon_Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38A8C3D020B8834C00534B25 /* KVMapVCon_Ext.swift */; };
 		38D128CB201A99F200B0DC7F /* KVVehicle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38D128A2201A99F100B0DC7F /* KVVehicle.swift */; };
 		38D128CC201A99F200B0DC7F /* KVVehicle+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38D128A3201A99F100B0DC7F /* KVVehicle+CoreDataProperties.swift */; };
 		38D128CD201A99F200B0DC7F /* KVPerson.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38D128A5201A99F100B0DC7F /* KVPerson.swift */; };
@@ -130,6 +131,7 @@
 		3827B0BE1D9DDE05004A3582 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		38422A2E1DA029ED00667B27 /* TC_DBTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TC_DBTests.swift; sourceTree = "<group>"; };
 		38760F0D2086E66100A3AC0E /* KDVEULAViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KDVEULAViewController.swift; sourceTree = "<group>"; };
+		38A8C3D020B8834C00534B25 /* KVMapVCon_Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KVMapVCon_Ext.swift; sourceTree = "<group>"; };
 		38D128A2201A99F100B0DC7F /* KVVehicle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KVVehicle.swift; sourceTree = "<group>"; };
 		38D128A3201A99F100B0DC7F /* KVVehicle+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "KVVehicle+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		38D128A5201A99F100B0DC7F /* KVPerson.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KVPerson.swift; sourceTree = "<group>"; };
@@ -280,6 +282,7 @@
 			isa = PBXGroup;
 			children = (
 				3827B03F1D9DD998004A3582 /* KVMapViewCon.swift */,
+				38A8C3D020B8834C00534B25 /* KVMapVCon_Ext.swift */,
 				3827B0401D9DD998004A3582 /* MapObjects */,
 			);
 			path = MapView;
@@ -633,7 +636,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0800;
-				LastUpgradeCheck = 0810;
+				LastUpgradeCheck = 0930;
 				ORGANIZATIONNAME = K3nV;
 				TargetAttributes = {
 					3827B0011D9DD3DE004A3582 = {
@@ -851,6 +854,7 @@
 				380E9A98207D9D8800EAE199 /* KVPersonDataController.swift in Sources */,
 				3827B0481D9DD998004A3582 /* KVCameraViewController.swift in Sources */,
 				38D128D9201A99F200B0DC7F /* KVRootEntitySizes+CoreDataProperties.swift in Sources */,
+				38A8C3D120B8834D00534B25 /* KVMapVCon_Ext.swift in Sources */,
 				38760F0E2086E66100A3AC0E /* KDVEULAViewController.swift in Sources */,
 				3827B0391D9DD923004A3582 /* AppDelegate.swift in Sources */,
 				3827B04C1D9DD998004A3582 /* KVPrimeTVCon.swift in Sources */,
@@ -946,15 +950,23 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
@@ -997,15 +1009,23 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
