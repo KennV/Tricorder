@@ -214,7 +214,7 @@ extension KVPrimeTVCon: CLLocationManagerDelegate
     findLocation()
     let p = pdc.makePersonAllUp(pdc.MOC!)
     pdc.updateLocationFor(p, loc: (locationManager?.location?.coordinate)!)
-    pdc.getAddressOfLocation(p.location!)
+    pdc.getAddressOfLocation(loc: p.location!)
     _ = pdc.saveEntity(entity: p)
 
     let indexPath = IndexPath(row: 0, section: 0)
@@ -226,7 +226,7 @@ extension KVPrimeTVCon: CLLocationManagerDelegate
   @objc func insertNewPlace(sender: AnyObject)
   {
     let pl = placesDC.makePlaceWithLocation(placesDC.MOC!, loc: (locationManager?.location?.coordinate)!)
-    placesDC.getAddressOfLocation(pl.location!)
+    placesDC.getAddressOfLocation(loc: pl.location!)
     
     _ = placesDC.saveEntity(entity: pl)
     placesDC.saveCurrentContext(placesDC.MOC!)
