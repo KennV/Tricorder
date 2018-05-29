@@ -21,16 +21,17 @@ class KVPersonEditorTableViewController: UITableViewController {
     super.viewDidLoad()
     self.title = "Person-Ed"
   }
+
   override func didReceiveMemoryWarning() {
     super.didReceiveMemoryWarning()
   }
   // MARK: - Table view data source
-  override func numberOfSections(in tableView: UITableView) -> Int
-  {
+
+  override func numberOfSections(in tableView: UITableView) -> Int {
     return 2 //
   }
-  override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int)-> Int
-  {
+
+  override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int)-> Int {
     var rowCount = 0
     if (section == 0) {
       rowCount = PersonSections.allValues.count
@@ -41,18 +42,14 @@ class KVPersonEditorTableViewController: UITableViewController {
     return rowCount
   }
   
-  override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
-  {
+  override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     var cell : UITableViewCell!
-    //        var cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath)
-    ///Please note that it is not procedurally necessary to test for the current Person but in the sake of true safety I am going to leave it there.
+    
     if (indexPath.section == 0)
     {
         if let p = currentPerson
         {
-        switch indexPath.row
-          {
-
+        switch indexPath.row {
           case PersonSections.NameCell.rawValue:
             //I just threw an exception on GUI testing fix GUI then come HERE
             cell = tableView.dequeueReusableCell(withIdentifier: "nameCell", for: indexPath)
@@ -61,7 +58,7 @@ class KVPersonEditorTableViewController: UITableViewController {
           case PersonSections.AddressCell.rawValue:
             cell = tableView.dequeueReusableCell(withIdentifier: "addressCell", for: indexPath)
             cell.textLabel?.text = p.location?.address!
-            cell.detailTextLabel?.text = (p.location?.state)! + " " + (p.location?.zipCode)!
+            cell.detailTextLabel?.text = (p.location?.city)! + " " + (p.location?.state)! + " " + (p.location?.zipCode)!
           
           case PersonSections.PhoneCell.rawValue:
             cell = tableView.dequeueReusableCell(withIdentifier: "phoneCell", for: indexPath)
@@ -84,8 +81,8 @@ class KVPersonEditorTableViewController: UITableViewController {
           default:
             break
           }
-      } //person
-    } //section 01
+        } //person
+    }
     else if (indexPath.section == 1) //Vehicle?
     {
       if let v = (currentPerson.vehicle)// as! KVVehicle)
@@ -109,7 +106,6 @@ class KVPersonEditorTableViewController: UITableViewController {
           
         }
       }
-      
     }
     return cell
   }

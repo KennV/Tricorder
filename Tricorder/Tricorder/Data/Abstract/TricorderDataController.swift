@@ -291,7 +291,7 @@ class TricorderDataController<T : KVRootEntity > : AbstractDataController<T>
    
   - parameter loc: a Loction Entity:
   */
-  func getAddressOfLocation(_ loc: KVRootEntityLocation)
+  func getAddressOfLocation(loc: KVRootEntityLocation)
   {
     
     let locLat : Double = (loc.latitude?.doubleValue) ?? 39.283333
@@ -306,57 +306,75 @@ class TricorderDataController<T : KVRootEntity > : AbstractDataController<T>
       
       if error == nil && (placemarks?.count)! > 0 {
         placemark = (placemarks?[0])! as CLPlacemark
-        // these were SF Swift 2.1
+
         var locAddressString:String = ""
         var addressString:String = ""
-        
-        // united states
+
         if placemark.isoCountryCode == "US"
         {
           if placemark.country != nil {
             addressString = placemark.country!
           }
-          //county?
+
+          if placemark.administrativeArea != nil {
+            loc.state = placemark.administrativeArea!
+            addressString = addressString + placemark.administrativeArea! + ", "
+          }
+
           if placemark.subAdministrativeArea != nil {
+            loc.city = placemark.subAdministrativeArea!
             addressString = addressString + placemark.subAdministrativeArea! + ", "
-          } // Baltimore City -- County?
+          }
+          
           if placemark.postalCode != nil {
             loc.zipCode = placemark.postalCode!
             addressString = addressString + placemark.postalCode! + " "
-          } // ZIP
+          }
+
           if placemark.locality != nil {
             loc.city = placemark.locality!
             addressString = addressString + placemark.locality!
-          } //City
+          }
+          
           if placemark.subThoroughfare != nil {
             addressString = addressString + placemark.subThoroughfare!
             locAddressString = (placemark.subThoroughfare! + " ")
-          } // house
+            loc.address = placemark.subThoroughfare!
+          }
+          
           if placemark.thoroughfare != nil {
             addressString = addressString + placemark.thoroughfare!
             locAddressString.append(placemark.thoroughfare!)
-          } // ave/street
+          }
+          
           loc.address = locAddressString
+
         }
         else {
           if placemark.subThoroughfare != nil {
             addressString = placemark.subThoroughfare! + " "
           }
+          
           if placemark.thoroughfare != nil {
             addressString = addressString + placemark.thoroughfare! + ", "
           }
+
           if placemark.postalCode != nil {
             addressString = addressString + placemark.postalCode! + " "
           }
+
           if placemark.locality != nil {
             addressString = addressString + placemark.locality! + ", "
           }
+
           if placemark.administrativeArea != nil {
             addressString = addressString + placemark.administrativeArea! + " "
           }
+
           if placemark.country != nil {
             addressString = addressString + placemark.country!
           }
+
         }
         print(addressString)
       }
