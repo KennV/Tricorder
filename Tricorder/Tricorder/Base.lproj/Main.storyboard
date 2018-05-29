@@ -81,7 +81,7 @@
                                     <barButtonItem systemItem="rewind" id="pc0-lK-MZr"/>
                                     <barButtonItem systemItem="camera" id="3J8-FO-tvV">
                                         <connections>
-                                            <segue destination="sxo-UE-zSz" kind="show" id="haQ-3U-lEy"/>
+                                            <segue destination="sxo-UE-zSz" kind="show" identifier="showPhotoEd" id="haQ-3U-lEy"/>
                                         </connections>
                                     </barButtonItem>
                                     <barButtonItem systemItem="fastForward" id="ZfQ-8L-wkc"/>
@@ -192,7 +192,7 @@
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="SmA-cp-jmU"/>
                                     <barButtonItem systemItem="action" id="V4g-eD-hIn">
                                         <connections>
-                                            <action selector="takeLibPhoto:" destination="sxo-UE-zSz" id="tuO-z1-SbE"/>
+                                            <action selector="takeLibPhoto:" destination="sxo-UE-zSz" id="7rh-AA-pur"/>
                                         </connections>
                                     </barButtonItem>
                                     <barButtonItem systemItem="camera" id="LSF-lA-vkz">
@@ -222,7 +222,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="w1c-WR-rhs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="708" y="1027"/>
+            <point key="canvasLocation" x="708" y="1002"/>
         </scene>
         <!--Person-->
         <scene sceneID="jD7-Ag-iBB">

@@ -14,7 +14,7 @@ extension KVMapViewCon: PhotoKhanDelegate {
     // pass it to the other deli
     delegate?.didChangePerson(currentPerson!)
   }
-  
+
   // MARK: Segues:
   override func prepare(for segue: UIStoryboardSegue, sender: Any?)
   {
@@ -29,13 +29,14 @@ extension KVMapViewCon: PhotoKhanDelegate {
       let e = segue.destination as! KVCameraViewController
       e.delegate = self
       e.currentGFX = (currentPerson?.graphics)
+      e.currentPerson = currentPerson
     }
     else if (segue.identifier == "showCollection")
     {
       //      ADD seg-seqs
     }
   }
-  
+
   // NEW
   func setupButtonsForApplicationState() {
     if (UserDefaults.standard.appHasRunSetup() == false) {
@@ -51,8 +52,7 @@ extension KVMapViewCon: PhotoKhanDelegate {
     }
   }
   //
-  
-  
+
   @IBAction func addPerson(sender: AnyObject)
   {
     delegate?.willAddPerson(delegate)

@@ -23,7 +23,7 @@ class KVPrimeTVCon: UITableViewController, MapKhanDelegate
   var placesDC = KVPlaceDataController()
   var msgMODC = KVMessageDataController()
   var locationManager : CLLocationManager? = CLLocationManager()
-  
+
   override func viewDidLoad() {
     super.viewDidLoad()
     
@@ -43,11 +43,12 @@ class KVPrimeTVCon: UITableViewController, MapKhanDelegate
     }
     
     dvc?.pdc = KVPersonDataController(self.pdc.MOC!)
-    
-    dvc?.currentPerson = dvc?.pdc.getAllEntities()[0]
+    UserDefaults.standard.setAppHasRunSetup(val: true)
+
+//    dvc?.currentPerson = dvc?.pdc.getAllEntities()[0]
     
   }
-  
+
   override func viewWillAppear(_ animated: Bool) {
     clearsSelectionOnViewWillAppear = splitViewController!.isCollapsed
     super.viewWillAppear(animated)
@@ -69,6 +70,7 @@ class KVPrimeTVCon: UITableViewController, MapKhanDelegate
   {
     return 4 //
   }
+  
   override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
 
     var rowCount = 0
@@ -88,7 +90,9 @@ class KVPrimeTVCon: UITableViewController, MapKhanDelegate
     
     return rowCount
   }
+  
   // MARK: Pulling section buttons for now
+  
   override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView?
   {
     //Plus right add the
@@ -134,10 +138,11 @@ class KVPrimeTVCon: UITableViewController, MapKhanDelegate
   {
     return (40)
   }
+
   // Draw the cells
+  
   override func tableView(_ tableView: UITableView,
-                          cellForRowAt indexPath: IndexPath) -> UITableViewCell
-  {
+                          cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     
     if (indexPath.section == 0)
     {
@@ -174,13 +179,14 @@ class KVPrimeTVCon: UITableViewController, MapKhanDelegate
     */
     return (UITableViewCell())//cell!
   }
+
   override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool
   {
     // Return false if you do not want the specified item to be editable.
     return true
   }
-  override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath)
-  {
+
+  override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
     //Don't delete from the array from the controller
     if editingStyle == .delete {
 
@@ -211,8 +217,6 @@ class KVPrimeTVCon: UITableViewController, MapKhanDelegate
         // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view.
     }
   }
-  
-  
 
 }
 

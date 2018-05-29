@@ -18,96 +18,88 @@ import UIKit
 
 class KVCameraViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate
 {
-//
-  var delegate: PhotoKhanDelegate?
   
+  var currentGFX: KVRootEntityGraphics?
+  {
+    didSet {
+      configureView()
+    }
+  }
+  
+  var currentPerson: KVPerson?
+  {
+    didSet {
+      // Update the view.
+      configureView()
+    }
+  }
+
+  var delegate: PhotoKhanDelegate?
+
   @IBOutlet weak var bigView: UIImageView!
   @IBOutlet weak var ratingView: UIView!
   @IBOutlet weak var useLibraryButton: UIButton!
   @IBOutlet weak var useCameraButton: UIButton!
   
   let picker = UIImagePickerController()
-  
-  //  var currentPerson : KVPerson!
-  override func viewDidLoad()
-  {
+
+  override func viewDidLoad() {
     super.viewDidLoad()
     // Do any additional setup after loading the view.
     picker.delegate = self
     configureView()
   }
-  override func didReceiveMemoryWarning()
-  {
+  
+  override func didReceiveMemoryWarning() {
     super.didReceiveMemoryWarning()
     // Dispose of any resources that can be recreated.
   }
-  func configureView()
-  {
-    if let g = currentGFX
+  
+  func configureView() {
+
+    if let _ = (self.currentPerson?.graphics?.photoActual)
     {
       if let aVue = bigView
       {
-        aVue.image = g.photoActual
+        print(currentGFX!.photoFileName!)
+
+        aVue.image = currentGFX!.photoActual
       }
     }
-    //      bigView.image = currentPerson?.graphics?.photoActual
-    //      let g = (p.graphics!) //was out of scope in ? now !
-    //        aVue.image = g.photoActual
   }
   
-  
-  // MARK: - Navigation
-//  override func prepare(for segue: UIStoryboardSegue, sender: AnyObject?) { ; }
-    // Get the new view controller using segue.destinationViewController.
-    // Pass the selected object to the new view controller.
-  var currentGFX: KVRootEntityGraphics?
-    {
-    didSet {
-      configureView()
-    }
-  }
-  
- //
-//  var currentPerson: KVPerson?
-//    {
-//    didSet {
-//      // Update the view.
-//      configureView()
-//    }
-//  }
-  /*
+/*
    Pick a photo
   
    - parameter picker: my Picker
    - parameter info:  # HEY take a trip to the Deli 
  */
-  func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any])
-  {
+  func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
     var  chosenImage = UIImage()
     chosenImage = info[UIImagePickerControllerOriginalImage] as! UIImage
 
     currentGFX?.photoActual = chosenImage
+    currentPerson?.graphics?.photoActual = currentGFX?.photoActual
     self.delegate?.didChangeGraphicsOn(self.currentGFX!)
     self.configureView()
     
     dismiss(animated:true, completion: nil)
   }
-  func imagePickerControllerDidCancel(_ picker: UIImagePickerController)
-  {
+
+  func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
     dismiss(animated: true, completion: nil)
   }
   //
-  @IBAction func takeLibPhoto(_ sender: UIButton)
-  {
+  @IBAction func takeLibPhoto(_ sender: UIBarButtonItem) {
     picker.allowsEditing = false
     picker.sourceType = .photoLibrary
     picker.mediaTypes = UIImagePickerController.availableMediaTypes(for: .photoLibrary)!
     picker.modalPresentationStyle = .popover
     present(picker, animated: true, completion: nil)
-//    picker.popoverPresentationController?.UIBu = sender
+    picker.popoverPresentationController?.barButtonItem = sender
   }
-  @IBAction func takeCamPhoto(_ sender: UIButton)
-  {
+
+  @IBAction func takeCamPhoto(_ sender: UIButton) {
 //  @IBAction func shootPhoto(_ sender: UIBarButtonItem) {
     if UIImagePickerController.isSourceTypeAvailable(.camera) {
       picker.allowsEditing = false
@@ -119,8 +111,8 @@ class KVCameraViewController: UIViewController, UIImagePickerControllerDelegate,
       killNilCamera()
     }
   }
-  func killNilCamera()
-  {
+
+  func killNilCamera() {
     let alertVC = UIAlertController(
       title: "No Camera",
       message: "Sorry, this device has no camera",
@@ -137,7 +129,7 @@ class KVCameraViewController: UIViewController, UIImagePickerControllerDelegate,
   }
 // Compliance is Complicity
 // tell the deli to update the image I just got.
-  //didChangeGraphicsOn(_ entity: KVPerson)
+// didChangeGraphicsOn(_ entity: KVPerson)
 // is it the same current person and if not then just use thisP.currentP -> thatP.thisP
   
 }
