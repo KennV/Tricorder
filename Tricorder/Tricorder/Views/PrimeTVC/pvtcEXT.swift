@@ -209,6 +209,7 @@ extension KVPrimeTVCon: CLLocationManagerDelegate
    
    These are called from the 
    */
+  
   @objc func insertNewPerson(sender: AnyObject)
   {
     findLocation()
@@ -223,6 +224,7 @@ extension KVPrimeTVCon: CLLocationManagerDelegate
     dvc!.configureView()
     
   }
+  
   @objc func insertNewPlace(sender: AnyObject)
   {
     let pl = placesDC.makePlaceWithLocation(placesDC.MOC!, loc: (locationManager?.location?.coordinate)!)
@@ -233,6 +235,7 @@ extension KVPrimeTVCon: CLLocationManagerDelegate
     tableView.reloadData()
     foundLocation()
   }
+  
   @objc func insertNewEvent(sender: AnyObject)
   {
     _ = eventsDC.makeEvent(eventsDC.MOC!, loc: (locationManager?.location?.coordinate)!)
@@ -243,12 +246,13 @@ extension KVPrimeTVCon: CLLocationManagerDelegate
     eventsDC.saveCurrentContext(eventsDC.MOC!)
     dvc!.configureView()
   }
+  
   @objc func insertNewMsgMO(sender: AnyObject)
   {
     let md = msgMODC.makeEmptyMessage()
     md.incepDate = NSDate()
-    // location for the event is the same as for the person
-//    allMessages.insert(md, at: 0)
+
+
     _ = msgMODC.saveEntity(entity: md)
     msgMODC.saveCurrentContext(msgMODC.MOC!)
     let indexPath = IndexPath(row: 0, section: 1)
@@ -256,4 +260,5 @@ extension KVPrimeTVCon: CLLocationManagerDelegate
     tableView.reloadData()
     dvc!.configureView()
   }
+  
 }

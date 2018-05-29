@@ -105,7 +105,10 @@ class TC_DBTests: XCTestCase
     XCTAssertNotNil(pp.location, "Need Location Obj")
     pCon.deleteEntityInContext(pCon.MOC!, entity: pp)
   }
-  
+  /** REFACTOR TEST CASES
+   
+   ## Actually _this_ Just stopped working ##
+   
   func testTVCon()
   {
     let AllDataController = MockTricorderDataController()
@@ -124,7 +127,7 @@ class TC_DBTests: XCTestCase
   }  
 
   
-  /** REFACTOR TEST CASES
+  
    */
   //New testCases
   
