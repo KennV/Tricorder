@@ -1,34 +1,8 @@
 /**
-Re-Stripped the Interface, no stacks
+GUI - 15
 
-Mind you this is buggy AF.
- the map view is visible prior to setup:
-  [do I make it invisible or opaque]
-  Is it suitable to make a blackout view to cover it and remove this view if etc
- Actually I bet that is a Massive Performance Hit See Option Three
-  Or the Other way around and have the map view on top
-  OR A THIRD WAY to have the background Black and the only draw the map view if hasSetup == true
+In the current map and camera view I have what I guess are "business rules" and logic (for toggling GUI states) interleaved with code for rendering the GUI. ANd it is not piecemeal/busy work to fix. this actually reduces the technical debt in this module
  
- the setup button does not do anything
- The buttons do not have correct placement, or arrtibutes
-  [Working this first]
-  look into attributed strings;
-  and IBInscpectable instance variables
- 
- the buttons do not do anything
-  [I suppose that this is second]
- There is no Progress indicator
-
-THE PRIME TVC Needs to also be a DataSource(Delegate)
- 
-It does what it (was) is designed to do, but that sucks.
- :: The Primary reason to get to a setup window is to create a Primary User for the app.
- :: When I add any NonPrimaryEntity it *Must* have a
- 
- OKAY SO:
-I AM adding a requirement to the app that it ALWAYS has a CLLocation
- Hell; it IS a MKMap
-And it is the first itenm in bugfix 
 */
 protocol MapKhanDelegate {
   func didChangePerson(_ entity: KVPerson)
@@ -71,6 +45,7 @@ class KVMapViewCon: UIViewController, MKMapViewDelegate
   override func viewDidLoad()
   {
     super.viewDidLoad()
+    setupGUIForApplicationState()
     setupButtonsForApplicationState()
     setupMapView()
     configureView()
@@ -79,7 +54,6 @@ class KVMapViewCon: UIViewController, MKMapViewDelegate
   
   func configureView() {
     if (UserDefaults.standard.appHasRunSetup()) {
-      
       if let p = currentPerson
       {
         if let _imgVue = imageView {
@@ -87,7 +61,7 @@ class KVMapViewCon: UIViewController, MKMapViewDelegate
           _imgVue.image = i
         }
         
-        loadPinData()
+        renderNotationPins()
         let objLocation = CLLocation(latitude: currentPerson?.location?.latitude as! Double, longitude: currentPerson?.location?.longitude as! Double)
         let region = MKCoordinateRegionMakeWithDistance(objLocation.coordinate, 500, 500)
         mapView.setNeedsDisplay()
@@ -106,60 +80,103 @@ class KVMapViewCon: UIViewController, MKMapViewDelegate
   func setupMapView()
   {
     
-    mapView.delegate = self
-    
-    mapView.mapType = .hybridFlyover // .Hybrid - Has Scale; .Standard Has all Custom camera No Scale Bar
-    
-    mapView.showsScale = false
-    mapView.showsUserLocation = true
-    mapView.showsPointsOfInterest = true
-    mapView.showsCompass = false
-    
     let camera = MKMapCamera()
-    camera.centerCoordinate = mapView.centerCoordinate
-    camera.pitch = 70
-    camera.altitude = 400
-    camera.heading = 0
+    mapView.delegate = self
+    /**
+     Switch on Map type
+    */
+    mapView.mapType = .hybridFlyover // .Hybrid - Has Scale; .Standard Has all Custom camera No Scale Bar
+    switch mapView.mapType {
+    case .hybrid:
+      mapView.showsScale = false
+      mapView.showsUserLocation = true
+      mapView.showsPointsOfInterest = true
+      mapView.showsCompass = false
+      //
+      camera.centerCoordinate = mapView.centerCoordinate
+      camera.pitch = 70
+      camera.altitude = 400
+      camera.heading = 0
+    case .hybridFlyover:
+      mapView.showsScale = false
+      mapView.showsUserLocation = true
+      mapView.showsPointsOfInterest = true
+      mapView.showsCompass = false
+      //
+      camera.centerCoordinate = mapView.centerCoordinate
+      camera.pitch = 70
+      camera.altitude = 400
+      camera.heading = 0
+    case .standard:
+      mapView.showsScale = false
+      mapView.showsUserLocation = true
+      mapView.showsPointsOfInterest = true
+      mapView.showsCompass = false
+      //
+      camera.centerCoordinate = mapView.centerCoordinate
+      camera.pitch = 70
+      camera.altitude = 400
+      camera.heading = 0
+    case .satellite:
+      //
+      mapView.showsScale = false
+      mapView.showsUserLocation = true
+      mapView.showsPointsOfInterest = true
+      mapView.showsCompass = false
+      //
+      camera.centerCoordinate = mapView.centerCoordinate
+      camera.pitch = 70
+      camera.altitude = 400
+      camera.heading = 0
+    default:
+      
+      mapView.showsScale = false
+      mapView.showsUserLocation = true
+      mapView.showsPointsOfInterest = true
+      mapView.showsCompass = false
+      
+      
+      camera.centerCoordinate = mapView.centerCoordinate
+      camera.pitch = 70
+      camera.altitude = 400
+      camera.heading = 0
+    }
     
     mapView.camera = camera
     
   }
   
-  // This used to be renderPeople replaces
-  func loadPinData()
-  {
-    //    well that is a good way to get all of these
+  func renderNotationPins() {
     let AllDAT = TricorderDataController()
     AllDAT.MOC = pdc.MOC
-    for object in (AllDAT.getAllEntities()) //as! [KVEntity]
-    {
-      // all pins
-      let loc = object.location
-      let cd = CLLocationCoordinate2DMake(loc?.latitude as! Double, loc?.longitude as! Double)
+    for object in (AllDAT.getAllEntities()) {
       let pin = KVPinItem()
       pin.pinColor = UIColor()
-      pin.coordinate = cd
+      pin.coordinate = CLLocationCoordinate2DMake(object.location?.latitude as! Double, object.location?.longitude as! Double)
       pin.title = object.qName
       pin.subtitle = object.hexID
       
       if (object.isMember(of: KVPerson.self)) {
         pin.pinColor = UIColor.red
       }
+      
       if (object.isMember(of: KVPlace.self)) {
         pin.pinColor = UIColor.purple
       }
+      
       if (object.isMember(of: KVEvent.self)) {
         pin.pinColor = UIColor.yellow
       }
+      
       if (object.isMember(of: KVMessageMO.self)) {
         pin.pinColor = UIColor.orange
       }
+      
       mapView.addAnnotation(pin)
     }
   }
   
-  func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView?
-  {
+  func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
     //http://stackoverflow.com/questions/31069802/error-could-not-cast-value-of-type-nskvonotifying-mkuserlocation-to-park-view-a
     if (annotation is MKUserLocation) {
       return nil

@@ -29,7 +29,7 @@ extension KVMapViewCon: PhotoKhanDelegate {
       let e = segue.destination as! KVCameraViewController
       e.delegate = self
       e.currentGFX = (currentPerson?.graphics)
-      e.currentPerson = currentPerson
+//      e.currentPerson = currentPerson
     }
     else if (segue.identifier == "showCollection")
     {
@@ -38,20 +38,27 @@ extension KVMapViewCon: PhotoKhanDelegate {
   }
 
   // NEW
-  func setupButtonsForApplicationState() {
-    if (UserDefaults.standard.appHasRunSetup() == false) {
+  func setupGUIForApplicationState() {
+    switch (UserDefaults.standard.appHasRunSetup()) {
+    case false:
       self.mapView.isHidden = true
       self.mapView.alpha = 00.00
-      self.setupButton.isHidden = false
-    } else {
+    default:
       self.mapView.isHidden = false
       self.mapView.alpha = 01.00
+    }
+  }
+  
+  func setupButtonsForApplicationState() {
+    switch (UserDefaults.standard.appHasRunSetup()) {
+    case false:
+      self.setupButton.isHidden = false
+    default:
       self.setupButton.isHidden = true
       self.personButton.isHidden = false
       self.eventButton.isHidden = false
-    }
+    }    
   }
-  //
 
   @IBAction func addPerson(sender: AnyObject)
   {
@@ -66,19 +73,14 @@ extension KVMapViewCon: PhotoKhanDelegate {
      OK I had to clean this up in Both places
      */
     delegate?.willMakeMessageFromPerson(currentPerson!) //It needs to reload table data
-  }
-  
-  @IBAction func AddPlace()
-  {
-    delegate?.willMakeNewPlaceHere(delegate)
     configureView()
   }
   
-  @IBAction func addEvent()
-  {
-    delegate?.willAddNewEvent(self)
+  @IBAction func AddPlace() {
+    delegate?.willMakeNewPlaceHere(delegate)
+    configureView()
   }
-  
+
   @IBAction func runSetup(_ sender: UIButton)
   {
     
@@ -86,7 +88,8 @@ extension KVMapViewCon: PhotoKhanDelegate {
   
   @IBAction func addEvent(_ sender: UIButton)
   {
-    
+    delegate?.willAddNewEvent(self)
+    configureView()
   }
 
 }
