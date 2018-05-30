@@ -26,13 +26,13 @@ class KVCameraViewController: UIViewController, UIImagePickerControllerDelegate,
     }
   }
   
-  var currentPerson: KVPerson?
-  {
-    didSet {
-      // Update the view.
-      configureView()
-    }
-  }
+//  var currentPerson: KVPerson?
+//  {
+//    didSet {
+//      // Update the view.
+//      configureView()
+//    }
+//  }
 
   var delegate: PhotoKhanDelegate?
 
@@ -57,17 +57,13 @@ class KVCameraViewController: UIViewController, UIImagePickerControllerDelegate,
   
   func configureView() {
 
-    if let _ = (self.currentPerson?.graphics?.photoActual)
+    if let aVue = bigView
     {
-      if let aVue = bigView
-      {
-        print(currentGFX!.photoFileName!)
-
-        aVue.image = currentGFX!.photoActual
-      }
+      print(currentGFX!.photoFileName!)
+      aVue.image = currentGFX!.photoActual
     }
   }
-  
+
 /*
    Pick a photo
   
@@ -79,7 +75,7 @@ class KVCameraViewController: UIViewController, UIImagePickerControllerDelegate,
     chosenImage = info[UIImagePickerControllerOriginalImage] as! UIImage
 
     currentGFX?.photoActual = chosenImage
-    currentPerson?.graphics?.photoActual = currentGFX?.photoActual
+//    currentPerson?.graphics?.photoActual = currentGFX?.photoActual
     self.delegate?.didChangeGraphicsOn(self.currentGFX!)
     self.configureView()
     
