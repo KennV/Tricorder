@@ -9,7 +9,7 @@ ACTIVATE
 
 protocol PhotoKhanDelegate {
 
-  func didChangeGraphicsOn(_ entity: KVRootEntityGraphics)
+  func didChangeEntityGraphics(_ gfx: KVRootEntityGraphics)
 //  optional
 //  func willChangeGFX(_ entity: KVRootEntityGraphics)
 }
@@ -76,7 +76,7 @@ class KVCameraViewController: UIViewController, UIImagePickerControllerDelegate,
 
     currentGFX?.photoActual = chosenImage
 //    currentPerson?.graphics?.photoActual = currentGFX?.photoActual
-    self.delegate?.didChangeGraphicsOn(self.currentGFX!)
+    self.delegate?.didChangeEntityGraphics(self.currentGFX!)
     self.configureView()
     
     dismiss(animated:true, completion: nil)

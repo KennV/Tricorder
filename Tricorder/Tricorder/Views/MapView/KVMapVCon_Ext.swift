@@ -5,14 +5,14 @@ extension KVMapViewCon: PhotoKhanDelegate {
 
   //MARK: -  Protocol Conformance -
 
-  func didChangeGraphicsOn(_ entity: KVRootEntityGraphics)
+  func didChangeEntityGraphics(_ gfx: KVRootEntityGraphics)
   {
-    if currentPerson?.graphics != entity {
-      currentPerson?.graphics = entity
+    if currentPerson?.graphics != gfx {
+      currentPerson?.graphics = gfx
     }
-    configureView()
-    // pass it to the other deli
-    delegate?.didChangePerson(currentPerson!)
+    delegate?.didChangePerson(currentPerson!) // pass it to the other deli
+    configureView() // Draw
+
   }
 
   // MARK: Segues:
@@ -37,7 +37,17 @@ extension KVMapViewCon: PhotoKhanDelegate {
     }
   }
 
-  // NEW
+  func setupButtonsForApplicationState() {
+    switch (UserDefaults.standard.appHasRunSetup()) {
+    case false:
+      self.setupButton.isHidden = false
+    default:
+      self.setupButton.isHidden = true
+      self.personButton.isHidden = false
+      self.eventButton.isHidden = false
+    }
+  }
+  
   func setupGUIForApplicationState() {
     switch (UserDefaults.standard.appHasRunSetup()) {
     case false:
@@ -49,17 +59,7 @@ extension KVMapViewCon: PhotoKhanDelegate {
     }
   }
   
-  func setupButtonsForApplicationState() {
-    switch (UserDefaults.standard.appHasRunSetup()) {
-    case false:
-      self.setupButton.isHidden = false
-    default:
-      self.setupButton.isHidden = true
-      self.personButton.isHidden = false
-      self.eventButton.isHidden = false
-    }    
-  }
-
+  
   @IBAction func addPerson(sender: AnyObject)
   {
     delegate?.willAddPerson(delegate)

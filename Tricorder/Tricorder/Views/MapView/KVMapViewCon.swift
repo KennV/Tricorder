@@ -64,12 +64,11 @@ class KVMapViewCon: UIViewController, MKMapViewDelegate
           let i = pdc.resizeImage(image: (p.graphics?.photoActual)!, newWidth: _imgVue.bounds.height)
           _imgVue.image = i
         }
-        
-        renderNotationPins()
         let objLocation = CLLocation(latitude: currentPerson?.location?.latitude as! Double, longitude: currentPerson?.location?.longitude as! Double)
         let region = MKCoordinateRegionMakeWithDistance(objLocation.coordinate, 500, 500)
         mapView.setNeedsDisplay()
         mapView.setRegion(region, animated: true)
+        renderNotationPins()
       }
     case false:
       print("\n ### NEED TO RUN _SETUP_### \n");
