@@ -53,9 +53,9 @@ class KVMapViewCon: UIViewController, MKMapViewDelegate
   }
   
   func configureView() {
-    if (UserDefaults.standard.appHasRunSetup()) {
-      if let p = currentPerson
-      {
+    switch (UserDefaults.standard.appHasRunSetup()) {
+    case true:
+      if let p = currentPerson {
         if let _imgVue = imageView {
           let i = pdc.resizeImage(image: (p.graphics?.photoActual)!, newWidth: _imgVue.bounds.height)
           _imgVue.image = i
@@ -67,7 +67,10 @@ class KVMapViewCon: UIViewController, MKMapViewDelegate
         mapView.setNeedsDisplay()
         mapView.setRegion(region, animated: true)
       }
-      
+    case false:
+      print("\N ### NEED TO RUN _SETUP_### \N");
+      // Actually it just makes more sense to link it from code
+      // BUT
     }
   }
   
