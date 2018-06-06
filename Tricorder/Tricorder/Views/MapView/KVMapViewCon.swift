@@ -68,7 +68,7 @@ class KVMapViewCon: UIViewController, MKMapViewDelegate
         mapView.setRegion(region, animated: true)
       }
     case false:
-      print("\N ### NEED TO RUN _SETUP_### \N");
+      print("\n ### NEED TO RUN _SETUP_### \n");
       // Actually it just makes more sense to link it from code
       // BUT
     }
