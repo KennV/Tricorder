@@ -3,6 +3,8 @@ GUI - 15
 
 In the current map and camera view I have what I guess are "business rules" and logic (for toggling GUI states) interleaved with code for rendering the GUI. ANd it is not piecemeal/busy work to fix. this actually reduces the technical debt in this module
  
+ OK the simplest way to run setup is from a button
+ 
 */
 protocol MapKhanDelegate {
   func didChangePerson(_ entity: KVPerson)
@@ -10,6 +12,8 @@ protocol MapKhanDelegate {
   func willMakeMessageFromPerson(_ person: KVPerson?)
   func willMakeNewPlaceHere(_ deli: Any?)
   func willAddNewEvent( _ deli: Any?)
+  //
+  func willRunSetupFrom(delegate: Any?)
 }
 
 import MapKit

@@ -202,6 +202,10 @@ extension KVPrimeTVCon: CLLocationManagerDelegate
 //    allMessages.insert(md, at: 0)
     tableView.reloadData()
   }
+  
+  func willRunSetupFrom(delegate: Any?) {
+    self.performSegue(withIdentifier: "showEula", sender: nil)
+  }
   /**
    Buttons in the TVC header sections
    ::Taking this out of the insertNew Object
@@ -260,5 +264,6 @@ extension KVPrimeTVCon: CLLocationManagerDelegate
     tableView.reloadData()
     dvc!.configureView()
   }
+  
   
 }
