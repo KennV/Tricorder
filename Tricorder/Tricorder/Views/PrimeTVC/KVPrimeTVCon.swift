@@ -28,11 +28,7 @@ class KVPrimeTVCon: UITableViewController, MapKhanDelegate
     super.viewDidLoad()
     
     setupCLManager() // I could set this in the AppDeli but I am not sure if that is best.
-
-    if (!(pdc.getAllEntities().isEmpty)) {
-     UserDefaults.standard.setAppHasRunSetup(val: true)
-    }
-
+    //FIXME: - Setting the appSetupState here?
     navigationItem.leftBarButtonItem = editButtonItem
     let addButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(KVPrimeTVCon.insertNewObject(sender :)))
     
@@ -41,10 +37,13 @@ class KVPrimeTVCon: UITableViewController, MapKhanDelegate
         let controllers = split.viewControllers
         dvc = (controllers[controllers.count-1] as! UINavigationController).topViewController as? KVMapViewCon
     }
-    
     dvc?.pdc = KVPersonDataController(self.pdc.MOC!)
-    UserDefaults.standard.setAppHasRunSetup(val: true)
-
+    switch dvc?.pdc.getAllEntities().isEmpty {
+    case true:
+      UserDefaults.standard.setAppHasRunSetup(val: false)
+    default:
+      UserDefaults.standard.setAppHasRunSetup(val: true)
+    }
 //    dvc?.currentPerson = dvc?.pdc.getAllEntities()[0]
     
   }
@@ -72,7 +71,6 @@ class KVPrimeTVCon: UITableViewController, MapKhanDelegate
   }
   
   override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-
     var rowCount = 0
     
     switch section {
@@ -87,14 +85,12 @@ class KVPrimeTVCon: UITableViewController, MapKhanDelegate
     default:
       rowCount = 0
     }
-    
     return rowCount
   }
   
   // MARK: Pulling section buttons for now
   
-  override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView?
-  {
+  override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
     //Plus right add the
     //While Height 0 Override down thurr
     let headerVue = UIView(frame: CGRect(origin: CGPoint(x: 0, y: 0), size: CGSize(width: view.frame.size.width, height: 0)))
@@ -140,13 +136,11 @@ class KVPrimeTVCon: UITableViewController, MapKhanDelegate
   }
 
   // Draw the cells
-  
   override func tableView(_ tableView: UITableView,
                           cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-    
     if (indexPath.section == 0)
     {
-    let c = tableView.dequeueReusableCell(withIdentifier: "personCell", for: indexPath) as! KVBasicCustomCell
+      let c = tableView.dequeueReusableCell(withIdentifier: "personCell", for: indexPath) as! KVBasicCustomCell
       let p = pdc.getAllEntities()[(indexPath as NSIndexPath).row]
       c.nameLabel!.text = p.qName
 // Use the 'real' resize ƒn
@@ -213,6 +207,7 @@ class KVPrimeTVCon: UITableViewController, MapKhanDelegate
         break
       }
       tableView.reloadData()
+      dvc?.configureView()
     } else if editingStyle == .insert {
         // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view.
     }

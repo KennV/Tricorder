@@ -204,7 +204,9 @@ extension KVPrimeTVCon: CLLocationManagerDelegate
   }
   
   func willRunSetupFrom(delegate: Any?) {
-    self.performSegue(withIdentifier: "showEula", sender: nil)
+    //FIXME: ¡¡¡Not Being Called!!! ¿Por Qué?
+    print("Setup Pressed")
+    self.performSegue(withIdentifier: "showEULA", sender: nil)
   }
   /**
    Buttons in the TVC header sections
@@ -226,7 +228,6 @@ extension KVPrimeTVCon: CLLocationManagerDelegate
     tableView.insertRows(at: [indexPath], with: .automatic)
     pdc.saveCurrentContext(pdc.MOC!)
     dvc!.configureView()
-    
   }
   
   @objc func insertNewPlace(sender: AnyObject)
@@ -238,6 +239,7 @@ extension KVPrimeTVCon: CLLocationManagerDelegate
     placesDC.saveCurrentContext(placesDC.MOC!)
     tableView.reloadData()
     foundLocation()
+    dvc?.configureView()
   }
   
   @objc func insertNewEvent(sender: AnyObject)
@@ -255,7 +257,6 @@ extension KVPrimeTVCon: CLLocationManagerDelegate
   {
     let md = msgMODC.makeEmptyMessage()
     md.incepDate = NSDate()
-
 
     _ = msgMODC.saveEntity(entity: md)
     msgMODC.saveCurrentContext(msgMODC.MOC!)
