@@ -46,14 +46,16 @@ class KVMapViewCon: UIViewController, MKMapViewDelegate
       //configureView()
     }
   }
-  override func viewDidLoad()
-  {
+  override func viewDidLoad() {
     super.viewDidLoad()
+    //FIXME: - Fixing simple listed bug?
+    if !(pdc.getAllEntities().isEmpty) {
+      currentPerson = pdc.getAllEntities().first
+    }
     setupGUIForApplicationState()
     setupButtonsForApplicationState()
     setupMapView()
     configureView()
-    
   }
   
   func configureView() {
@@ -71,7 +73,7 @@ class KVMapViewCon: UIViewController, MKMapViewDelegate
         renderNotationPins()
       }
     case false:
-      print("\n ### NEED TO RUN _SETUP_### \n");
+      print("\n### NEED TO RUN _SETUP_ ###\n");
       // Actually it just makes more sense to link it from code
       // BUT
     }

@@ -81,9 +81,11 @@ extension KVMapViewCon: PhotoKhanDelegate {
     configureView()
   }
 
-  @IBAction func runSetup(_ sender: UIButton)
-  {
-    
+  @IBAction func runSetup(_ sender: UIButton) {
+    UserDefaults.standard.setAppHasRunSetup(val: true)
+    // FIXME: - Does this get called?
+    delegate?.willRunSetupFrom(delegate: self)
+    configureView()
   }
   
   @IBAction func addEvent(_ sender: UIButton)
