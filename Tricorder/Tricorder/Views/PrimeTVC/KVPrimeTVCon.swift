@@ -44,7 +44,7 @@ class KVPrimeTVCon: UITableViewController, MapKhanDelegate
     
     dvc?.pdc = KVPersonDataController(self.pdc.MOC!)
     
-    dvc?.currentPerson = dvc?.pdc.getAllEntities()[0]
+   // dvc?.currentPerson = dvc?.pdc.getAllEntities()[0]
     
   }
   
@@ -60,7 +60,7 @@ class KVPrimeTVCon: UITableViewController, MapKhanDelegate
     // OR are they lightweight
   }
 
-  func insertNewObject(sender: AnyObject)
+  @objc func insertNewObject(sender: AnyObject)
   {
     insertNewPerson(sender: self)
   }

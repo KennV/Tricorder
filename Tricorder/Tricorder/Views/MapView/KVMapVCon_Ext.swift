@@ -38,17 +38,23 @@ extension KVMapViewCon: PhotoKhanDelegate {
   
   // NEW
   func setupButtonsForApplicationState() {
-    if (UserDefaults.standard.appHasRunSetup() == false) {
-      self.mapView.isHidden = true
-      self.mapView.alpha = 00.00
-      self.setupButton.isHidden = false
-    } else {
-      self.mapView.isHidden = false
-      self.mapView.alpha = 01.00
-      self.setupButton.isHidden = true
-      self.personButton.isHidden = false
-      self.eventButton.isHidden = false
-    }
+//    if (UserDefaults.standard.appHasRunSetup() == false) {
+//      self.mapView.isHidden = true
+//      self.mapView.alpha = 00.00
+//      self.setupButton.isHidden = false
+//    } else {
+//      self.mapView.isHidden = false
+//      self.mapView.alpha = 01.00
+//      self.setupButton.isHidden = true
+//      self.personButton.isHidden = false
+//      self.eventButton.isHidden = false
+//    }
+    self.mapView.isHidden = false
+    self.mapView.alpha = 01.00
+    self.setupButton.isHidden = true
+    self.personButton.isHidden = false
+    self.eventButton.isHidden = false
+
   }
   //
   
