@@ -59,7 +59,7 @@ class KVRatingView: UIView
   }
   // MARK: Button Action
 //IBOutlet insted
-  func ratingButtonTapped(_ button: UIButton)
+  @objc func ratingButtonTapped(_ button: UIButton)
   {
     rating = ratingButtons.index(of: button)! + 1
     

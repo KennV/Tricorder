@@ -60,7 +60,7 @@ class KVPrimeTVCon: UITableViewController, MapKhanDelegate
     // OR are they lightweight
   }
 
-  func insertNewObject(sender: AnyObject)
+  @objc func insertNewObject(sender: AnyObject)
   {
     insertNewPerson(sender: self)
   }
