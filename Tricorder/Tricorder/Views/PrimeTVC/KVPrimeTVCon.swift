@@ -53,7 +53,7 @@ class KVPrimeTVCon: UITableViewController, MapKhanDelegate
     super.viewWillAppear(animated)
     print("App state for AppHasRunSetup = \(UserDefaults.standard.appHasRunSetup())")
   }
-  
+
   override func didReceiveMemoryWarning() {
     super.didReceiveMemoryWarning()
     // I can really Easily crush the arrays no?
@@ -211,8 +211,6 @@ class KVPrimeTVCon: UITableViewController, MapKhanDelegate
         // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view.
     }
   }
-  
-  
 
 }
 
