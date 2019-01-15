@@ -146,6 +146,9 @@ class TC_DBTests: XCTestCase
      Can I pop that over to a background queue?
      - does that fail?, How?
     */
+    let tCon = MockTricorderDataController()
+    tCon.MOC = inMemoryContext
+    XCTAssertNotNil(tCon.createEntityInContext(tCon.MOC!, type: "KVRootEntity"), "thing")
   }
 
   func testPhotoEditState()
