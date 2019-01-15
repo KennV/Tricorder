@@ -30,7 +30,7 @@ I AM adding a requirement to the app that it ALWAYS has a CLLocation
  Hell; it IS a MKMap
 And it is the first itenm in bugfix 
 */
-protocol MapKhanDelegate {
+protocol MapDataProtocol {
   func didChangePerson(_ entity: KVPerson)
   func willAddPerson(_ deli: Any?)
   func willMakeMessageFromPerson(_ person: KVPerson?)
@@ -52,7 +52,7 @@ class KVMapViewCon: UIViewController, MKMapViewDelegate
   /**
 
    */
-  var delegate: MapKhanDelegate?
+  var delegate: MapDataProtocol?
   var pdc = KVPersonDataController()
   var plc = KVPlaceDataController()
   

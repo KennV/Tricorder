@@ -1,7 +1,7 @@
 
 import UIKit
 
-extension KVMapViewCon: PhotoKhanDelegate {
+extension KVMapViewCon: PhotoEditorProtocol {
 
   //MARK: -  Protocol Conformance -
 
@@ -26,6 +26,11 @@ extension KVMapViewCon: PhotoKhanDelegate {
     }
     else if (segue.identifier == "showPhotoEd")
     {
+      /**
+       BUGFIX: showPhotoEd became unlinked in the XIB
+       with disasterous results. The Deli is not set and the GFX is nil
+       _Obviously_ this is sub-optimal
+      */
       let e = segue.destination as! KVCameraViewController
       e.delegate = self
       e.currentGFX = (currentPerson?.graphics)

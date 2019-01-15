@@ -14,7 +14,7 @@ I should make a cutsom class for that
 import CoreLocation
 import UIKit
 
-class KVPrimeTVCon: UITableViewController, MapKhanDelegate
+class KVPrimeTVCon: UITableViewController, MapDataProtocol
 {
 
   var dvc: KVMapViewCon? = nil
