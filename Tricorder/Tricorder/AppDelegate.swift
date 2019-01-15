@@ -53,7 +53,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
    
    */
 
-
   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
     // Override point for customization after application launch.
     let splitViewController = self.window!.rootViewController as! UISplitViewController
@@ -63,8 +62,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
     
     let masterNavigationController = splitViewController.viewControllers[0] as! UINavigationController
     let c = masterNavigationController.topViewController as! KVPrimeTVCon
-    // THUS; the vue never owns even a copy or a pointer of the data it gets it from the controller who got it from a (hidden) source
-    
+    /** THUS; the vue never owns even a copy or a pointer of the data it gets it from the controller who got it from a (hidden) source
+     MODERNIZATION NOTE: This implies by-ref. was built in at the early stage
+     */
     c.pdc.MOC = self.rootDataController.PSK.viewContext
     c.placesDC.MOC = self.rootDataController.PSK.viewContext
     c.eventsDC.MOC = self.rootDataController.PSK.viewContext

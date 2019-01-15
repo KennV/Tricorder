@@ -10,7 +10,7 @@ I was having some issues with the TVCells, it was because I tried to dequue Phon
 
 import UIKit
 enum PersonSections: Int {
-  //This makes the TVCells setup more readable AND Less Error Prone
+  //This makes the TVCells setup more readable, extensible AND Less Error Prone
   case NameCell, AddressCell, PhoneCell, TextIDCell, HexIDCell, StatusCell
   static let allValues = [NameCell, AddressCell, PhoneCell, TextIDCell, HexIDCell, StatusCell]
 }

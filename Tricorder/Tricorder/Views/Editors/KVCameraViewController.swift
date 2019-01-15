@@ -50,9 +50,9 @@ class KVCameraViewController: UIViewController, UIImagePickerControllerDelegate,
         aVue.image = g.photoActual
       }
     }
-    //      bigView.image = currentPerson?.graphics?.photoActual
-    //      let g = (p.graphics!) //was out of scope in ? now !
-    //        aVue.image = g.photoActual
+//          bigView.image = currentPerson?.graphics?.photoActual
+//          let g = (p.graphics!) //was out of scope in ? now !
+//            aVue.image = g.photoActual
   }
   
   
@@ -60,21 +60,12 @@ class KVCameraViewController: UIViewController, UIImagePickerControllerDelegate,
 //  override func prepare(for segue: UIStoryboardSegue, sender: AnyObject?) { ; }
     // Get the new view controller using segue.destinationViewController.
     // Pass the selected object to the new view controller.
-  var currentGFX: KVRootEntityGraphics?
-    {
+  var currentGFX: KVRootEntityGraphics? {
     didSet {
       configureView()
     }
   }
-  
- //
-//  var currentPerson: KVPerson?
-//    {
-//    didSet {
-//      // Update the view.
-//      configureView()
-//    }
-//  }
+
   /*
    Pick a photo
   
