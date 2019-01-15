@@ -29,6 +29,7 @@ class MockItemsDataController <T : KVItem> : TricorderDataController<T>
   
 }
 @testable import Tricorder
+let SUT = UIApplication.shared.delegate as! AppDelegate
 
 class TricorderTests: XCTestCase {
   
@@ -42,4 +43,13 @@ class TricorderTests: XCTestCase {
         super.tearDown()
     }
 
+  func testOner() {
+    XCTAssert((SUT.isKind(of: AppDelegate.self)), "This would get very MetaPhysical if it failed")
+    XCTAssertTrue((SUT.application(UIApplication.shared, didFinishLaunchingWithOptions: nil)), "Application Did not launch! release the Daleks")
+
+    XCTAssertNotNil(SUT.window, "_NO WINDOW!_")
+    XCTAssertNotNil(SUT.rootDataController, "_NO DATA-Khan!_")
+    
+    
+  }
 }
