@@ -113,5 +113,10 @@ class KVPersonEditorTableViewController: UITableViewController {
     }
     return cell
   }
-  
+//MARK: UNFUGGITY
+  /**
+   Currently I am using the various controllers to have protocols to effect the state of the person. This is good and bad. It is harder to tell in the case of the Camera's VC where I am only affecting the image/GFX and I am doing it by reference
+   Therefore I might suggest having the CRUD-like behavior be on a PersonDataProtocol and then moving that over to the
+PersonActionDelegate and ReFactoring that to PersonActionProtocol (*NOTE* PersonActionDelegate is already filled with weird shit)
+  */
 }
