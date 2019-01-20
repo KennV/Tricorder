@@ -176,7 +176,6 @@ class TC_DBTests: XCTestCase
   
   // New Protocol
   func testPersonMakesItem()
-    
   {
     /**
      Attempt to make a new person (p) and have P's controller

@@ -22,9 +22,7 @@ extension KVPrimeTVCon: CLLocationManagerDelegate
     case showEULA
     case showDetail
   }
-  
-  // Hmmm, them thingies
-  
+
   // MARK: - Segues
   override func prepare(for segue: UIStoryboardSegue, sender: Any?)
   {
@@ -35,6 +33,7 @@ extension KVPrimeTVCon: CLLocationManagerDelegate
     }
     switch identifierCase {
     case .showEULA:
+      print("App state for AppHasRunSetup = \(UserDefaults.standard.appHasRunSetup())")
       print("License")
       let eulaCon = (segue.destination as! UINavigationController).topViewController as! KDVEULAViewController
       eulaCon.navigationItem.leftBarButtonItem = splitViewController?.displayModeButtonItem
@@ -77,9 +76,8 @@ extension KVPrimeTVCon: CLLocationManagerDelegate
     }
     
   }
-  // TODO: Update the RSRC string/URL in here
-  func locationManager(_ manager: CLLocationManager,
-                       didChangeAuthorization status: CLAuthorizationStatus)
+  // TODO: Is this is AppDeli or a queue?
+  func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus)
   {
     switch status {
     case .authorizedAlways:
@@ -208,8 +206,9 @@ extension KVPrimeTVCon: CLLocationManagerDelegate
    ADDING IT BACK
    
    These are called from the 
+   IBOutlet insted
    */
-  //IBOutlet insted
+  //FIXME: FUCKIN' *NEEDS* TO BE A PROTOCOL!!!
   func insertNewPerson(sender: AnyObject)
   {
     findLocation()

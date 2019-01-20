@@ -5,6 +5,8 @@
   Created by Kenn Villegas on 9/19/16.
   Copyright © 2016 K3nV. All rights reserved.
 
+*/
+/**
 ** Attrib: http://nshipster.com/core-location-in-ios-8/
 
 I believe that i can customise the cells to have a custom scroll view
@@ -18,11 +20,15 @@ class KVPrimeTVCon: UITableViewController, MapDataProtocol
 {
 
   var dvc: KVMapViewCon? = nil
+  var locationManager : CLLocationManager? = CLLocationManager()
+  /*
+   _Suppose_ I put all of these in API _from_ each given controller?
+  */
   var pdc = KVPersonDataController()
   var eventsDC = KVEventDataController()
   var placesDC = KVPlaceDataController()
   var msgMODC = KVMessageDataController()
-  var locationManager : CLLocationManager? = CLLocationManager()
+  
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -51,7 +57,7 @@ class KVPrimeTVCon: UITableViewController, MapDataProtocol
   override func viewWillAppear(_ animated: Bool) {
     clearsSelectionOnViewWillAppear = splitViewController!.isCollapsed
     super.viewWillAppear(animated)
-    print("App state for AppHasRunSetup = \(UserDefaults.standard.appHasRunSetup())")
+
   }
 
   override func didReceiveMemoryWarning() {
@@ -60,6 +66,7 @@ class KVPrimeTVCon: UITableViewController, MapDataProtocol
     // OR are they lightweight
   }
 
+  //FIXME: Make a Fucken Protocol from Entity Controller
   @objc func insertNewObject(sender: AnyObject)
   {
     insertNewPerson(sender: self)
