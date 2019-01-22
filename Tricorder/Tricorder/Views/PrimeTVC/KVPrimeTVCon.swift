@@ -16,7 +16,7 @@ I should make a cutsom class for that
 import CoreLocation
 import UIKit
 
-class KVPrimeTVCon: UITableViewController, MapDataProtocol
+class KVPrimeTVCon: UITableViewController, KVMapActionsProtocol
 {
 
   var dvc: KVMapViewCon? = nil
@@ -47,7 +47,7 @@ class KVPrimeTVCon: UITableViewController, MapDataProtocol
         let controllers = split.viewControllers
         dvc = (controllers[controllers.count-1] as! UINavigationController).topViewController as? KVMapViewCon
     }
-    
+//    self.pdc.delegate = self
     dvc?.pdc = KVPersonDataController(self.pdc.MOC!)
     
    // dvc?.currentPerson = dvc?.pdc.getAllEntities()[0]
@@ -70,6 +70,7 @@ class KVPrimeTVCon: UITableViewController, MapDataProtocol
   @objc func insertNewObject(sender: AnyObject)
   {
     insertNewPerson(sender: self)
+//    self.mkPersonForDelegate(deli: pdc.delegate)
   }
   // MARK: - Table View Setup
   override func numberOfSections(in tableView: UITableView) -> Int
@@ -102,9 +103,9 @@ class KVPrimeTVCon: UITableViewController, MapDataProtocol
     //While Height 0 Override down thurr
     let headerVue = UIView(frame: CGRect(origin: CGPoint(x: 0, y: 0), size: CGSize(width: view.frame.size.width, height: 0)))
     let sectionLabel = UILabel(frame: CGRect(origin: CGPoint(x: 10, y: 10), size: CGSize(width: view.frame.size.width, height: 21)))
-//    let sectionButton = UIButton(frame: CGRect(x: 80, y: 10, width: 88, height: 21))
-//    sectionButton.backgroundColor = UIColor.clear
-//        sectionButton.titleLabel?.textColor = UIColor.black
+    let sectionButton = UIButton(frame: CGRect(x: 80, y: 10, width: 88, height: 21))
+    sectionButton.backgroundColor = UIColor.clear
+        sectionButton.titleLabel?.textColor = UIColor.black
 //        sectionButton.font = UIFont.systemFont(ofSize: 16)
     sectionLabel.backgroundColor = UIColor.clear
     sectionLabel.textColor = UIColor.yellow
@@ -114,19 +115,19 @@ class KVPrimeTVCon: UITableViewController, MapDataProtocol
     {
     case 0:
       sectionLabel.text = NSLocalizedString("Person:", comment: "")
-//      sectionButton.setTitle("Person --", for: .normal)
+      sectionButton.setTitle("Person --", for: .normal)
     case 1:
       sectionLabel.text = NSLocalizedString("Message:", comment: "")
-//      sectionButton.setTitle("Msgs ++", for: .normal)
+      sectionButton.setTitle("Msgs ++", for: .normal)
 //      sectionButton.addTarget(self, action: #selector(insertNewMsgMO(sender:)), for: .touchDown)
     case 2:
       sectionLabel.text = NSLocalizedString("Events:", comment: "")
-//      sectionButton.setTitle("Events ++", for: .normal)
+      sectionButton.setTitle("Events ++", for: .normal)
 //      sectionButton.addTarget(self, action: #selector(insertNewEvent(sender:)), for: .touchDown)
     case 3:
       sectionLabel.text = NSLocalizedString("Places:", comment: "")
+      sectionButton.setTitle("Places ++", for: .normal)
 //      sectionButton.addTarget(self, action: #selector(insertNewPlace(sender:)), for: .touchDown)
-//      sectionButton.setTitle("Places ++", for: .normal)
       
     default:
       return nil

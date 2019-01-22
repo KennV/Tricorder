@@ -172,7 +172,8 @@ extension KVPrimeTVCon: CLLocationManagerDelegate
   
   func willAddPerson(_ deli: Any?) {
     findLocation()
-    insertNewPerson(sender: self)
+//    insertNewPerson(sender: self)
+    
   }
   
   func willMakeNewPlaceHere(_ deli: Any?)
@@ -258,5 +259,18 @@ extension KVPrimeTVCon: CLLocationManagerDelegate
     tableView.insertRows(at: [indexPath], with: .automatic)
     tableView.reloadData()
     dvc!.configureView()
+  }
+  func mkPersonForDelegate(deli: Any?) {
+    findLocation()
+    let p = pdc.makePersonAllUp(pdc.MOC!)
+    pdc.updateLocationFor(p, loc: (locationManager?.location?.coordinate)!)
+    pdc.getAddressOfLocation(p.location!)
+    _ = pdc.saveEntity(entity: p)
+    
+    let indexPath = IndexPath(row: 0, section: 0)
+    tableView.insertRows(at: [indexPath], with: .automatic)
+    pdc.saveCurrentContext(pdc.MOC!)
+    dvc!.configureView()
+  
   }
 }
