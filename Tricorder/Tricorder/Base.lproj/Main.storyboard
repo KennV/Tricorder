@@ -223,10 +223,10 @@
             </objects>
             <point key="canvasLocation" x="708" y="1027"/>
         </scene>
-        <!--Person-->
+        <!--PersonView-->
         <scene sceneID="jD7-Ag-iBB">
             <objects>
-                <tableViewController id="06g-Er-evH" userLabel="Person" customClass="KVPersonEditorTableViewController" customModule="Tricorder" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="06g-Er-evH" userLabel="PersonView" customClass="KVPersonVueTVC" customModule="Tricorder" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="N7y-HY-xD8">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -766,7 +766,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rux-fX-hf1" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="709" y="-630"/>
+            <point key="canvasLocation" x="708" y="-630.13493253373315"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="r7l-gg-dq7">

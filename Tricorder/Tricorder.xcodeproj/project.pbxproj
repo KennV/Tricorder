@@ -23,7 +23,7 @@
 		3827B0281D9DD3DF004A3582 /* TricorderUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3827B0271D9DD3DF004A3582 /* TricorderUITests.swift */; };
 		3827B0391D9DD923004A3582 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3827B0381D9DD923004A3582 /* AppDelegate.swift */; };
 		3827B0481D9DD998004A3582 /* KVCameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3827B03C1D9DD998004A3582 /* KVCameraViewController.swift */; };
-		3827B0491D9DD998004A3582 /* KVPersonEditorTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3827B03D1D9DD998004A3582 /* KVPersonEditorTableViewController.swift */; };
+		3827B0491D9DD998004A3582 /* KVPersonVueTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3827B03D1D9DD998004A3582 /* KVPersonVueTVC.swift */; };
 		3827B04A1D9DD998004A3582 /* KVMapViewCon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3827B03F1D9DD998004A3582 /* KVMapViewCon.swift */; };
 		3827B04B1D9DD998004A3582 /* KVAnnotationItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3827B0411D9DD998004A3582 /* KVAnnotationItem.swift */; };
 		3827B04C1D9DD998004A3582 /* KVPrimeTVCon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3827B0431D9DD998004A3582 /* KVPrimeTVCon.swift */; };
@@ -112,7 +112,7 @@
 		3827B0291D9DD3DF004A3582 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3827B0381D9DD923004A3582 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3827B03C1D9DD998004A3582 /* KVCameraViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KVCameraViewController.swift; sourceTree = "<group>"; };
-		3827B03D1D9DD998004A3582 /* KVPersonEditorTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KVPersonEditorTableViewController.swift; sourceTree = "<group>"; };
+		3827B03D1D9DD998004A3582 /* KVPersonVueTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KVPersonVueTVC.swift; sourceTree = "<group>"; };
 		3827B03F1D9DD998004A3582 /* KVMapViewCon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KVMapViewCon.swift; sourceTree = "<group>"; };
 		3827B0411D9DD998004A3582 /* KVAnnotationItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KVAnnotationItem.swift; sourceTree = "<group>"; };
 		3827B0431D9DD998004A3582 /* KVPrimeTVCon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KVPrimeTVCon.swift; sourceTree = "<group>"; };
@@ -273,7 +273,7 @@
 			isa = PBXGroup;
 			children = (
 				3827B03C1D9DD998004A3582 /* KVCameraViewController.swift */,
-				3827B03D1D9DD998004A3582 /* KVPersonEditorTableViewController.swift */,
+				3827B03D1D9DD998004A3582 /* KVPersonVueTVC.swift */,
 			);
 			path = Editors;
 			sourceTree = "<group>";
@@ -845,7 +845,7 @@
 				38D128D5201A99F200B0DC7F /* KVMeal.swift in Sources */,
 				38D128DC201A99F200B0DC7F /* KVRootEntity+CoreDataProperties.swift in Sources */,
 				3827B04D1D9DD998004A3582 /* pvtcEXT.swift in Sources */,
-				3827B0491D9DD998004A3582 /* KVPersonEditorTableViewController.swift in Sources */,
+				3827B0491D9DD998004A3582 /* KVPersonVueTVC.swift in Sources */,
 				38D128D0201A99F200B0DC7F /* KVMessageMO.swift in Sources */,
 				38D128DB201A99F200B0DC7F /* KVRootEntityGraphics.swift in Sources */,
 				38D128DE201A99F200B0DC7F /* KVRootEntityData+CoreDataProperties.swift in Sources */,

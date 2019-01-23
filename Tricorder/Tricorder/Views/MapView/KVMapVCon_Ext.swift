@@ -20,7 +20,7 @@ extension KVMapViewCon: PhotoEditorProtocol {
   {
     if (segue.identifier == "showPersonEd")
     {
-      let e = segue.destination as! KVPersonEditorTableViewController
+      let e = segue.destination as! KVPersonVueTVC
       
       e.currentPerson = currentPerson
     }

@@ -15,11 +15,13 @@ enum PersonSections: Int {
   static let allValues = [NameCell, AddressCell, PhoneCell, TextIDCell, HexIDCell, StatusCell]
 }
 //MARK: ATHENA
-class KVPersonEditorTableViewController: UITableViewController {
+class KVPersonVueTVC: UITableViewController {
   var currentPerson : KVPerson!
   override func viewDidLoad() {
     super.viewDidLoad()
-    self.title = "Person-Ed"
+    self.title = "Report"
+    setupPersonEd()
+    
   }
   override func didReceiveMemoryWarning() {
     super.didReceiveMemoryWarning()
@@ -119,4 +121,8 @@ class KVPersonEditorTableViewController: UITableViewController {
    Therefore I might suggest having the CRUD-like behavior be on a PersonDataProtocol and then moving that over to the
 PersonActionDelegate and ReFactoring that to PersonActionProtocol (*NOTE* PersonActionDelegate is already filled with weird shit)
   */
+  func setupPersonEd() {
+    navigationItem.rightBarButtonItem = editButtonItem
+    
+  }
 }
