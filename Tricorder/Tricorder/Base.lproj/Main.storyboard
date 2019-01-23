@@ -53,7 +53,7 @@
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
                                 <state key="normal" title="Edit Person"/>
                                 <connections>
-                                    <segue destination="06g-Er-evH" kind="show" identifier="showPersonEd" id="nJM-4d-xdM"/>
+                                    <segue destination="06g-Er-evH" kind="show" identifier="showPersonVue" id="nJM-4d-xdM"/>
                                 </connections>
                             </button>
                             <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zOX-fV-mZw">
@@ -70,6 +70,7 @@
                                 <state key="normal" title="Setup"/>
                                 <connections>
                                     <action selector="runSetup:" destination="JEX-9P-axG" eventType="touchUpInside" id="TCN-cv-Dgz"/>
+                                    <segue destination="j0f-et-ulB" kind="show" id="Vbs-kk-Dll"/>
                                 </connections>
                             </button>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Qnh-AA-jJa">
@@ -232,15 +233,15 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="nameCell" textLabel="Plr-uz-QZw" style="IBUITableViewCellStyleDefault" id="D7J-hK-Obe">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="nameCell" textLabel="Plr-uz-QZw" style="IBUITableViewCellStyleDefault" id="D7J-hK-Obe">
                                 <rect key="frame" x="0.0" y="55.5" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="D7J-hK-Obe" id="nuO-6L-be6">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="341" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Plr-uz-QZw">
-                                            <rect key="frame" x="16" y="0.0" width="343" height="43.5"/>
+                                            <rect key="frame" x="16" y="0.0" width="324" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -248,6 +249,9 @@
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="Fb2-Fz-cTG" kind="show" id="dH9-Pk-QZ5"/>
+                                </connections>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="addressCell" textLabel="y9f-bo-vbb" detailTextLabel="VsN-Zn-ihE" style="IBUITableViewCellStyleSubtitle" id="d6p-N4-ofa">
                                 <rect key="frame" x="0.0" y="99.5" width="375" height="44"/>
@@ -433,6 +437,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CJD-Ph-kkE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2930" y="118"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="dCi-u3-WNA">
+            <objects>
+                <viewController id="Fb2-Fz-cTG" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ZXB-NP-AjH"/>
+                        <viewControllerLayoutGuide type="bottom" id="NGX-WY-hl9"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="g8j-R9-kB7">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5rH-Vt-0fU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3743" y="117"/>
         </scene>
         <!--Vehicle-->
         <scene sceneID="a5Q-Cj-ABM">

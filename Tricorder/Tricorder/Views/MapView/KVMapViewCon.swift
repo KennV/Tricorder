@@ -138,9 +138,6 @@ class KVMapViewCon: UIViewController, MKMapViewDelegate
       let cd = CLLocationCoordinate2DMake(loc?.latitude as! Double, loc?.longitude as! Double)
       let pin = KVPinItem()
       pin.pinColor = UIColor()
-      pin.coordinate = cd
-      pin.title = object.qName
-      pin.subtitle = object.hexID
       
       if (object.isMember(of: KVPerson.self)) {
         pin.pinColor = UIColor.red
@@ -154,6 +151,10 @@ class KVMapViewCon: UIViewController, MKMapViewDelegate
       if (object.isMember(of: KVMessageMO.self)) {
         pin.pinColor = UIColor.orange
       }
+      pin.coordinate = cd
+      pin.title = object.qName
+      pin.subtitle = object.hexID
+      
       mapView.addAnnotation(pin)
     }
   }
