@@ -43,6 +43,10 @@ extension KVMapViewCon: PhotoEditorProtocol {
   
   // NEW
   func setupButtonsForApplicationState() {
+    self.navigationItem.leftBarButtonItem = splitViewController?.displayModeButtonItem
+    self.navigationItem.leftItemsSupplementBackButton = true
+    self.title = currentPerson?.firstName
+    
     if (UserDefaults.standard.appHasRunSetup() == false) {
 
       self.mapView.isHidden = true

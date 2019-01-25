@@ -74,11 +74,11 @@ class KVPrimeTVCon: UITableViewController, KVMapActionsProtocol
     • The reason that I didn't really see it was in iPhone view, the detail is not visible until person is selected - but in the iPad it is some BS Location.
      •This is also a stop-gap fix: It is not as important how or what is selected, just as long as it is not nil
      */
-    self.title = "Pony"
+    self.title = "Tri-Ed"
     dvc?.pdc = KVPersonDataController(self.pdc.MOC!)
     dvc?.currentPerson = dvc?.pdc.getAllEntities()[0]
-    dvc?.title = (dvc?.pdc.getAllEntities()[0])!.qName
-
+    dvc?.title = (dvc?.pdc.getAllEntities()[0])!.firstName
+    
   }
 
   //FIXME: Make a Fucken Protocol from Entity Controller

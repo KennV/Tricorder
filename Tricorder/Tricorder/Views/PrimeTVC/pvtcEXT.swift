@@ -48,8 +48,8 @@ extension KVPrimeTVCon: CLLocationManagerDelegate
         mapC.pdc = pdc
         mapC.plc = placesDC
 
-        mapC.navigationItem.leftBarButtonItem = splitViewController?.displayModeButtonItem
-        mapC.navigationItem.leftItemsSupplementBackButton = true
+//        mapC.navigationItem.leftBarButtonItem = splitViewController?.displayModeButtonItem
+//        mapC.navigationItem.leftItemsSupplementBackButton = true
 //    default: //unused
       }
 
