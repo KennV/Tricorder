@@ -103,6 +103,7 @@ class TC_DBTests: XCTestCase
     let pp = pCon.makePersonAllUp(pCon.MOC!)
     pCon.makeRandomName(pp)
     XCTAssertNotNil(pp.location, "Need Location Obj")
+    
     pCon.deleteEntityInContext(pCon.MOC!, entity: pp)
   }
   

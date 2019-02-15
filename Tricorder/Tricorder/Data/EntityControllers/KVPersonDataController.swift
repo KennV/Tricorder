@@ -55,39 +55,6 @@ protocol PersonActionDelegate  {
  ```
  Parameters: position: CGPoint
  */
-protocol Renderer
-{
-  //   Moves the pen to `position` without drawing anything.
-  func moveTo(position: CGPoint)
-  // Draws a line from the pen's current position to `position`, updating the pen position.
-  func lineTo(position: CGPoint)
-  // Draws the fragment of the circle centered at `c` having the given `radius`, that lies between `startAngle` and `endAngle`, measured in radians.
-  func arcAt(center: CGPoint, radius: CGFloat, startAngle: CGFloat, endAngle: CGFloat)
-}
-// http://iosunittesting.com/testing-swift-protocol-delegates/
-protocol Drawable : class
-{
-  //  Issues drawing commands to `renderer` to represent `self`.
-  func draw(renderer: Renderer)
-}
-//MARK: Dark
-struct TestRenderer : Renderer
-{ // If this is IDK how to say it but it seems to make more sense as a class
-  //It still comes up correctly in test
-  //class TestRenderer : Renderer {
-  func moveTo(position p: CGPoint)
-  {
-    print("moveTo: (\(p.x), \(p.y))")
-  }
-  func lineTo(position p: CGPoint)
-  {
-    print("lineTo: (\(p.x), \(p.y))")
-  }
-  func arcAt(center: CGPoint, radius: CGFloat, startAngle: CGFloat, endAngle: CGFloat)
-  {
-    print("arcAt: (\(center), radius: \(radius)," + " startAngle: \(startAngle), endAngle: \(endAngle))")
-  }
-}
 
 /** # Contoller for KVPerson
  
