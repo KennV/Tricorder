@@ -16,7 +16,7 @@ I should make a cutsom class for that
 import CoreLocation
 import UIKit
 
-class KVPrimeTVCon: UITableViewController, KVMapActionsProtocol
+class KVPrimeTVCon: UITableViewController
 {
 
   var dvc: KVMapViewCon? = nil
@@ -61,26 +61,7 @@ class KVPrimeTVCon: UITableViewController, KVMapActionsProtocol
     // I can really Easily crush the arrays no?
     // OR are they lightweight
   }
-  // : :
-  func setupViewDataLogic () {
-    /** OK this is flawed.
-     but the reasoning is sort of sound for now
-    SEE Without it I have this really nice bug where I have the map view loading without an entity - with the Obvious effect that there is nobody to center the map on BUT
-    WITH THE CRASHER BUG
-     Of what happens if you try to edit the person or persons photo when person is nil, well that is again an obvious fix - but it is _still_ the wrong implementation.
-    • First of all. I might not want getAll…[0]
-      I probably do but let's assume that is not an absolute
-    • Second if I do then I want it to be clear in the interface
-    • The reason that I didn't really see it was in iPhone view, the detail is not visible until person is selected - but in the iPad it is some BS Location.
-     •This is also a stop-gap fix: It is not as important how or what is selected, just as long as it is not nil
-     */
-    self.title = "Tri-Ed"
-    dvc?.pdc = KVPersonDataController(self.pdc.MOC!)
-    dvc?.currentPerson = dvc?.pdc.getAllEntities()[0]
-    dvc?.title = (dvc?.pdc.getAllEntities()[0])!.firstName
-    
-  }
-
+  
   //FIXME: Make a Fucken Protocol from Entity Controller
   @objc func insertNewObject(sender: AnyObject)
   {
