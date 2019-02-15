@@ -273,7 +273,7 @@
 			isa = PBXGroup;
 			children = (
 				3827B03C1D9DD998004A3582 /* KVCameraViewController.swift */,
-				3827B03D1D9DD998004A3582 /* KVPersonVueTVC.swift */,
+				38942C8C2200147500D201BF /* Person */,
 			);
 			path = Editors;
 			sourceTree = "<group>";
@@ -373,6 +373,30 @@
 			);
 			name = EULA;
 			path = "New Group";
+			sourceTree = "<group>";
+		};
+		38942C8C2200147500D201BF /* Person */ = {
+			isa = PBXGroup;
+			children = (
+				38942C8E2200149800D201BF /* KVPersonEdController */,
+				38942C8D2200148400D201BF /* KVPersonTVC */,
+			);
+			path = Person;
+			sourceTree = "<group>";
+		};
+		38942C8D2200148400D201BF /* KVPersonTVC */ = {
+			isa = PBXGroup;
+			children = (
+				3827B03D1D9DD998004A3582 /* KVPersonVueTVC.swift */,
+			);
+			path = KVPersonTVC;
+			sourceTree = "<group>";
+		};
+		38942C8E2200149800D201BF /* KVPersonEdController */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = KVPersonEdController;
 			sourceTree = "<group>";
 		};
 		38A9475A1D9DE38D002D7821 /* GUI */ = {
