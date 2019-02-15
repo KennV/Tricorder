@@ -65,7 +65,7 @@ extension KVMapViewCon: PhotoEditorProtocol {
     
   @IBAction func addPerson(sender: AnyObject)
   {
-    delegate?.willAddPerson(delegate)
+    delegate?.willAddPerson(self)
     currentPerson = pdc.getAllEntities().first
     configureView()
   }

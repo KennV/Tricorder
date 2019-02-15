@@ -40,6 +40,11 @@ class KVPrimeTVCon: UITableViewController
     }
 
     navigationItem.leftBarButtonItem = editButtonItem
+    /**
+     I think #selector is a big cause of problems here
+     #NOTE# Making the reciever of the selector an @IBAction seems to have
+     Fixed the 'add @ObjC' / don't add @ObjC warning cycle
+     */
     let addButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(KVPrimeTVCon.insertNewObject(sender :)))
     
     navigationItem.rightBarButtonItem = addButton
@@ -62,11 +67,15 @@ class KVPrimeTVCon: UITableViewController
     // OR are they lightweight
   }
   
-  //FIXME: Make a Fucken Protocol from Entity Controller
-  @objc func insertNewObject(sender: AnyObject)
+  @IBAction func insertNewObject(sender: AnyObject)
   {
-    insertNewPerson(sender: self)
+    self.willAddPerson(self)
+//    insertNewPerson(sender: self)
 //    self.mkPersonForDelegate(deli: pdc.delegate)
+//    let indexPath = IndexPath(row: 0, section: 0)
+//    tableView.insertRows(at: [indexPath], with: .automatic)
+//    pdc.saveCurrentContext(pdc.MOC!)
+//    dvc!.configureView()
   }
   // MARK: - Table View Setup
   override func numberOfSections(in tableView: UITableView) -> Int
@@ -115,15 +124,15 @@ class KVPrimeTVCon: UITableViewController
     case 1:
       sectionLabel.text = NSLocalizedString("Message:", comment: "")
       sectionButton.setTitle("Msgs ++", for: .normal)
-//      sectionButton.addTarget(self, action: #selector(insertNewMsgMO(sender:)), for: .touchDown)
+      sectionButton.addTarget(self, action: #selector(insertNewMsgMO(sender:)), for: .touchDown)
     case 2:
       sectionLabel.text = NSLocalizedString("Events:", comment: "")
       sectionButton.setTitle("Events ++", for: .normal)
-//      sectionButton.addTarget(self, action: #selector(insertNewEvent(sender:)), for: .touchDown)
+      sectionButton.addTarget(self, action: #selector(insertNewEvent(sender:)), for: .touchDown)
     case 3:
       sectionLabel.text = NSLocalizedString("Places:", comment: "")
       sectionButton.setTitle("Places ++", for: .normal)
-//      sectionButton.addTarget(self, action: #selector(insertNewPlace(sender:)), for: .touchDown)
+      sectionButton.addTarget(self, action: #selector(insertNewPlace(sender:)), for: .touchDown)
       
     default:
       return nil

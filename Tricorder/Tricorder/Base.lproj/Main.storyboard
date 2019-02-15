@@ -77,7 +77,11 @@
                                 <rect key="frame" x="0.0" y="623" width="375" height="44"/>
                                 <items>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="s81-5t-EAg"/>
-                                    <barButtonItem title="Item" id="6KO-WS-SHi"/>
+                                    <barButtonItem title="Person ++" id="6KO-WS-SHi">
+                                        <connections>
+                                            <action selector="addPersonWithSender:" destination="JEX-9P-axG" id="tyw-Re-BCn"/>
+                                        </connections>
+                                    </barButtonItem>
                                     <barButtonItem systemItem="rewind" id="pc0-lK-MZr"/>
                                     <barButtonItem systemItem="camera" id="3J8-FO-tvV">
                                         <connections>

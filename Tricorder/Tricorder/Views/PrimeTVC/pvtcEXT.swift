@@ -191,8 +191,19 @@ extension KVPrimeTVCon: CLLocationManagerDelegate, KVMapActionsProtocol
   }
   
   func willAddPerson(_ deli: Any?) {
+    /**
+     NOW MOVE THIS TO THE CONTROLLER _NOT_ THE MAP VIEW!!!
+     AAMOF it could even be in an superclass of person and or item
+     */
     findLocation()
-//    insertNewPerson(sender: self)
+    let p = pdc.makePersonAllUp(pdc.MOC!)
+    pdc.updateLocationFor(p, loc: (locationManager?.location?.coordinate)!)
+    pdc.getAddressOfLocation(p.location!)
+    _ = pdc.saveEntity(entity: p)
+    let indexPath = IndexPath(row: 0, section: 0)
+    tableView.insertRows(at: [indexPath], with: .automatic)
+    pdc.saveCurrentContext(pdc.MOC!)
+    dvc!.configureView()
     
   }
   
@@ -229,23 +240,8 @@ extension KVPrimeTVCon: CLLocationManagerDelegate, KVMapActionsProtocol
    These are called from the 
    IBOutlet insted
    */
-  //FIXME: FUCKIN' *NEEDS* TO BE A PROTOCOL!!!
-  func insertNewPerson(sender: AnyObject)
-  {
-    findLocation()
-    let p = pdc.makePersonAllUp(pdc.MOC!)
-    pdc.updateLocationFor(p, loc: (locationManager?.location?.coordinate)!)
-    pdc.getAddressOfLocation(p.location!)
-    _ = pdc.saveEntity(entity: p)
-
-    let indexPath = IndexPath(row: 0, section: 0)
-    tableView.insertRows(at: [indexPath], with: .automatic)
-    pdc.saveCurrentContext(pdc.MOC!)
-    dvc!.configureView()
-    
-  }
-  //IBOutlet insted
-  func insertNewPlace(sender: AnyObject)
+  //IBAction insted
+  @IBAction func insertNewPlace(sender: AnyObject)
   {
     let pl = placesDC.makePlaceWithLocation(placesDC.MOC!, loc: (locationManager?.location?.coordinate)!)
     placesDC.getAddressOfLocation(pl.location!)
@@ -255,8 +251,8 @@ extension KVPrimeTVCon: CLLocationManagerDelegate, KVMapActionsProtocol
     tableView.reloadData()
     foundLocation()
   }
-  //IBOutlet insted
-  func insertNewEvent(sender: AnyObject)
+  //IBAction insted
+  @IBAction func insertNewEvent(sender: AnyObject)
   {
     _ = eventsDC.makeEvent(eventsDC.MOC!, loc: (locationManager?.location?.coordinate)!)
 
@@ -266,8 +262,8 @@ extension KVPrimeTVCon: CLLocationManagerDelegate, KVMapActionsProtocol
     eventsDC.saveCurrentContext(eventsDC.MOC!)
     dvc!.configureView()
   }
-  //IBOutlet insted
-  func insertNewMsgMO(sender: AnyObject)
+  //IBAction insted
+  @IBAction func insertNewMsgMO(sender: AnyObject)
   {
     let md = msgMODC.makeEmptyMessage()
     md.incepDate = NSDate()
@@ -293,4 +289,14 @@ extension KVPrimeTVCon: CLLocationManagerDelegate, KVMapActionsProtocol
     dvc!.configureView()
   
   }
+  
+/**
+   OKAY, I have a question;
+   What do I really create when I @addPerson:?
+   Does that Person Have a real list of tasks or items?
+   The Active Code is 
+   This is best answered in TEST and popped back over here.
+   
+   
+*/
 }
